@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="pt-br"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#00d4ff",
+                        "background-light": "#f5f8f8",
+                        "background-dark": "#0a0a0a",
+                        "surface-dark": "#121212",
+                        "border-cyan": "rgba(0, 212, 255, 0.3)",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .glass-card {
+            background: rgba(18, 18, 18, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(0, 212, 255, 0.1);
+        }
+        .pro-glow {
+            box-shadow: 0 0 15px rgba(0, 212, 255, 0.2);
+            border: 1px solid #00d4ff;
+        }
+        .cyan-text-glow {
+            text-shadow: 0 0 8px rgba(0, 212, 255, 0.5);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 antialiased">
+<div class="relative flex min-h-screen w-full flex-col overflow-x-hidden pb-20">
+<!-- Header -->
+<div class="flex items-center bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md sticky top-0 z-50 p-4 justify-between border-b border-slate-200 dark:border-primary/10">
+<div class="flex size-10 shrink-0 items-center justify-center rounded-full bg-slate-100 dark:bg-primary/10">
+<span class="material-symbols-outlined text-slate-900 dark:text-primary">arrow_back_ios_new</span>
+</div>
+<h2 class="text-slate-900 dark:text-slate-100 text-lg font-bold leading-tight tracking-tight flex-1 text-center">Planos QLS Quantum</h2>
+<div class="flex w-10 items-center justify-end">
+<button class="flex size-10 items-center justify-center rounded-full text-slate-900 dark:text-primary">
+<span class="material-symbols-outlined">help_outline</span>
+</button>
+</div>
+</div>
+<!-- Hero Section -->
+<div class="px-6 pt-8 pb-4 text-center">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 mb-4">
+<span class="size-2 rounded-full bg-primary animate-pulse"></span>
+<span class="text-[10px] font-bold uppercase tracking-widest text-primary">Live Liquidity</span>
+</div>
+<h1 class="text-slate-900 dark:text-slate-100 text-3xl font-extrabold leading-tight mb-2">Potencialize seu Trading</h1>
+<p class="text-slate-600 dark:text-slate-400 text-sm">Acesse algoritmos institucionais e liquidez quântica em tempo real.</p>
+</div>
+<!-- Plans Container -->
+<div class="flex flex-col gap-6 px-4 py-6">
+<!-- Basic Plan -->
+<div class="glass-card rounded-xl p-6 flex flex-col gap-4">
+<div class="flex justify-between items-start">
+<div>
+<h3 class="text-slate-900 dark:text-slate-100 text-lg font-bold">Standard</h3>
+<p class="text-slate-500 dark:text-slate-400 text-xs">Para traders iniciantes</p>
+</div>
+<div class="text-right">
+<p class="text-slate-900 dark:text-slate-100 text-2xl font-black">$49<span class="text-xs font-normal text-slate-500">/mês</span></p>
+</div>
+</div>
+<div class="space-y-3">
+<div class="flex items-center gap-3 text-sm">
+<span class="material-symbols-outlined text-primary text-lg">check_circle</span>
+<span class="text-slate-700 dark:text-slate-300">Algoritmos Base</span>
+</div>
+<div class="flex items-center gap-3 text-sm">
+<span class="material-symbols-outlined text-primary text-lg">check_circle</span>
+<span class="text-slate-700 dark:text-slate-300">1 Estratégia Ativa</span>
+</div>
+<div class="flex items-center gap-3 text-sm">
+<span class="material-symbols-outlined text-primary text-lg">check_circle</span>
+<span class="text-slate-700 dark:text-slate-300">Suporte via Discord</span>
+</div>
+</div>
+<button class="w-full py-3 rounded-lg bg-slate-200 dark:bg-primary/10 text-slate-900 dark:text-primary font-bold text-sm transition-all active:scale-95">
+                    Começar Agora
+                </button>
+</div>
+<!-- Pro Plan (Featured) -->
+<div class="glass-card pro-glow rounded-xl p-6 flex flex-col gap-4 relative overflow-hidden">
+<div class="absolute top-0 right-0 bg-primary text-background-dark px-4 py-1 text-[10px] font-black uppercase rounded-bl-lg">
+                    Mais Popular
+                </div>
+<div class="flex justify-between items-start">
+<div>
+<h3 class="text-slate-900 dark:text-primary cyan-text-glow text-xl font-extrabold tracking-tight">Pro Quantum</h3>
+<p class="text-slate-500 dark:text-slate-400 text-xs">Performance institucional</p>
+</div>
+<div class="text-right">
+<p class="text-slate-900 dark:text-slate-100 text-3xl font-black cyan-text-glow">$99<span class="text-xs font-normal text-slate-500">/mês</span></p>
+</div>
+</div>
+<div class="space-y-3 my-2">
+<div class="flex items-center gap-3 text-sm">
+<span class="material-symbols-outlined text-primary text-lg" style="font-variation-settings: 'FILL' 1">verified</span>
+<span class="text-slate-700 dark:text-slate-100 font-medium">Liquidez de Alta Frequência</span>
+</div>
+<div class="flex items-center gap-3 text-sm">
+<span class="material-symbols-outlined text-primary text-lg" style="font-variation-settings: 'FILL' 1">verified</span>
+<span class="text-slate-700 dark:text-slate-100 font-medium">5 Estratégias Avançadas</span>
+</div>
+<div class="flex items-center gap-3 text-sm">
+<span class="material-symbols-outlined text-primary text-lg" style="font-variation-settings: 'FILL' 1">verified</span>
+<span class="text-slate-700 dark:text-slate-100 font-medium">Backtesting Ilimitado</span>
+</div>
+<div class="flex items-center gap-3 text-sm">
+<span class="material-symbols-outlined text-primary text-lg" style="font-variation-settings: 'FILL' 1">verified</span>
+<span class="text-slate-700 dark:text-slate-100 font-medium">Prioridade em Execução</span>
+</div>
+</div>
+<button class="w-full py-4 rounded-lg bg-primary text-background-dark font-black text-sm transition-all active:scale-95 shadow-lg shadow-primary/20">
+                    ASSINAR PRO QUANTUM
+                </button>
+</div>
+<!-- Elite Plan -->
+<div class="glass-card rounded-xl p-6 flex flex-col gap-4">
+<div class="flex justify-between items-start">
+<div>
+<h3 class="text-slate-900 dark:text-slate-100 text-lg font-bold">Elite</h3>
+<p class="text-slate-500 dark:text-slate-400 text-xs">Full API &amp; Customização</p>
+</div>
+<div class="text-right">
+<p class="text-slate-900 dark:text-slate-100 text-2xl font-black">$199<span class="text-xs font-normal text-slate-500">/mês</span></p>
+</div>
+</div>
+<div class="space-y-3">
+<div class="flex items-center gap-3 text-sm">
+<span class="material-symbols-outlined text-primary text-lg">check_circle</span>
+<span class="text-slate-700 dark:text-slate-300">API Institutional Access</span>
+</div>
+<div class="flex items-center gap-3 text-sm">
+<span class="material-symbols-outlined text-primary text-lg">check_circle</span>
+<span class="text-slate-700 dark:text-slate-300">Sinais via Webhook</span>
+</div>
+<div class="flex items-center gap-3 text-sm">
+<span class="material-symbols-outlined text-primary text-lg">check_circle</span>
+<span class="text-slate-700 dark:text-slate-300">Gerente de Conta Dedicado</span>
+</div>
+</div>
+<button class="w-full py-3 rounded-lg bg-slate-200 dark:bg-primary/10 text-slate-900 dark:text-primary font-bold text-sm transition-all active:scale-95">
+                    Contato Comercial
+                </button>
+</div>
+</div>
+<!-- Testimonial / Social Proof -->
+<div class="px-6 py-4 mb-8">
+<div class="flex items-center justify-center -space-x-3 mb-3">
+<div class="size-8 rounded-full border-2 border-background-dark bg-slate-800">
+<img class="size-full rounded-full object-cover" data-alt="User avatar 1" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBEJAhF18vp44cXDSmc1dQfF1IKkb8TfxiMtHcuNcbANaFwAY1h1MH1sIlDOenNtjy614-j3oz45wmVthOT505y_uaiGYhYpEU7LQ2oHTjV09bKTMDnaukwFMstH4z2q8is5k7jasuIWBoWH5KmqzoeweM9kcAW15QQhdnJt6udoz6gZbWWdponeI1ti01GRTDLxtM_HK33odEuCtRFZfaoTuQVRrhxTOWL7lMyp-egD_3baaykIRxZ72C_UNjA0apLigrvKvrqE2g"/>
+</div>
+<div class="size-8 rounded-full border-2 border-background-dark bg-slate-800">
+<img class="size-full rounded-full object-cover" data-alt="User avatar 2" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBzy3qPb3_BImU_50uH5Q2kWaImcTbHCSvnzg4t0jUhz_fBbnrjNRLov6SupD5BTb8lohOGS0hJPQ8W5oWiNlFv4U2RCeduq-JBR-toPB0oiKNIxNNd4NvvG3Qe44Mo2NnHUrqnNJHzVEtRTo_8vfhS58WF1Yh7BI52Es4_NxzqO77IfhpmoOkFs-FFiaqRnZbDBQNAWcjMiGAZFIixxkXe97JecU22uCttSXQf_o4AuQH0ZkZJRiPNQ8fDRQ7CVtDp7tkes7v5ldE"/>
+</div>
+<div class="size-8 rounded-full border-2 border-background-dark bg-slate-800">
+<img class="size-full rounded-full object-cover" data-alt="User avatar 3" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBsJdA9xSWdkhvQT-CuBJsyM7zdmV_b04QvTE-dRx5H_rrNhqwYxadFrpSdKOYz2Jb67fi-JaL45wX-VgFdkNgE1B98NKsXLmvD_3YKwSCzUex27sshwa-e2tkGmoqZDLm8Tx9VTWnfLJWsq3FuU2umD3fR3PYfCOS9ts-p3eYRBrWEES2kqtYCCWI0Y_-hcqWY3TLOb0o9_3BmDJnA2oXunk38SbbU_8Mh4T7OKvbW4irJBhQkXFnwWdPD0HOJvxKY6kOu0qN7Hac"/>
+</div>
+<div class="size-8 rounded-full border-2 border-background-dark bg-primary flex items-center justify-center text-[10px] font-bold text-background-dark">
+                    +2k
+                </div>
+</div>
+<p class="text-center text-xs text-slate-500 dark:text-slate-400">Junte-se a mais de 2,000 traders utilizando QLS Quantum diariamente.</p>
+</div>
+<!-- Bottom Navigation -->
+<div class="fixed bottom-0 left-0 right-0 z-50 flex border-t border-slate-200 dark:border-primary/20 bg-background-light dark:bg-surface-dark px-4 pb-6 pt-3 backdrop-blur-lg">
+<a class="flex flex-1 flex-col items-center justify-center gap-1 text-slate-400 dark:text-slate-500" href="#">
+<span class="material-symbols-outlined">home</span>
+<p class="text-[10px] font-medium leading-normal">Início</p>
+</a>
+<a class="flex flex-1 flex-col items-center justify-center gap-1 text-slate-400 dark:text-slate-500" href="#">
+<span class="material-symbols-outlined">analytics</span>
+<p class="text-[10px] font-medium leading-normal">Mercados</p>
+</a>
+<a class="flex flex-1 flex-col items-center justify-center gap-1 text-primary" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1">payments</span>
+<p class="text-[10px] font-bold leading-normal">Planos</p>
+</a>
+<a class="flex flex-1 flex-col items-center justify-center gap-1 text-slate-400 dark:text-slate-500" href="#">
+<span class="material-symbols-outlined">person</span>
+<p class="text-[10px] font-medium leading-normal">Perfil</p>
+</a>
+</div>
+</div>
+</body></html>

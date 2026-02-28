@@ -1,0 +1,197 @@
+<html class="dark" lang="pt-br"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#00ff88",
+              "background-light": "#f5f8f7",
+              "background-dark": "#0a0a0a",
+              "surface": "#141414",
+              "border-glass": "rgba(0, 255, 136, 0.1)",
+            },
+            fontFamily: {
+              "display": ["Space Grotesk"]
+            },
+            borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .glass-card {
+            background: rgba(20, 20, 20, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(0, 255, 136, 0.15);
+        }
+        .neon-shadow {
+            box-shadow: 0 0 15px rgba(0, 255, 136, 0.3);
+        }
+        .custom-range::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 18px;
+            height: 18px;
+            background: #00ff88;
+            cursor: pointer;
+            border-radius: 50%;
+            box-shadow: 0 0 10px rgba(0, 255, 136, 0.5);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 min-h-screen selection:bg-primary selection:text-background-dark">
+<div class="relative flex min-h-screen w-full flex-col overflow-x-hidden max-w-[430px] mx-auto bg-background-dark border-x border-primary/5">
+<!-- Header -->
+<header class="flex items-center p-6 justify-between sticky top-0 z-50 bg-background-dark/80 backdrop-blur-md">
+<div class="text-primary flex size-10 shrink-0 items-center justify-center rounded-full glass-card">
+<span class="material-symbols-outlined">arrow_back_ios_new</span>
+</div>
+<h2 class="text-slate-100 text-lg font-bold leading-tight tracking-tight flex-1 text-center">Estratégias QLC</h2>
+<div class="flex w-10 items-center justify-end">
+<button class="flex size-10 items-center justify-center rounded-full glass-card text-primary">
+<span class="material-symbols-outlined">tune</span>
+</button>
+</div>
+</header>
+<!-- Strategy Hero Card -->
+<div class="px-6 pb-4">
+<div class="glass-card rounded-xl overflow-hidden relative group">
+<div class="absolute inset-0 bg-gradient-to-t from-background-dark via-transparent to-transparent opacity-80 z-10"></div>
+<div class="w-full bg-center bg-no-repeat aspect-[16/9] bg-cover" data-alt="High tech digital financial market chart with neon lines" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAJLDV8BAf-X2MXII5T8lgGflRroFlx-YfuGjqKnd1t6bMx39SWEZIzrhyQdIFIs0c1OnN0a3BKJmOfEeCk3ev0TUurANYPBENvfD9Oht63UxW4uebwinpQFAGREMeX48PgJ99f-mkfGiveQNwZu7Vqd-yxSVx0e-er2AzD13lD_FmjbTt5yLSZyn3xe_Vj-4O8GB9B0YXp71hlmuqpLBoe02ZGrWY7tdq3iFhO9TORBhN_mdCuFqLtGL2SSUKJr_QQ5Q-YKfyAUdo");'></div>
+<div class="absolute bottom-0 left-0 right-0 p-5 z-20">
+<div class="flex items-center gap-2 mb-1">
+<span class="size-2 rounded-full bg-primary neon-shadow animate-pulse"></span>
+<p class="text-primary text-[10px] font-bold tracking-[0.1em] uppercase">Status: Operando</p>
+</div>
+<p class="text-white text-xl font-bold leading-tight tracking-tight">Quantum Liquidity Pro</p>
+<p class="text-slate-400 text-sm font-medium">Frequência HFT • Par BTC/USDT</p>
+</div>
+</div>
+</div>
+<!-- Performance Stats -->
+<div class="flex gap-3 px-6 pb-6 overflow-x-auto no-scrollbar">
+<div class="flex min-w-[120px] flex-1 flex-col gap-1 rounded-xl p-4 glass-card">
+<p class="text-slate-400 text-xs font-medium uppercase tracking-wider">ROI Mês</p>
+<p class="text-primary text-xl font-bold">+12.4%</p>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-primary">trending_up</span>
+<p class="text-primary text-[10px] font-medium">+1.2% hoje</p>
+</div>
+</div>
+<div class="flex min-w-[120px] flex-1 flex-col gap-1 rounded-xl p-4 glass-card">
+<p class="text-slate-400 text-xs font-medium uppercase tracking-wider">Drawdown</p>
+<p class="text-slate-100 text-xl font-bold">3.2%</p>
+<p class="text-slate-500 text-[10px] font-medium">Risco Baixo</p>
+</div>
+<div class="flex min-w-[120px] flex-1 flex-col gap-1 rounded-xl p-4 glass-card">
+<p class="text-slate-400 text-xs font-medium uppercase tracking-wider">Win Rate</p>
+<p class="text-slate-100 text-xl font-bold">74%</p>
+<p class="text-slate-500 text-[10px] font-medium">1.2k trades</p>
+</div>
+</div>
+<!-- Bot Controls Section -->
+<div class="px-6 flex flex-col gap-6">
+<!-- Active Toggle -->
+<div class="glass-card rounded-xl p-5 flex items-center justify-between border-primary/30">
+<div>
+<h3 class="text-slate-100 font-bold">Ativação do Robô</h3>
+<p class="text-slate-400 text-xs mt-1">Execução automatizada em tempo real</p>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-14 h-7 bg-slate-800 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-6 after:w-6 after:transition-all peer-checked:bg-primary neon-shadow"></div>
+</label>
+</div>
+<!-- Configuration Sliders -->
+<div class="glass-card rounded-xl p-6 flex flex-col gap-8">
+<!-- Capital Allocation -->
+<div class="space-y-4">
+<div class="flex justify-between items-center">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">account_balance_wallet</span>
+<p class="text-slate-100 font-medium">Capital Alocado</p>
+</div>
+<span class="text-primary font-bold">US$ 4.500</span>
+</div>
+<input class="w-full h-1.5 bg-slate-800 rounded-lg appearance-none cursor-pointer custom-range" max="10000" min="0" step="100" type="range" value="4500"/>
+<div class="flex justify-between text-[10px] text-slate-500 font-bold uppercase tracking-widest">
+<span>US$ 500</span>
+<span>US$ 10.000</span>
+</div>
+</div>
+<!-- Risk Level -->
+<div class="space-y-4">
+<div class="flex justify-between items-center">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">warning</span>
+<p class="text-slate-100 font-medium">Nível de Risco</p>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-orange-500/20 text-orange-400 text-[10px] font-bold">MODERADO</span>
+</div>
+<input class="w-full h-1.5 bg-slate-800 rounded-lg appearance-none cursor-pointer custom-range" max="10" min="1" step="1" type="range" value="4"/>
+<div class="flex justify-between text-[10px] text-slate-500 font-bold uppercase tracking-widest">
+<span>Conservador</span>
+<span>Agressivo</span>
+</div>
+</div>
+</div>
+<!-- Ping-Pong Mode (Grid) -->
+<div class="glass-card rounded-xl p-5 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="size-10 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">grid_view</span>
+</div>
+<div>
+<h3 class="text-slate-100 font-bold">Modo Ping-Pong</h3>
+<p class="text-slate-400 text-xs">Estratégia de Grid Trading</p>
+</div>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-slate-800 rounded-full peer peer-checked:after:translate-x-full after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+</label>
+</div>
+</div>
+<!-- Footer Spacer -->
+<div class="h-24"></div>
+<!-- Navigation Bar -->
+<nav class="fixed bottom-0 left-0 right-0 max-w-[430px] mx-auto z-[100] bg-background-dark/90 backdrop-blur-xl border-t border-primary/10 px-6 pb-8 pt-4">
+<div class="flex items-center justify-between">
+<a class="flex flex-col items-center gap-1 text-slate-500" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="text-[10px] font-medium uppercase tracking-tighter">Resumo</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-primary" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1">memory</span>
+<span class="text-[10px] font-medium uppercase tracking-tighter">Robôs</span>
+</a>
+<div class="relative -top-10">
+<button class="size-16 rounded-full bg-primary text-background-dark flex items-center justify-center neon-shadow border-4 border-background-dark">
+<span class="material-symbols-outlined text-3xl font-bold">add</span>
+</button>
+</div>
+<a class="flex flex-col items-center gap-1 text-slate-500" href="#">
+<span class="material-symbols-outlined">account_balance_wallet</span>
+<span class="text-[10px] font-medium uppercase tracking-tighter">Carteira</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-500" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="text-[10px] font-medium uppercase tracking-tighter">Perfil</span>
+</a>
+</div>
+</nav>
+</div>
+</body></html>

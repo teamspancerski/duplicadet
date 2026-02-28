@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="pt-BR"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#0df287",
+                        "background-light": "#f5f8f7",
+                        "background-dark": "#0a0a0a",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .glass {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .neon-glow {
+            box-shadow: 0 0 15px rgba(13, 242, 135, 0.4);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 min-h-screen flex flex-col">
+<header class="flex items-center p-6 justify-between sticky top-0 z-50 bg-background-dark/80 backdrop-blur-md">
+<div class="text-primary flex size-10 items-center justify-center glass rounded-full cursor-pointer">
+<span class="material-symbols-outlined">chevron_left</span>
+</div>
+<h2 class="text-slate-100 text-lg font-bold leading-tight tracking-tight flex-1 text-center pr-10">Conexão Exchanges</h2>
+</header>
+<main class="flex-1 px-6 pb-24 overflow-y-auto">
+<div class="mt-4 text-center">
+<h1 class="text-slate-100 text-3xl font-bold tracking-tight">Vincular Exchange</h1>
+<p class="text-slate-400 text-sm mt-2 max-w-[280px] mx-auto">Selecione a plataforma para integrar ao ecossistema QLS Quantum Liquidity</p>
+</div>
+<div class="mt-8">
+<div class="flex gap-3 justify-between">
+<button class="flex flex-col items-center justify-center border-2 border-primary bg-primary/10 rounded-xl p-4 flex-1 transition-all">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-lg size-10 mb-2" data-alt="Binance logo gold and black" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCmQft2k973ZOX5slmtOTMaruroaKPo9TyxDHUItKSznp4bnncyIqRYv1IF7hpCTOs1tWokw-EBbKQ-QEAbD-0Gp8dcLShOUPRwwIAq0oIsWdA8gp4Sidsm8fAOXkv8xGRP-5v9SANMk0n94g88kBlsPsAmjqeIpFZ0h28BnikL92A4ligv3Lgf69glGvQpvdhBg2Nwnj1GIToGWLpnXB00u0h3JJSVt_bq2aiD9KqCgle7bNIEv_1695g0QXUWlN24kWDPRy26ybo");'></div>
+<p class="text-primary text-xs font-bold uppercase tracking-wider">Binance</p>
+</button>
+<button class="flex flex-col items-center justify-center border border-slate-800 bg-slate-900/50 rounded-xl p-4 flex-1 opacity-60">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-lg size-10 mb-2" data-alt="Bybit logo monochromatic" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCJ3YdDE1umqk2e09hf7rb8hWu2nqnGIQ97g4LqHhx1bkZcXKWQBbpk2rki6J5i62iwrb6E6HR9FbxHBbuijIxLN1Fo_k80TDbwlfuw3P4XpKqnxGOjnHV-ip5xuYGfkKrdpqhtkwIr4BVuIer1M3ASTupXVZfCK_C0x1SYT8ktMFcyu6dykbkip0pEIGgkz1qyVpDYy9iUOgjBCECIQtQj07O6NHVLuIkEohS7ZstUDZGsXYrmfrZ2Z7w1LprK68AElOpiBFU0w_c");'></div>
+<p class="text-slate-400 text-xs font-bold uppercase tracking-wider">Bybit</p>
+</button>
+<button class="flex flex-col items-center justify-center border border-slate-800 bg-slate-900/50 rounded-xl p-4 flex-1 opacity-60">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-lg size-10 mb-2" data-alt="Forex.com logo professional blue" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuC-EDW9sPL9H6dfW5UiVnh7ocqD5fryuzrrLlATMnEQFtxHWYd-Cf5Eme1JiJ4RBCdLqs5VQ3Y6vNgkZEWc646voeaArsPJ1r0HqERxnLEKz7EqTILFpnF2VSdguMhMvcsI9KRUzUl-LJIwaGdLHpusL50-32UtQFAZsYxW1-Al1m34tBX8H4cB7VLzsLJbSsJEjBWtQjQaAa1ddI2OAZXb6HzBaN2Oxrnm1x8ftnW0fUifDLW9f-lvaeU__MofilZNyF2Cv_Ntd9Y");'></div>
+<p class="text-slate-400 text-xs font-bold uppercase tracking-wider">Forex.com</p>
+</button>
+</div>
+</div>
+<div class="mt-10 space-y-6">
+<div class="glass p-6 rounded-2xl space-y-5">
+<div class="flex items-center justify-between mb-2">
+<span class="text-xs font-bold text-slate-500 uppercase tracking-widest">Configuração API</span>
+<div class="flex items-center gap-2">
+<div class="size-2 rounded-full bg-primary neon-glow animate-pulse"></div>
+<span class="text-[10px] font-bold text-primary uppercase">Status: Online</span>
+</div>
+</div>
+<div class="space-y-2">
+<label class="text-xs font-medium text-slate-400 ml-1">API Key</label>
+<div class="relative">
+<input class="w-full bg-slate-900/50 border border-slate-800 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-primary/50 text-slate-100 placeholder:text-slate-600" placeholder="Insira sua chave de API" type="text"/>
+</div>
+</div>
+<div class="space-y-2">
+<label class="text-xs font-medium text-slate-400 ml-1">Secret Key</label>
+<div class="relative">
+<input class="w-full bg-slate-900/50 border border-slate-800 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-primary/50 text-slate-100 placeholder:text-slate-600" placeholder="••••••••••••••••" type="password"/>
+</div>
+</div>
+<button class="w-full bg-primary text-background-dark font-bold py-4 rounded-xl shadow-lg shadow-primary/20 flex items-center justify-center gap-2 mt-4">
+<span class="material-symbols-outlined text-[20px]">security</span>
+                    Sincronizar Exchange
+                </button>
+</div>
+<div class="glass p-4 rounded-2xl flex items-start gap-4">
+<div class="bg-primary/10 p-2 rounded-lg text-primary shrink-0">
+<span class="material-symbols-outlined">verified_user</span>
+</div>
+<div>
+<h4 class="text-xs font-bold text-slate-100">Segurança Militar AES-256</h4>
+<p class="text-[11px] text-slate-500 mt-1 leading-relaxed">Suas chaves são criptografadas com o padrão AES de 256 bits antes de serem armazenadas. O QLS nunca tem acesso direto aos seus fundos.</p>
+</div>
+</div>
+</div>
+</main>
+<nav class="fixed bottom-0 left-0 right-0 glass border-t border-slate-800/50 px-6 py-3 flex justify-between items-center z-50">
+<a class="flex flex-col items-center gap-1 text-slate-500" href="#">
+<span class="material-symbols-outlined">grid_view</span>
+<span class="text-[10px] font-medium">Dashboard</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-primary" href="#">
+<span class="material-symbols-outlined fill-1">account_balance_wallet</span>
+<span class="text-[10px] font-medium">Exchanges</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-500" href="#">
+<span class="material-symbols-outlined">query_stats</span>
+<span class="text-[10px] font-medium">Estratégias</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-500" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="text-[10px] font-medium">Perfil</span>
+</a>
+</nav>
+<div class="fixed top-0 left-0 w-full h-full pointer-events-none -z-10 overflow-hidden">
+<div class="absolute top-[-10%] right-[-10%] w-[300px] h-[300px] bg-primary/5 rounded-full blur-[100px]"></div>
+<div class="absolute bottom-[-10%] left-[-10%] w-[250px] h-[250px] bg-primary/10 rounded-full blur-[80px]"></div>
+</div>
+</body></html>

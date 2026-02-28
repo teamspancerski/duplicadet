@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="pt-BR"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Comparativo QLS - Cyan Mode</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#0dccf2",
+                        "background-light": "#f5f8f8",
+                        "background-dark": "#101f22",
+                        "slate-custom": "#1a2e32",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+            -webkit-tap-highlight-color: transparent;
+        }
+        .ios-status-bar {
+            height: 44px;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 min-h-screen flex flex-col overflow-x-hidden">
+<div class="ios-status-bar w-full flex items-center justify-between px-6 pt-2">
+<span class="text-sm font-semibold">9:41</span>
+<div class="flex gap-1.5 items-center">
+<span class="material-symbols-outlined text-sm">signal_cellular_4_bar</span>
+<span class="material-symbols-outlined text-sm">wifi</span>
+<span class="material-symbols-outlined text-sm rotate-90">battery_full</span>
+</div>
+</div>
+<header class="flex items-center px-4 py-3 justify-between">
+<div class="flex items-center gap-3">
+<div class="text-primary p-2">
+<span class="material-symbols-outlined text-2xl">arrow_back_ios</span>
+</div>
+<div>
+<h1 class="text-xl font-bold tracking-tight">Comparativo</h1>
+<p class="text-[10px] uppercase tracking-widest text-primary font-bold">QLS Quantum Liquidity</p>
+</div>
+</div>
+<div class="flex gap-2">
+<button class="size-10 flex items-center justify-center rounded-full bg-slate-custom/50">
+<span class="material-symbols-outlined text-primary">share</span>
+</button>
+<button class="size-10 flex items-center justify-center rounded-full bg-slate-custom/50">
+<span class="material-symbols-outlined text-primary">more_vert</span>
+</button>
+</div>
+</header>
+<div class="px-4 mt-2">
+<div class="flex bg-slate-custom/30 rounded-xl p-1">
+<button class="flex-1 py-2 text-sm font-bold rounded-lg bg-primary text-background-dark">Equity Curves</button>
+<button class="flex-1 py-2 text-sm font-bold text-slate-400">Key Metrics</button>
+</div>
+</div>
+<main class="flex-1 px-4 py-6 overflow-y-auto">
+<div class="mb-8">
+<div class="flex justify-between items-end mb-4">
+<div>
+<h2 class="text-slate-400 text-sm font-medium">Alpha Quant vs Delta Flux</h2>
+<div class="flex items-center gap-3">
+<span class="text-4xl font-bold text-slate-100">+32.4%</span>
+<span class="bg-primary/20 text-primary text-xs font-bold px-2 py-1 rounded-md flex items-center gap-1">
+<span class="material-symbols-outlined text-xs">trending_up</span>
+                            4.2%
+                        </span>
+</div>
+</div>
+<div class="text-right">
+<span class="text-[10px] text-slate-500 uppercase font-bold">Jan - Fev 2024</span>
+</div>
+</div>
+<div class="relative h-64 w-full bg-slate-custom/10 rounded-2xl border border-slate-custom/20 overflow-hidden p-2">
+<svg class="absolute inset-0 w-full h-full" preserveaspectratio="none" viewbox="0 0 400 200">
+<defs>
+<lineargradient id="grad-primary" x1="0%" x2="0%" y1="0%" y2="100%">
+<stop offset="0%" style="stop-color:#0dccf2;stop-opacity:0.3"></stop>
+<stop offset="100%" style="stop-color:#0dccf2;stop-opacity:0"></stop>
+</lineargradient>
+<lineargradient id="grad-white" x1="0%" x2="0%" y1="0%" y2="100%">
+<stop offset="0%" style="stop-color:#ffffff;stop-opacity:0.1"></stop>
+<stop offset="100%" style="stop-color:#ffffff;stop-opacity:0"></stop>
+</lineargradient>
+</defs>
+<path d="M0 160 Q 50 140, 100 150 T 200 100 T 300 80 T 400 40 V 200 H 0 Z" fill="url(#grad-primary)"></path>
+<path d="M0 160 Q 50 140, 100 150 T 200 100 T 300 80 T 400 40" fill="none" stroke="#0dccf2" stroke-linecap="round" stroke-width="3"></path>
+<path d="M0 170 Q 80 165, 150 130 T 250 140 T 350 110 T 400 95" fill="none" stroke="#ffffff" stroke-dasharray="4 4" stroke-opacity="0.6" stroke-width="2"></path>
+</svg>
+<div class="absolute bottom-4 left-0 w-full flex justify-between px-4">
+<span class="text-[10px] text-slate-500 font-bold uppercase">Jan 01</span>
+<span class="text-[10px] text-slate-500 font-bold uppercase">Jan 15</span>
+<span class="text-[10px] text-slate-500 font-bold uppercase">Fev 01</span>
+</div>
+</div>
+<div class="flex gap-4 mt-4">
+<div class="flex items-center gap-2">
+<div class="size-2 bg-primary rounded-full"></div>
+<span class="text-xs text-slate-300">Alpha Quant (Cyan)</span>
+</div>
+<div class="flex items-center gap-2">
+<div class="size-2 bg-white/40 rounded-full"></div>
+<span class="text-xs text-slate-300">Delta Flux (White)</span>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div class="bg-slate-custom/20 border border-slate-custom/40 p-4 rounded-2xl">
+<p class="text-slate-400 text-xs font-medium mb-1">Win Rate (Alpha)</p>
+<p class="text-2xl font-bold text-primary">74.2%</p>
+<div class="mt-2 flex items-center text-[10px] text-primary font-bold">
+<span class="material-symbols-outlined text-xs mr-1">keyboard_double_arrow_up</span>
+                    TOP PERFORMANCE
+                </div>
+</div>
+<div class="bg-slate-custom/20 border border-slate-custom/40 p-4 rounded-2xl">
+<p class="text-slate-400 text-xs font-medium mb-1">Win Rate (Delta)</p>
+<p class="text-2xl font-bold text-slate-100">62.8%</p>
+<div class="mt-2 flex items-center text-[10px] text-slate-500 font-bold">
+<span class="material-symbols-outlined text-xs mr-1">remove</span>
+                    BASELINE
+                </div>
+</div>
+<div class="bg-slate-custom/20 border border-slate-custom/40 p-4 rounded-2xl">
+<p class="text-slate-400 text-xs font-medium mb-1">Max Drawdown</p>
+<p class="text-2xl font-bold text-slate-100">-4.2%</p>
+<div class="mt-2 h-1 w-full bg-slate-custom/50 rounded-full overflow-hidden">
+<div class="h-full bg-primary w-[40%]"></div>
+</div>
+</div>
+<div class="bg-slate-custom/20 border border-slate-custom/40 p-4 rounded-2xl">
+<p class="text-slate-400 text-xs font-medium mb-1">Sharpe Ratio</p>
+<p class="text-2xl font-bold text-slate-100">3.12</p>
+<div class="mt-2 h-1 w-full bg-slate-custom/50 rounded-full overflow-hidden">
+<div class="h-full bg-primary w-[85%]"></div>
+</div>
+</div>
+</div>
+<div class="mt-6 bg-primary/10 border border-primary/20 rounded-2xl p-5 relative overflow-hidden">
+<div class="relative z-10">
+<h3 class="text-primary font-bold text-sm mb-2">Quantum Recommendation</h3>
+<p class="text-slate-200 text-xs leading-relaxed">
+                    A estratégia <span class="text-primary font-bold">Alpha Quant</span> demonstrou 12% mais estabilidade em zonas de baixa liquidez. Recomendado para o par BTC/USDT.
+                </p>
+</div>
+<span class="material-symbols-outlined absolute -right-4 -bottom-4 text-8xl text-primary/5 select-none">bolt</span>
+</div>
+</main>
+<nav class="bg-slate-custom/80 backdrop-blur-md border-t border-slate-custom/50 px-6 py-3 pb-8 flex justify-between items-center">
+<a class="flex flex-col items-center gap-1 text-slate-500" href="#">
+<span class="material-symbols-outlined">terminal</span>
+<span class="text-[10px] font-medium">Terminal</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-500" href="#">
+<span class="material-symbols-outlined">pie_chart</span>
+<span class="text-[10px] font-medium">Portfólio</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-primary" href="#">
+<div class="relative">
+<span class="material-symbols-outlined">query_stats</span>
+<div class="absolute -top-1 -right-1 size-2 bg-primary rounded-full border-2 border-background-dark"></div>
+</div>
+<span class="text-[10px] font-bold">Backtest</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-500" href="#">
+<span class="material-symbols-outlined">monitoring</span>
+<span class="text-[10px] font-medium">Sinais</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-500" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="text-[10px] font-medium">Ajustes</span>
+</a>
+</nav>
+</body></html>

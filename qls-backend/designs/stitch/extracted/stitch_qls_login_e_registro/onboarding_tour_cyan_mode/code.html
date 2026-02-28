@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#25f4f4",
+                        "background-light": "#f5f8f8",
+                        "background-dark": "#102222",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .glass-tooltip {
+            background: rgba(16, 34, 34, 0.8);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(37, 244, 244, 0.4);
+            box-shadow: 0 0 20px rgba(37, 244, 244, 0.15);
+        }
+        .neon-border {
+            box-shadow: 0 0 10px rgba(37, 244, 244, 0.5);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 antialiased overflow-hidden">
+<!-- Background Dashboard (Dimmed) -->
+<div class="relative flex h-screen w-full flex-col bg-background-light dark:bg-background-dark overflow-hidden opacity-30 grayscale-[0.5]">
+<!-- Header -->
+<div class="flex items-center p-4 justify-between border-b border-slate-200 dark:border-primary/10">
+<div class="flex size-12 shrink-0 items-center text-primary">
+<span class="material-symbols-outlined text-3xl">menu</span>
+</div>
+<h2 class="text-lg font-bold leading-tight flex-1 text-center">QLS Quantum</h2>
+<div class="flex w-12 items-center justify-end text-primary">
+<span class="material-symbols-outlined text-3xl">account_circle</span>
+</div>
+</div>
+<!-- Stats Cards -->
+<div class="flex flex-wrap gap-4 p-4">
+<div class="flex min-w-[140px] flex-1 flex-col gap-2 rounded-xl p-4 border border-slate-200 dark:border-primary/20 bg-white/5">
+<p class="text-sm font-medium opacity-70">Total Liquidity</p>
+<p class="text-xl font-bold">$2.4M</p>
+<p class="text-emerald-400 text-sm font-medium">+12.5%</p>
+</div>
+<div class="flex min-w-[140px] flex-1 flex-col gap-2 rounded-xl p-4 border border-slate-200 dark:border-primary/20 bg-white/5">
+<p class="text-sm font-medium opacity-70">24h Volume</p>
+<p class="text-xl font-bold">$840K</p>
+<p class="text-rose-400 text-sm font-medium">-2.4%</p>
+</div>
+</div>
+<!-- Chart Section -->
+<div class="px-4 py-6">
+<div class="flex flex-col gap-2 p-4 rounded-xl border border-primary/20 bg-primary/5">
+<p class="text-sm font-medium opacity-70">Liquidity Depth</p>
+<p class="text-3xl font-bold">$1.2M</p>
+<div class="h-32 w-full mt-4 bg-gradient-to-t from-primary/10 to-transparent rounded-lg flex items-end px-2 gap-1">
+<div class="flex-1 bg-primary/40 h-12 rounded-t-sm"></div>
+<div class="flex-1 bg-primary/60 h-20 rounded-t-sm"></div>
+<div class="flex-1 bg-primary/40 h-16 rounded-t-sm"></div>
+<div class="flex-1 bg-primary/80 h-24 rounded-t-sm"></div>
+<div class="flex-1 bg-primary/50 h-14 rounded-t-sm"></div>
+<div class="flex-1 bg-primary/90 h-28 rounded-t-sm"></div>
+</div>
+</div>
+</div>
+<!-- Active Pairs Header -->
+<h3 class="text-lg font-bold px-4 pt-4">Active Pairs</h3>
+<!-- Pair List -->
+<div class="p-4 flex flex-col gap-3">
+<div class="flex items-center justify-between p-3 rounded-lg bg-white/5 border border-primary/10">
+<div class="flex items-center gap-3">
+<div class="size-10 rounded-full bg-primary/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary">currency_bitcoin</span>
+</div>
+<div>
+<p class="font-bold">BTC/USDT</p>
+<p class="text-xs opacity-60">Quantum Pool A</p>
+</div>
+</div>
+<div class="text-right">
+<p class="font-bold">$64,231</p>
+<p class="text-xs text-emerald-400">+1.2%</p>
+</div>
+</div>
+</div>
+<!-- Spacer for Bottom Nav -->
+<div class="mt-auto">
+<div class="flex gap-2 border-t border-slate-200 dark:border-primary/20 px-4 pb-8 pt-2">
+<div class="flex flex-1 flex-col items-center gap-1 text-primary">
+<span class="material-symbols-outlined">swap_horiz</span>
+<p class="text-[10px]">Trade</p>
+</div>
+<div class="flex flex-1 flex-col items-center gap-1 opacity-50">
+<span class="material-symbols-outlined">water_drop</span>
+<p class="text-[10px]">Pools</p>
+</div>
+<div class="flex flex-1 flex-col items-center gap-1 opacity-50">
+<span class="material-symbols-outlined">pie_chart</span>
+<p class="text-[10px]">Stats</p>
+</div>
+<div class="flex flex-1 flex-col items-center gap-1 opacity-50">
+<span class="material-symbols-outlined">settings</span>
+<p class="text-[10px]">Settings</p>
+</div>
+</div>
+</div>
+</div>
+<!-- ONBOARDING OVERLAY -->
+<div class="absolute inset-0 z-50 bg-black/60 flex flex-col items-center justify-center p-6">
+<!-- Feature Highlight 1: Liquidity Depth Tooltip -->
+<div class="absolute top-[22%] left-1/2 -translate-x-1/2 w-[90%] max-w-sm glass-tooltip rounded-xl p-5 neon-border">
+<div class="absolute -top-3 left-1/2 -translate-x-1/2 w-6 h-6 rotate-45 glass-tooltip border-b-0 border-r-0"></div>
+<div class="flex items-start gap-3 mb-3">
+<div class="size-10 rounded-lg bg-primary/20 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-primary">insights</span>
+</div>
+<div>
+<h4 class="text-primary font-bold text-lg">Real-time Depth</h4>
+<p class="text-slate-300 text-sm leading-relaxed">
+                        Monitor live liquidity fluctuations with our high-frequency quantum trackers.
+                    </p>
+</div>
+</div>
+<div class="flex items-center justify-between mt-6">
+<div class="flex gap-1">
+<div class="h-1.5 w-1.5 rounded-full bg-primary/20"></div>
+<div class="h-1.5 w-1.5 rounded-full bg-primary/20"></div>
+<div class="h-1.5 w-6 rounded-full bg-primary"></div>
+<div class="h-1.5 w-1.5 rounded-full bg-primary/20"></div>
+</div>
+<div class="flex gap-3">
+<button class="text-sm font-medium text-slate-400 px-3 py-1">Skip</button>
+<button class="bg-primary text-background-dark text-sm font-bold px-5 py-2 rounded-lg flex items-center gap-1 shadow-[0_0_15px_rgba(37,244,244,0.4)]">
+                        Next
+                        <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Highlight Ring for the Dashboard Card (Visual cue) -->
+<div class="absolute top-[18%] left-4 right-4 h-48 border-2 border-primary rounded-xl neon-border pointer-events-none">
+<div class="absolute -top-8 right-0 bg-primary text-background-dark text-[10px] font-bold px-2 py-0.5 rounded-t-sm uppercase tracking-wider">
+                Feature 3 of 10
+            </div>
+</div>
+<!-- Swipe Indicator at Bottom -->
+<div class="absolute bottom-12 flex flex-col items-center gap-2">
+<p class="text-primary/60 text-xs font-medium uppercase tracking-[0.2em]">Swipe to navigate</p>
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-primary/40">chevron_left</span>
+<span class="material-symbols-outlined text-primary animate-pulse">keyboard_double_arrow_right</span>
+</div>
+</div>
+<!-- Close Button -->
+<button class="absolute top-6 right-6 size-10 flex items-center justify-center rounded-full bg-white/10 text-white border border-white/20 backdrop-blur-md">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<!-- Status Bar (iOS style) -->
+<div class="absolute top-0 left-0 w-full h-11 flex items-center justify-between px-6 z-[60] pointer-events-none">
+<span class="text-sm font-bold">9:41</span>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-lg">signal_cellular_4_bar</span>
+<span class="material-symbols-outlined text-lg">wifi</span>
+<span class="material-symbols-outlined text-lg rotate-90">battery_full</span>
+</div>
+</div>
+<!-- Home Indicator -->
+<div class="absolute bottom-2 left-1/2 -translate-x-1/2 w-32 h-1 bg-white/30 rounded-full z-[60] pointer-events-none"></div>
+</body></html>

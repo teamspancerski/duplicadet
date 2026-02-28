@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="pt-br"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Conexão Exchanges QLS (Ciano)</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#00d4ff",
+                        "background-light": "#f6f8f8",
+                        "background-dark": "#0a0a0a",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .glass {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(0, 212, 255, 0.1);
+        }
+        .neon-border {
+            box-shadow: 0 0 10px rgba(0, 212, 255, 0.2);
+        }
+        .cyan-glow {
+            box-shadow: 0 0 15px rgba(0, 212, 255, 0.4);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 antialiased">
+<div class="relative flex h-auto min-h-screen w-full flex-col overflow-x-hidden pb-24">
+<!-- Header -->
+<header class="flex items-center bg-background-dark/80 backdrop-blur-md sticky top-0 z-50 p-4 justify-between border-b border-primary/10">
+<div class="flex size-10 items-center justify-center rounded-full glass">
+<span class="material-symbols-outlined text-primary">arrow_back_ios_new</span>
+</div>
+<h2 class="text-slate-100 text-lg font-bold tracking-tight flex-1 text-center">Conexão Exchanges</h2>
+<div class="flex w-10 items-center justify-end">
+<button class="flex items-center justify-center size-10 rounded-full glass">
+<span class="material-symbols-outlined text-primary">support_agent</span>
+</button>
+</div>
+</header>
+<!-- Status Card -->
+<div class="px-4 pt-6">
+<div class="glass rounded-xl p-5 flex flex-col gap-4 neon-border">
+<div class="flex justify-between items-center">
+<div class="flex flex-col">
+<span class="text-slate-400 text-xs uppercase tracking-widest font-semibold">QLS Quantum Engine</span>
+<h1 class="text-2xl font-bold text-slate-100 mt-1">Status Global</h1>
+</div>
+<div class="flex items-center gap-2 bg-primary/10 px-3 py-1 rounded-full border border-primary/30">
+<div class="size-2 rounded-full bg-primary cyan-glow animate-pulse"></div>
+<span class="text-primary text-xs font-bold uppercase">Online</span>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-3 mt-2">
+<div class="bg-slate-900/50 p-3 rounded-lg border border-primary/5">
+<p class="text-slate-400 text-[10px] uppercase">Latência Média</p>
+<p class="text-primary text-lg font-bold">12ms</p>
+</div>
+<div class="bg-slate-900/50 p-3 rounded-lg border border-primary/5">
+<p class="text-slate-400 text-[10px] uppercase">Sinais Ativos</p>
+<p class="text-primary text-lg font-bold">4.2k/s</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Exchange Selection -->
+<div class="px-4 mt-8">
+<h3 class="text-slate-100 text-sm font-semibold mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-lg">account_balance</span>
+                Escolher Exchange
+            </h3>
+<div class="flex gap-4 overflow-x-auto pb-4 no-scrollbar">
+<div class="flex flex-col items-center gap-2 shrink-0">
+<div class="size-16 rounded-xl glass border-2 border-primary flex items-center justify-center p-2">
+<img alt="Binance Logo" class="w-full h-auto" data-alt="Binance crypto exchange logo ciano variant" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA8TTeyJtwyMJ2iLxE3EWxwTtYEX495B2tuWCaKfHOq9S4YJpEkm9c5--83judIHI6I8cjhAKkkCS2mEynwFT9oSWweMdtVDWaL6MRPZimvPHGlAPU_nZvx39Z7GTCDiaEXfXb6TJn8yGtee4Eg0Z5pYtanIDllhzdAv-NFdiWnGIBtq9Ss1R3PIMebavS6VB1eZNNIVoJfF6LOEDPKNKxWvhGEmYwbojcbI45GZe5XzJlg1Q-7DM9V0WPWXqaqPULN4okEz1sjyAc"/>
+</div>
+<span class="text-primary text-xs font-medium">Binance</span>
+</div>
+<div class="flex flex-col items-center gap-2 shrink-0 opacity-50 grayscale hover:grayscale-0 transition-all">
+<div class="size-16 rounded-xl glass border border-primary/20 flex items-center justify-center p-2">
+<img alt="Coinbase Logo" class="w-full h-auto" data-alt="Coinbase logo simple white" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBn_or_0AeHc_dQEnp1nkQJiPiQVFEeWYK6bvgbImqPlM_nskgZLiiWu9pHusndv786BD81VTTEzJyzqEcB90aqosI6jsf_-YCCKiTCcbdry3HzGvQVqCMH4N1NpfLLrzChsPfPyMbnBk5ODV161FuAo8aawCkO7zQsUdX8yPN7_cXtDVDv1Bymv9toeyy9kVgeA0AZjTOc54Ge3sMLGqQNU7KBE2pV-x4VBXuSz-RYhDGNfWU8Vva-ZGs8gq7AecGelsfIeXgpD_8"/>
+</div>
+<span class="text-slate-400 text-xs">Coinbase</span>
+</div>
+<div class="flex flex-col items-center gap-2 shrink-0 opacity-50 grayscale hover:grayscale-0 transition-all">
+<div class="size-16 rounded-xl glass border border-primary/20 flex items-center justify-center p-2">
+<img alt="Bybit Logo" class="w-full h-auto" data-alt="Bybit logo simple" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC7QmCxKcLCwA6cyS6YaiedFH43CXrSZ1IDMotVOqFd0vxyBpvbXjqbBoNi8H4nyBqSfE9hyeMjx3eYVhphmpG6jkFT-bWmQBvCkbSouxDnO3t-dzso3aNp1-ZdV_pX5Ebqu6CvlgwDWaKQ0Ehdjv4IbCKkf91VzkI5wJ09wR8xHJu0hWM72a0umqgPATMygnv5H11ZHvFsRwG7jU_jY1GaqtYDMkiHtsjy8F8PpzJUS29htPhdXWMaN19hMwqKMRLSvUTiJaKPSIs"/>
+</div>
+<span class="text-slate-400 text-xs">Bybit</span>
+</div>
+<div class="flex flex-col items-center gap-2 shrink-0 opacity-50 grayscale hover:grayscale-0 transition-all">
+<div class="size-16 rounded-xl glass border border-primary/20 flex items-center justify-center p-2">
+<img alt="Kucoin Logo" class="w-full h-auto" data-alt="Kucoin logo simple" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBFWPYLnNqNEtOgQK90d-2FDRq2EcaHA2bsHRiPU01TUnIet96G3F15VDdK7MXiZzz9Cf3cW0p8VOVAXwPYue-rSX1_nlJORu0QqaswcHdtLSQPACr747V0OB-h4s_xuzAZ8tscU6r0R3O5gWkv8HB0_BD_UwVSBLidCMKfNKxFr3vIL4UCw55vRzovxrVmdyFJC_yNRndYAkjb7SYBSEZe1FREgWmeq_dhQcix7wSGLPders3lt8CXVQn2qBkuHtEV2Jh7P1zRdxA"/>
+</div>
+<span class="text-slate-400 text-xs">Kucoin</span>
+</div>
+</div>
+</div>
+<!-- Connection Form -->
+<div class="px-4 mt-4">
+<div class="glass rounded-2xl p-6 border-primary/20">
+<div class="mb-6">
+<h4 class="text-slate-100 text-lg font-bold">Configurar API</h4>
+<p class="text-slate-400 text-sm">Insira suas chaves da Binance para ativar o QLS Bot.</p>
+</div>
+<form class="space-y-5">
+<div>
+<label class="block text-slate-400 text-xs font-medium mb-1.5 ml-1">API Key</label>
+<div class="relative">
+<input class="w-full bg-slate-900/50 border border-primary/30 rounded-lg py-3 px-4 text-slate-100 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/50 transition-all" placeholder="Xv83k9...zP2q" type="text"/>
+<span class="material-symbols-outlined absolute right-3 top-3 text-slate-600">vpn_key</span>
+</div>
+</div>
+<div>
+<label class="block text-slate-400 text-xs font-medium mb-1.5 ml-1">Secret Key</label>
+<div class="relative">
+<input class="w-full bg-slate-900/50 border border-primary/30 rounded-lg py-3 px-4 text-slate-100 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/50 transition-all" placeholder="••••••••••••••••" type="password"/>
+<span class="material-symbols-outlined absolute right-3 top-3 text-slate-600">visibility_off</span>
+</div>
+</div>
+<div class="flex items-center gap-3 p-3 bg-primary/5 rounded-lg border border-primary/10">
+<span class="material-symbols-outlined text-primary">info</span>
+<p class="text-[11px] text-slate-400 leading-tight">
+                            Certifique-se de habilitar as permissões de <span class="text-primary font-bold">Spot &amp; Futures Trading</span>. Desabilite permissões de saque (Withdrawals).
+                        </p>
+</div>
+<button class="w-full bg-primary hover:bg-primary/90 text-slate-950 font-bold py-4 rounded-xl shadow-lg cyan-glow transition-all active:scale-95 flex items-center justify-center gap-2 mt-4">
+<span class="material-symbols-outlined">bolt</span>
+                        Conectar Exchange
+                    </button>
+</form>
+</div>
+</div>
+<!-- Bottom Navigation Bar -->
+<nav class="fixed bottom-0 left-0 right-0 bg-background-dark/90 backdrop-blur-xl border-t border-primary/10 px-4 pb-8 pt-3 flex justify-around items-center z-50">
+<a class="flex flex-col items-center gap-1 group" href="#">
+<span class="material-symbols-outlined text-slate-500 group-hover:text-primary transition-colors">dashboard</span>
+<span class="text-[10px] text-slate-500 group-hover:text-primary uppercase font-bold tracking-tighter">Dash</span>
+</a>
+<a class="flex flex-col items-center gap-1 group" href="#">
+<div class="p-2 rounded-full bg-primary/10 -mt-8 border border-primary/30 cyan-glow">
+<span class="material-symbols-outlined text-primary scale-125">sync_alt</span>
+</div>
+<span class="text-[10px] text-primary uppercase font-bold tracking-tighter mt-1">Exchanges</span>
+</a>
+<a class="flex flex-col items-center gap-1 group" href="#">
+<span class="material-symbols-outlined text-slate-500 group-hover:text-primary transition-colors">query_stats</span>
+<span class="text-[10px] text-slate-500 group-hover:text-primary uppercase font-bold tracking-tighter">Estratégia</span>
+</a>
+<a class="flex flex-col items-center gap-1 group" href="#">
+<span class="material-symbols-outlined text-slate-500 group-hover:text-primary transition-colors">person</span>
+<span class="text-[10px] text-slate-500 group-hover:text-primary uppercase font-bold tracking-tighter">Perfil</span>
+</a>
+</nav>
+</div>
+</body></html>

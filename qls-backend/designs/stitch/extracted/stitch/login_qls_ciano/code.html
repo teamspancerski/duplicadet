@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="pt-BR"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#00d4ff",
+                        "background-light": "#f5f8f8",
+                        "background-dark": "#0a0a0a",
+                    },
+                    fontFamily: {
+                        "display": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .glass {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(0, 212, 255, 0.2);
+        }
+        .glow-primary {
+            box-shadow: 0 0 15px rgba(0, 212, 255, 0.4);
+        }
+        .input-glow:focus {
+            box-shadow: 0 0 10px rgba(0, 212, 255, 0.3);
+            border-color: #00d4ff;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 min-h-screen flex flex-col items-center justify-center p-4 relative overflow-hidden">
+<!-- Background Accents -->
+<div class="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-primary/10 rounded-full blur-[120px]"></div>
+<div class="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-primary/5 rounded-full blur-[120px]"></div>
+<!-- Login Card -->
+<div class="w-full max-w-[400px] glass rounded-xl p-8 flex flex-col gap-6 z-10">
+<!-- Logo Section -->
+<div class="flex flex-col items-center gap-2">
+<div class="w-16 h-16 bg-primary/20 rounded-full flex items-center justify-center border border-primary/30 glow-primary">
+<span class="material-symbols-outlined text-primary text-4xl">bolt</span>
+</div>
+<h1 class="text-2xl font-bold tracking-tight text-slate-100 mt-2">QLS Quantum</h1>
+<p class="text-slate-400 text-sm">Liquidity Trading SaaS</p>
+</div>
+<!-- Plan Toggle -->
+<div class="flex bg-slate-900/50 p-1 rounded-lg border border-primary/10">
+<button class="flex-1 py-2 text-sm font-medium rounded-md bg-primary text-background-dark">Free</button>
+<button class="flex-1 py-2 text-sm font-medium text-slate-400">Pro</button>
+</div>
+<!-- Form -->
+<form class="flex flex-col gap-4">
+<div class="flex flex-col gap-1.5">
+<label class="text-xs font-semibold uppercase tracking-wider text-slate-400 ml-1">Email</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-500 text-xl">mail</span>
+<input class="w-full bg-slate-900/40 border border-slate-800 rounded-lg py-3 pl-10 pr-4 text-slate-100 placeholder:text-slate-600 focus:outline-none input-glow transition-all" placeholder="seu@email.com" type="email"/>
+</div>
+</div>
+<div class="flex flex-col gap-1.5">
+<div class="flex justify-between items-center ml-1">
+<label class="text-xs font-semibold uppercase tracking-wider text-slate-400">Senha</label>
+<a class="text-xs text-primary hover:underline" href="#">Esqueceu?</a>
+</div>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-500 text-xl">lock</span>
+<input class="w-full bg-slate-900/40 border border-slate-800 rounded-lg py-3 pl-10 pr-4 text-slate-100 placeholder:text-slate-600 focus:outline-none input-glow transition-all" placeholder="••••••••" type="password"/>
+</div>
+</div>
+<button class="w-full bg-primary hover:bg-primary/90 text-background-dark font-bold py-3 rounded-lg mt-2 transition-all shadow-lg shadow-primary/20" type="submit">
+                Acessar Terminal
+            </button>
+</form>
+<div class="relative py-2">
+<div class="absolute inset-0 flex items-center"><div class="w-full border-t border-slate-800"></div></div>
+<div class="relative flex justify-center text-xs uppercase"><span class="bg-background-dark px-2 text-slate-500">Ou continue com</span></div>
+</div>
+<!-- Social Login -->
+<div class="grid grid-cols-2 gap-3">
+<button class="flex items-center justify-center gap-2 border border-slate-800 py-2 rounded-lg hover:bg-slate-800/50 transition-all">
+<div class="w-5 h-5 bg-white rounded-full flex items-center justify-center overflow-hidden">
+<img class="w-full h-full" data-alt="Google Logo for social login" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAjOcnKncIOELd4Cp1E_93t2IiL-5dWeeez949cSMUTzwgTWICuaS4o1m5CsB2BHSo4S8VMQM2xQzHgjYpZWzN3JMWH3jDzbghg3buK-CDrRVKHdTT-IS8GNEiNPTELh6McDbbqjcc0XiZzGEkg86zxpPwHRIeP2ExZDe_TekabBPBaXWgzEJ0-ge-DcHL84TcnopbzsHQdBJ8U_3I73p7ioW5gU0OF2zz-tjMO_FCzJyjxaGGbiGsDTqD2Hs_BNiw0bfk7rjmTNOc"/>
+</div>
+<span class="text-sm font-medium">Google</span>
+</button>
+<button class="flex items-center justify-center gap-2 border border-slate-800 py-2 rounded-lg hover:bg-slate-800/50 transition-all">
+<span class="material-symbols-outlined text-xl">account_circle</span>
+<span class="text-sm font-medium">Apple</span>
+</button>
+</div>
+<p class="text-center text-sm text-slate-500">
+            Não tem uma conta? <a class="text-primary font-semibold hover:underline" href="#">Registre-se</a>
+</p>
+</div>
+<!-- Bottom Navigation Bar (App Experience) -->
+<div class="fixed bottom-0 left-0 right-0 max-w-[430px] mx-auto z-20">
+<div class="flex gap-2 border-t border-slate-800 bg-background-dark/80 backdrop-blur-md px-4 pb-8 pt-2">
+<a class="flex flex-1 flex-col items-center justify-center gap-1 text-slate-500" href="#">
+<span class="material-symbols-outlined">home</span>
+</a>
+<a class="flex flex-1 flex-col items-center justify-center gap-1 text-slate-500" href="#">
+<span class="material-symbols-outlined">trending_up</span>
+</a>
+<a class="flex flex-1 flex-col items-center justify-center gap-1 text-primary" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">person</span>
+</a>
+</div>
+</div>
+<!-- Background Illustration Elements -->
+<div class="absolute inset-0 pointer-events-none opacity-20">
+<div class="absolute top-20 right-10 w-32 h-32 rounded-full border border-primary/20"></div>
+<div class="absolute bottom-40 left-5 w-48 h-48 rounded-full border border-primary/10"></div>
+</div>
+</body></html>

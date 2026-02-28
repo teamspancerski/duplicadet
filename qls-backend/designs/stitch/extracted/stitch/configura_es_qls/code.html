@@ -1,0 +1,204 @@
+<html class="dark"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#00ff88",
+                        "background-light": "#f5f8f7",
+                        "background-dark": "#0a0a0a",
+                        "surface-dark": "#161b18",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk"]
+                    },
+                    borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .glass-card {
+            background: rgba(22, 27, 24, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(0, 255, 136, 0.1);
+        }
+        .neon-glow {
+            box-shadow: 0 0 15px rgba(0, 255, 136, 0.2);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 antialiased">
+<div class="relative flex h-screen w-full flex-col overflow-hidden max-w-md mx-auto border-x border-primary/10">
+<!-- Header -->
+<header class="flex items-center px-6 py-6 justify-between sticky top-0 z-50 bg-background-dark/80 backdrop-blur-md">
+<div class="flex items-center gap-3">
+<div class="flex size-10 items-center justify-center rounded-full bg-primary/10 text-primary border border-primary/20">
+<span class="material-symbols-outlined text-2xl">arrow_back_ios_new</span>
+</div>
+<h1 class="text-xl font-bold tracking-tight">Configurações QLS</h1>
+</div>
+<div class="size-10 rounded-full overflow-hidden border border-primary/30">
+<img class="w-full h-full object-cover" data-alt="User profile avatar portrait" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCMPAFsc3Xc7s52zpSfSnGS5NP_xoFdrkwohc1lsd_HK0uwX8UXzeO80xF3LnZrVNZUxG_24grF8vq70SUIYrFCk8X4JzUIviXUKJqq0rlQ1LPcmw2ASDdmNX3UmAnHP8eDud71G0NttCG_a-MZOOy1rjIx0uorSoYTG0r9RWZxRbhFBi1VPblgscaHgZUCMsFm5OqXbU3jGsp5VpETmkQFHPp4a5CGsgiohIlB7lhkAsr5fPXB6fuWlcOV_ejHRl5IRO9RTeWVmOM"/>
+</div>
+</header>
+<!-- Scrollable Content -->
+<main class="flex-1 overflow-y-auto px-4 pb-24 space-y-6">
+<!-- Notifications Section -->
+<section>
+<h3 class="text-xs font-semibold uppercase tracking-widest text-primary mb-3 px-2">Notificações Push</h3>
+<div class="glass-card rounded-2xl overflow-hidden">
+<div class="flex items-center gap-4 px-4 py-4 border-b border-primary/5">
+<div class="flex items-center justify-center rounded-lg bg-primary/10 text-primary size-10">
+<span class="material-symbols-outlined">notifications_active</span>
+</div>
+<div class="flex-1">
+<p class="text-base font-medium">Alertas de Trading</p>
+<p class="text-slate-400 text-xs">Sinais de liquidez em tempo real</p>
+</div>
+<label class="relative flex h-6 w-11 cursor-pointer items-center rounded-full bg-slate-700 p-1 has-[:checked]:bg-primary transition-colors duration-300">
+<input checked="" class="invisible absolute peer" type="checkbox"/>
+<div class="h-4 w-4 rounded-full bg-white transition-all duration-300 peer-checked:translate-x-5"></div>
+</label>
+</div>
+<div class="flex items-center gap-4 px-4 py-4 border-b border-primary/5">
+<div class="flex items-center justify-center rounded-lg bg-primary/10 text-primary size-10">
+<span class="material-symbols-outlined">bolt</span>
+</div>
+<div class="flex-1">
+<p class="text-base font-medium">Execução de Ordens</p>
+<p class="text-slate-400 text-xs">Status de preenchimento de ordens</p>
+</div>
+<label class="relative flex h-6 w-11 cursor-pointer items-center rounded-full bg-slate-700 p-1 has-[:checked]:bg-primary transition-colors duration-300">
+<input checked="" class="invisible absolute peer" type="checkbox"/>
+<div class="h-4 w-4 rounded-full bg-white transition-all duration-300 peer-checked:translate-x-5"></div>
+</label>
+</div>
+<div class="flex items-center gap-4 px-4 py-4">
+<div class="flex items-center justify-center rounded-lg bg-primary/10 text-primary size-10">
+<span class="material-symbols-outlined">shield_moon</span>
+</div>
+<div class="flex-1">
+<p class="text-base font-medium">Resumo Diário</p>
+<p class="text-slate-400 text-xs">Relatório de performance às 20h</p>
+</div>
+<label class="relative flex h-6 w-11 cursor-pointer items-center rounded-full bg-slate-700 p-1 has-[:checked]:bg-primary transition-colors duration-300">
+<input class="invisible absolute peer" type="checkbox"/>
+<div class="h-4 w-4 rounded-full bg-white transition-all duration-300 peer-checked:translate-x-5"></div>
+</label>
+</div>
+</div>
+</section>
+<!-- Security Section -->
+<section>
+<h3 class="text-xs font-semibold uppercase tracking-widest text-primary mb-3 px-2">Segurança &amp; Acesso</h3>
+<div class="glass-card rounded-2xl overflow-hidden">
+<a class="flex items-center gap-4 px-4 py-4 border-b border-primary/5 active:bg-primary/5 transition-colors" href="#">
+<div class="flex items-center justify-center rounded-lg bg-primary/10 text-primary size-10">
+<span class="material-symbols-outlined">lock_reset</span>
+</div>
+<div class="flex-1">
+<p class="text-base font-medium">Alterar Senha</p>
+<p class="text-slate-400 text-xs">Atualizada há 3 meses</p>
+</div>
+<span class="material-symbols-outlined text-slate-500">chevron_right</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-4 border-b border-primary/5 active:bg-primary/5 transition-colors" href="#">
+<div class="flex items-center justify-center rounded-lg bg-primary/10 text-primary size-10">
+<span class="material-symbols-outlined">security_update_good</span>
+</div>
+<div class="flex-1">
+<p class="text-base font-medium">Autenticação 2FA</p>
+<p class="text-primary text-xs font-semibold">Ativado via Google Authenticator</p>
+</div>
+<span class="material-symbols-outlined text-slate-500">chevron_right</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-4 active:bg-primary/5 transition-colors" href="#">
+<div class="flex items-center justify-center rounded-lg bg-primary/10 text-primary size-10">
+<span class="material-symbols-outlined">fingerprint</span>
+</div>
+<div class="flex-1">
+<p class="text-base font-medium">Biometria</p>
+<p class="text-slate-400 text-xs">Usar Face ID para login</p>
+</div>
+<label class="relative flex h-6 w-11 cursor-pointer items-center rounded-full bg-slate-700 p-1 has-[:checked]:bg-primary transition-colors duration-300">
+<input checked="" class="invisible absolute peer" type="checkbox"/>
+<div class="h-4 w-4 rounded-full bg-white transition-all duration-300 peer-checked:translate-x-5"></div>
+</label>
+</a>
+</div>
+</section>
+<!-- Preferences Section -->
+<section>
+<h3 class="text-xs font-semibold uppercase tracking-widest text-primary mb-3 px-2">Preferências</h3>
+<div class="glass-card rounded-2xl overflow-hidden">
+<a class="flex items-center gap-4 px-4 py-4 border-b border-primary/5 active:bg-primary/5 transition-colors" href="#">
+<div class="flex items-center justify-center rounded-lg bg-primary/10 text-primary size-10">
+<span class="material-symbols-outlined">language</span>
+</div>
+<div class="flex-1">
+<p class="text-base font-medium">Idioma do Sistema</p>
+</div>
+<div class="flex items-center gap-2">
+<span class="text-slate-400 text-sm">Português (BR)</span>
+<span class="material-symbols-outlined text-slate-500">chevron_right</span>
+</div>
+</a>
+<a class="flex items-center gap-4 px-4 py-4 active:bg-primary/5 transition-colors" href="#">
+<div class="flex items-center justify-center rounded-lg bg-primary/10 text-primary size-10">
+<span class="material-symbols-outlined">database</span>
+</div>
+<div class="flex-1">
+<p class="text-base font-medium">Provedor de Dados</p>
+</div>
+<div class="flex items-center gap-2">
+<span class="text-slate-400 text-sm">QLS Quantum Node</span>
+<span class="material-symbols-outlined text-slate-500">chevron_right</span>
+</div>
+</a>
+</div>
+</section>
+<!-- Danger Zone -->
+<section class="pb-8">
+<button class="w-full flex items-center justify-center gap-2 px-4 py-4 text-red-400 font-semibold glass-card rounded-2xl border-red-500/20 active:scale-95 transition-transform">
+<span class="material-symbols-outlined">logout</span>
+                    Sair da Conta
+                </button>
+<p class="text-center text-slate-600 text-[10px] mt-4 uppercase tracking-[0.2em]">QLS Quantum Liquidity v2.4.0-stable</p>
+</section>
+</main>
+<!-- Bottom Navigation -->
+<nav class="absolute bottom-0 w-full flex gap-2 border-t border-primary/10 bg-background-dark/95 backdrop-blur-xl px-4 pb-8 pt-3">
+<a class="flex flex-1 flex-col items-center justify-center gap-1 text-slate-400" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<p class="text-[10px] font-medium leading-none">Dashboard</p>
+</a>
+<a class="flex flex-1 flex-col items-center justify-center gap-1 text-slate-400" href="#">
+<span class="material-symbols-outlined">swap_horiz</span>
+<p class="text-[10px] font-medium leading-none">Trading</p>
+</a>
+<a class="flex flex-1 flex-col items-center justify-center gap-1 text-slate-400" href="#">
+<span class="material-symbols-outlined">account_balance_wallet</span>
+<p class="text-[10px] font-medium leading-none">Portfolio</p>
+</a>
+<a class="flex flex-1 flex-col items-center justify-center gap-1 text-primary" href="#">
+<span class="material-symbols-outlined fill-[1]">settings</span>
+<p class="text-[10px] font-medium leading-none">Ajustes</p>
+</a>
+</nav>
+</div>
+
+```</body></html>

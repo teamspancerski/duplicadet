@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="pt-br"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Logs do Robô QLS</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#06f967",
+                        "background-light": "#f5f8f7",
+                        "background-dark": "#0f2317",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .glass {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .neon-glow {
+            box-shadow: 0 0 15px rgba(6, 249, 103, 0.3);
+        }
+        body {
+            background-color: #0f2317;
+            color: #f1f5f9;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-display bg-background-light dark:bg-background-dark min-h-screen flex flex-col max-w-[430px] mx-auto border-x border-primary/10 shadow-2xl">
+<!-- Header Section -->
+<header class="sticky top-0 z-50 glass px-6 pt-12 pb-4">
+<div class="flex items-center justify-between mb-6">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-primary/20 flex items-center justify-center border border-primary/30">
+<span class="material-symbols-outlined text-primary">terminal</span>
+</div>
+<div>
+<h1 class="text-xl font-bold text-slate-100 leading-tight">Logs do Robô</h1>
+<p class="text-primary text-xs font-medium tracking-widest uppercase">Sistema QLS Quantum</p>
+</div>
+</div>
+<button class="w-10 h-10 rounded-full glass flex items-center justify-center text-slate-100">
+<span class="material-symbols-outlined">search</span>
+</button>
+</div>
+<!-- Filters Scrollable -->
+<div class="flex gap-2 overflow-x-auto pb-2 no-scrollbar">
+<button class="flex h-9 shrink-0 items-center justify-center gap-2 rounded-lg bg-primary px-4 text-background-dark font-bold text-sm">
+                Hoje
+                <span class="material-symbols-outlined text-sm">expand_more</span>
+</button>
+<button class="flex h-9 shrink-0 items-center justify-center gap-2 rounded-lg bg-primary/10 border border-primary/20 px-4 text-primary font-medium text-sm">
+                Últimas 24h
+                <span class="material-symbols-outlined text-sm">expand_more</span>
+</button>
+<button class="flex h-9 shrink-0 items-center justify-center gap-2 rounded-lg bg-primary/10 border border-primary/20 px-4 text-primary font-medium text-sm">
+                Status
+                <span class="material-symbols-outlined text-sm">expand_more</span>
+</button>
+</div>
+</header>
+<!-- Main Content -->
+<main class="flex-1 px-6 py-6 space-y-6 overflow-y-auto">
+<!-- Status Overview Card -->
+<div class="glass rounded-xl p-5 border-l-4 border-primary">
+<div class="flex justify-between items-start mb-4">
+<div>
+<p class="text-slate-400 text-xs uppercase font-bold tracking-tighter">Status Atual</p>
+<h2 class="text-2xl font-bold text-slate-100">Executando</h2>
+</div>
+<div class="flex items-center gap-2 px-3 py-1 bg-primary/20 rounded-full border border-primary/30">
+<div class="w-2 h-2 rounded-full bg-primary animate-pulse"></div>
+<span class="text-primary text-xs font-bold uppercase">Live</span>
+</div>
+</div>
+<div class="grid grid-cols-3 gap-4 border-t border-white/5 pt-4">
+<div>
+<p class="text-slate-500 text-[10px] uppercase font-bold tracking-widest">Rotas</p>
+<p class="text-lg font-bold text-slate-200">142</p>
+</div>
+<div>
+<p class="text-slate-500 text-[10px] uppercase font-bold tracking-widest">Sucesso</p>
+<p class="text-lg font-bold text-primary">98.4%</p>
+</div>
+<div>
+<p class="text-slate-500 text-[10px] uppercase font-bold tracking-widest">Erros</p>
+<p class="text-lg font-bold text-rose-500">2</p>
+</div>
+</div>
+</div>
+<!-- Activity Feed -->
+<section class="space-y-4">
+<div class="flex items-center justify-between">
+<h3 class="text-slate-100 font-bold">Atividade Recente</h3>
+<span class="text-xs text-primary/70">Atualizado agora</span>
+</div>
+<!-- Log Item: Error -->
+<div class="glass rounded-xl p-4 flex gap-4 border-l-2 border-rose-500">
+<div class="flex-shrink-0">
+<div class="w-10 h-10 rounded-lg bg-rose-500/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-rose-500">cancel</span>
+</div>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-start">
+<p class="text-slate-100 font-bold text-sm">Par Descartado: BTC/USDT</p>
+<span class="text-slate-500 text-[10px] font-medium">14:22:05</span>
+</div>
+<p class="text-slate-400 text-xs mt-1">Rotação: <span class="text-primary">Delta-3</span></p>
+<div class="mt-2 py-2 px-3 bg-rose-500/5 rounded border border-rose-500/10">
+<p class="text-rose-400 text-xs font-mono">Erro: Liquidez insuficiente no pool primário.</p>
+</div>
+</div>
+</div>
+<!-- Log Item: Success -->
+<div class="glass rounded-xl p-4 flex gap-4 border-l-2 border-primary">
+<div class="flex-shrink-0">
+<div class="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary">check_circle</span>
+</div>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-start">
+<p class="text-slate-100 font-bold text-sm">Rotação Executada: ETH/DAI</p>
+<span class="text-slate-500 text-[10px] font-medium">14:18:42</span>
+</div>
+<p class="text-slate-400 text-xs mt-1">Arbitragem: <span class="text-primary">Vortex-Q</span></p>
+<p class="text-primary/70 text-xs mt-1">+0.42% ROI Realizado</p>
+</div>
+</div>
+<!-- Log Item: Warning/System -->
+<div class="glass rounded-xl p-4 flex gap-4 border-l-2 border-amber-400">
+<div class="flex-shrink-0">
+<div class="w-10 h-10 rounded-lg bg-amber-400/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-amber-400">bolt</span>
+</div>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-start">
+<p class="text-slate-100 font-bold text-sm">Rebalanceamento de Wallet</p>
+<span class="text-slate-500 text-[10px] font-medium">13:55:01</span>
+</div>
+<p class="text-slate-400 text-xs mt-1">Status: <span class="text-amber-400 italic">Concluído</span></p>
+</div>
+</div>
+<!-- Log Item: Error -->
+<div class="glass rounded-xl p-4 flex gap-4 border-l-2 border-rose-500">
+<div class="flex-shrink-0">
+<div class="w-10 h-10 rounded-lg bg-rose-500/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-rose-500">report</span>
+</div>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-start">
+<p class="text-slate-100 font-bold text-sm">Timeout de API: Binance</p>
+<span class="text-slate-500 text-[10px] font-medium">13:42:15</span>
+</div>
+<p class="text-slate-400 text-xs mt-1">Retentativa automática em 5s...</p>
+</div>
+</div>
+</section>
+</main>
+<!-- Bottom Navigation Bar -->
+<nav class="sticky bottom-0 z-50 glass border-t border-primary/10 px-6 pt-3 pb-8 flex justify-between items-center">
+<a class="flex flex-col items-center gap-1 group" href="#">
+<span class="material-symbols-outlined text-slate-500 group-hover:text-primary transition-colors">dashboard</span>
+<span class="text-[10px] font-bold text-slate-500 uppercase tracking-tighter">Início</span>
+</a>
+<a class="flex flex-col items-center gap-1 group" href="#">
+<span class="material-symbols-outlined text-slate-500 group-hover:text-primary transition-colors">smart_toy</span>
+<span class="text-[10px] font-bold text-slate-500 uppercase tracking-tighter">Robôs</span>
+</a>
+<a class="flex flex-col items-center gap-1 relative" href="#">
+<div class="absolute -top-6 w-12 h-12 bg-primary rounded-full neon-glow flex items-center justify-center border-4 border-background-dark">
+<span class="material-symbols-outlined text-background-dark font-bold">terminal</span>
+</div>
+<span class="text-[10px] font-bold text-primary uppercase tracking-tighter mt-6">Logs</span>
+</a>
+<a class="flex flex-col items-center gap-1 group" href="#">
+<span class="material-symbols-outlined text-slate-500 group-hover:text-primary transition-colors">insights</span>
+<span class="text-[10px] font-bold text-slate-500 uppercase tracking-tighter">Análise</span>
+</a>
+<a class="flex flex-col items-center gap-1 group" href="#">
+<span class="material-symbols-outlined text-slate-500 group-hover:text-primary transition-colors">settings</span>
+<span class="text-[10px] font-bold text-slate-500 uppercase tracking-tighter">Ajustes</span>
+</a>
+</nav>
+</body></html>

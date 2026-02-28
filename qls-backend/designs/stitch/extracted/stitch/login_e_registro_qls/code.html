@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="pt-BR"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Login e Registro QLS</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#00ff88",
+                        "background-light": "#f5f8f7",
+                        "background-dark": "#0a0a0a",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk"]
+                    },
+                    borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(0, 255, 136, 0.2);
+        }
+        .neon-glow {
+            box-shadow: 0 0 15px rgba(0, 255, 136, 0.4);
+        }
+        .neon-border-focus:focus {
+            border-color: #00ff88;
+            box-shadow: 0 0 8px rgba(0, 255, 136, 0.3);
+            outline: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-dark font-display text-slate-100 min-h-screen flex flex-col">
+<div class="relative flex min-h-screen w-full flex-col overflow-x-hidden">
+<header class="flex items-center justify-between p-6 pt-12">
+<div class="flex items-center gap-3">
+<div class="flex size-12 items-center justify-center rounded-xl bg-primary/10 text-primary border border-primary/20">
+<span class="material-symbols-outlined text-3xl">bolt</span>
+</div>
+<div>
+<h2 class="text-xl font-bold leading-tight tracking-tight text-slate-100">QLS</h2>
+<p class="text-[10px] uppercase tracking-[0.2em] text-primary">Quantum Liquidity</p>
+</div>
+</div>
+<div class="rounded-full bg-slate-800/50 p-2 border border-slate-700">
+<span class="material-symbols-outlined text-slate-400">help_outline</span>
+</div>
+</header>
+<main class="flex-1 px-6 flex flex-col justify-center pb-24">
+<div class="glass-card rounded-xl p-8 w-full max-w-md mx-auto relative overflow-hidden">
+<div class="absolute -top-24 -right-24 size-48 bg-primary/10 rounded-full blur-3xl"></div>
+<div class="flex flex-col items-center mb-8">
+<h1 class="text-3xl font-bold text-slate-100 mb-2">Bem-vindo</h1>
+<p class="text-slate-400 text-sm text-center">Acesse o motor de liquidez quantitativa mais avançado do mercado.</p>
+</div>
+<div class="flex bg-slate-900/50 rounded-full p-1 mb-8 border border-slate-800">
+<button class="flex-1 py-2 px-4 rounded-full bg-primary text-background-dark font-bold text-sm transition-all">Login</button>
+<button class="flex-1 py-2 px-4 rounded-full text-slate-400 font-medium text-sm transition-all hover:text-slate-200">Registro</button>
+</div>
+<form class="space-y-4">
+<div class="space-y-2">
+<label class="text-xs font-semibold uppercase tracking-wider text-slate-500 ml-1">E-mail</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-slate-500 text-xl">mail</span>
+<input class="w-full bg-slate-900/40 border border-slate-800 rounded-lg py-3 pl-12 pr-4 text-slate-100 placeholder:text-slate-600 focus:neon-border-focus transition-all" placeholder="seu@email.com" type="email"/>
+</div>
+</div>
+<div class="space-y-2">
+<label class="text-xs font-semibold uppercase tracking-wider text-slate-500 ml-1">Senha</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-slate-500 text-xl">lock</span>
+<input class="w-full bg-slate-900/40 border border-slate-800 rounded-lg py-3 pl-12 pr-4 text-slate-100 placeholder:text-slate-600 focus:neon-border-focus transition-all" placeholder="••••••••" type="password"/>
+</div>
+</div>
+<div class="flex items-center justify-between py-2">
+<div class="flex items-center gap-2">
+<input class="size-4 rounded border-slate-700 bg-slate-900 text-primary focus:ring-primary/20" id="2fa" type="checkbox"/>
+<label class="text-xs text-slate-400" for="2fa">Ativar 2FA</label>
+</div>
+<a class="text-xs text-primary hover:underline" href="#">Esqueceu a senha?</a>
+</div>
+<div class="pt-4">
+<div class="flex items-center justify-between mb-4 px-2">
+<span class="text-sm font-medium text-slate-300">Plano Anual</span>
+<div class="flex items-center gap-2">
+<span class="text-xs text-slate-500">Free</span>
+<button class="relative inline-flex h-6 w-11 shrink-0 cursor-pointer rounded-full border-2 border-transparent bg-slate-700 transition-colors duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 dark:bg-slate-700" type="button">
+<span class="pointer-events-none inline-block size-5 translate-x-5 transform rounded-full bg-primary shadow ring-0 transition duration-200 ease-in-out"></span>
+</button>
+<span class="text-xs text-primary font-bold">Pro</span>
+</div>
+</div>
+<button class="w-full bg-primary py-4 rounded-lg font-bold text-background-dark uppercase tracking-widest neon-glow hover:brightness-110 active:scale-[0.98] transition-all" type="submit">
+                            Entrar na Conta
+                        </button>
+</div>
+</form>
+<div class="mt-8 pt-6 border-t border-slate-800/50 flex flex-col items-center gap-4">
+<p class="text-xs text-slate-500 uppercase tracking-widest">Ou acesse com</p>
+<div class="flex gap-4">
+<button class="size-12 rounded-full border border-slate-800 flex items-center justify-center hover:bg-slate-800 transition-colors">
+<span class="material-symbols-outlined text-slate-300">account_balance_wallet</span>
+</button>
+<button class="size-12 rounded-full border border-slate-800 flex items-center justify-center hover:bg-slate-800 transition-colors">
+<span class="material-symbols-outlined text-slate-300">fingerprint</span>
+</button>
+</div>
+</div>
+</div>
+</main>
+<nav class="fixed bottom-0 left-0 right-0 border-t border-slate-800 bg-background-dark/80 backdrop-blur-md px-6 pb-8 pt-4 flex justify-between items-center z-50">
+<a class="flex flex-col items-center gap-1 text-primary" href="#">
+<span class="material-symbols-outlined">analytics</span>
+<span class="text-[10px] font-medium">Mercado</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-500" href="#">
+<span class="material-symbols-outlined">shield_with_heart</span>
+<span class="text-[10px] font-medium">Segurança</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-500" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="text-[10px] font-medium">Perfil</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-500" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="text-[10px] font-medium">Ajustes</span>
+</a>
+</nav>
+<div class="fixed inset-0 pointer-events-none z-[-1]">
+<div class="absolute top-1/4 -left-20 size-80 bg-primary/5 rounded-full blur-[120px]"></div>
+<div class="absolute bottom-1/4 -right-20 size-80 bg-primary/10 rounded-full blur-[120px]"></div>
+</div>
+</div>
+</body></html>

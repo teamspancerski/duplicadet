@@ -1,0 +1,179 @@
+<html class="dark"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#06f9f9",
+                        "background-light": "#f5f8f8",
+                        "background-dark": "#0f2323",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Space Grotesk', sans-serif; }
+        .neon-glow { box-shadow: 0 0 15px rgba(6, 249, 249, 0.4); }
+        .slider-thumb::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 20px;
+            height: 20px;
+            background: #06f9f9;
+            cursor: pointer;
+            border-radius: 50%;
+            border: 2px solid #ffffff;
+            box-shadow: 0 0 10px rgba(6, 249, 249, 0.8);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 antialiased overflow-x-hidden">
+<div class="relative flex min-h-screen flex-col bg-background-light dark:bg-background-dark">
+<!-- Header -->
+<header class="sticky top-0 z-50 flex items-center justify-between px-4 py-4 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md border-b border-primary/10">
+<button class="flex items-center justify-center w-10 h-10 rounded-full hover:bg-primary/10 transition-colors">
+<span class="material-symbols-outlined text-slate-900 dark:text-slate-100">arrow_back_ios</span>
+</button>
+<h1 class="text-xl font-bold tracking-tight text-slate-900 dark:text-slate-100">Estratégias</h1>
+<button class="flex items-center justify-center w-10 h-10 rounded-full hover:bg-primary/10 transition-colors">
+<span class="material-symbols-outlined text-slate-900 dark:text-slate-100">info</span>
+</button>
+</header>
+<main class="flex-1 px-4 py-6 space-y-6">
+<!-- Quick Stats Summary -->
+<div class="grid grid-cols-2 gap-4">
+<div class="flex flex-col gap-2 rounded-xl p-5 bg-primary/5 border border-primary/20 neon-glow">
+<p class="text-slate-400 text-sm font-medium">Total Profit</p>
+<p class="text-primary tracking-tight text-2xl font-bold leading-tight">+$1,240.50</p>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-xs text-primary">trending_up</span>
+<p class="text-primary text-xs font-bold leading-normal">+12.4%</p>
+</div>
+</div>
+<div class="flex flex-col gap-2 rounded-xl p-5 bg-slate-800/20 border border-slate-700/50">
+<p class="text-slate-400 text-sm font-medium">Active Bots</p>
+<p class="text-slate-100 tracking-tight text-2xl font-bold leading-tight">4/10</p>
+<p class="text-slate-500 text-xs font-medium leading-normal">Status: Healthy</p>
+</div>
+</div>
+<!-- Master Toggle Section -->
+<div class="p-5 rounded-xl border border-primary/30 bg-primary/10 flex items-center justify-between">
+<div class="flex flex-col gap-1">
+<p class="text-slate-100 text-lg font-bold">Estado do Robô</p>
+<p class="text-slate-400 text-sm">Ativar ou desativar execução automática</p>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-14 h-7 bg-slate-700 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-6 after:w-6 after:transition-all peer-checked:bg-primary neon-glow"></div>
+</label>
+</div>
+<!-- Configuration Section -->
+<div class="space-y-8 pt-4">
+<h2 class="text-lg font-bold text-slate-100 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">settings_input_component</span>
+                    Configurações QLC
+                </h2>
+<!-- Amount Slider -->
+<div class="space-y-4">
+<div class="flex justify-between items-end">
+<label class="text-sm font-semibold text-slate-300">Investimento por Trade</label>
+<span class="text-primary font-bold text-xl">$ 500.00</span>
+</div>
+<div class="relative w-full h-6 flex items-center">
+<input class="slider-thumb w-full h-2 bg-slate-800 rounded-lg appearance-none cursor-pointer accent-primary" max="5000" min="10" type="range" value="500"/>
+</div>
+<div class="flex justify-between text-xs text-slate-500">
+<span>$10</span>
+<span>$5,000</span>
+</div>
+</div>
+<!-- Risk Management Slider -->
+<div class="space-y-4">
+<div class="flex justify-between items-end">
+<label class="text-sm font-semibold text-slate-300">Nível de Risco</label>
+<span class="text-red-400 font-bold text-lg uppercase">Moderado</span>
+</div>
+<div class="relative w-full h-6 flex items-center">
+<input class="slider-thumb w-full h-2 bg-slate-800 rounded-lg appearance-none cursor-pointer" max="100" min="1" type="range" value="45"/>
+</div>
+<div class="flex justify-between text-xs text-slate-500">
+<span>Conservador</span>
+<span>Agressivo</span>
+</div>
+</div>
+<!-- Advanced Options -->
+<div class="space-y-4">
+<!-- Ping-Pong Mode -->
+<div class="flex items-center justify-between p-4 rounded-xl bg-slate-800/30 border border-slate-700/50">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">sync_alt</span>
+<div>
+<p class="text-slate-100 font-medium">Modo Ping-Pong</p>
+<p class="text-slate-500 text-xs text-pretty">Vende e compra simultaneamente</p>
+</div>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-slate-700 rounded-full peer peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+</label>
+</div>
+<!-- Market Liquidity Factor -->
+<div class="flex items-center justify-between p-4 rounded-xl bg-slate-800/30 border border-slate-700/50">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">water_drop</span>
+<div>
+<p class="text-slate-100 font-medium">Liquidez Quântica</p>
+<p class="text-slate-500 text-xs">Otimização de Slippage</p>
+</div>
+</div>
+<span class="text-primary text-sm font-bold">ATIVA</span>
+</div>
+</div>
+</div>
+<!-- Version Tag -->
+<div class="flex justify-center pt-4">
+<span class="bg-primary/5 text-primary/50 text-[10px] px-3 py-1 rounded-full border border-primary/10 uppercase tracking-widest font-bold">
+                    Variant 5 of 10 • QLC Engine v2.4
+                </span>
+</div>
+</main>
+<!-- Spacer for nav -->
+<div class="h-24"></div>
+<!-- Bottom NavBar -->
+<nav class="fixed bottom-0 left-0 right-0 z-50 bg-background-dark/95 border-t border-primary/20 pb-6 pt-2 px-6 flex justify-between items-center backdrop-blur-md">
+<a class="flex flex-col items-center gap-1 text-slate-500" href="#">
+<span class="material-symbols-outlined">grid_view</span>
+<span class="text-[10px] font-medium uppercase tracking-tighter">Dashboard</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-primary" href="#">
+<span class="material-symbols-outlined">rocket_launch</span>
+<span class="text-[10px] font-medium uppercase tracking-tighter">Estratégias</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-500" href="#">
+<span class="material-symbols-outlined">account_balance_wallet</span>
+<span class="text-[10px] font-medium uppercase tracking-tighter">Carteira</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-500" href="#">
+<span class="material-symbols-outlined">person_outline</span>
+<span class="text-[10px] font-medium uppercase tracking-tighter">Perfil</span>
+</a>
+</nav>
+</div>
+</body></html>

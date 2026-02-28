@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="pt-br"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Configurações - QLS Quantum Liquidity</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#0dccf2",
+                        "background-light": "#f5f8f8",
+                        "background-dark": "#101f22",
+                        "surface-dark": "#182f34",
+                        "border-dark": "#224249",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                    boxShadow: {
+                        'neon': '0 0 10px rgba(13, 204, 242, 0.4), 0 0 20px rgba(13, 204, 242, 0.2)',
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+            -webkit-tap-highlight-color: transparent;
+        }
+        .cyan-glow {
+            filter: drop-shadow(0 0 4px #0dccf2);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 antialiased font-display">
+<div class="relative flex h-auto min-h-screen w-full flex-col bg-background-light dark:bg-background-dark overflow-x-hidden max-w-md mx-auto border-x border-border-dark/20">
+<!-- Header -->
+<header class="sticky top-0 z-10 flex items-center bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md p-4 pb-4 justify-between border-b border-border-dark/10">
+<div class="text-slate-900 dark:text-slate-100 flex size-10 shrink-0 items-center justify-center rounded-full hover:bg-primary/10 transition-colors">
+<span class="material-symbols-outlined">arrow_back</span>
+</div>
+<h1 class="text-slate-900 dark:text-slate-100 text-lg font-bold leading-tight tracking-tight flex-1 text-center pr-10">Ajustes</h1>
+</header>
+<!-- Profile Section Quick Access -->
+<div class="px-4 py-6">
+<div class="flex items-center gap-4 bg-surface-dark/40 p-4 rounded-xl border border-border-dark/30">
+<div class="size-14 rounded-full bg-primary/20 flex items-center justify-center border border-primary/40 overflow-hidden">
+<img alt="User profile" class="w-full h-full object-cover" data-alt="Abstract cyan geometric user avatar" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCF_uBQ-Rx5JYiYS1ouGYl30yrgcLa7RXiI9uxso5Tvlafnwv6hS1nJcqQMEqQanG1FK9AAtoc7_yd7B750CoeK_7SnFuyGd8SE0vnReqLoX6AEtxLFwuXBS7J2lvLzt0NlHBP8Wmf9LEECSktL_S-j7A08L-KQ9NB3e1xqhbrVxYRlz0vF4NsqI6W4N1QhcsPKyrRaz5V558quDe7lMEJrNj2seFXNSmttBASsYLUKZIRLDPpTMeFxgmxsP_m8473WUHJe-Jz6HoA"/>
+</div>
+<div class="flex-1">
+<p class="text-slate-100 font-bold text-lg">Alex Quantum</p>
+<p class="text-primary text-xs font-medium uppercase tracking-widest">Trader Pro Account</p>
+</div>
+<span class="material-symbols-outlined text-primary">verified</span>
+</div>
+</div>
+<main class="flex-1 pb-24">
+<!-- Section: Notificações -->
+<div class="px-4 py-2">
+<h3 class="text-primary text-xs font-bold leading-tight tracking-[0.2em] uppercase pb-4 px-2 opacity-80">Notificações</h3>
+<div class="space-y-2">
+<!-- Toggle Row -->
+<div class="flex items-center gap-4 bg-surface-dark/30 hover:bg-surface-dark/50 transition-colors px-4 min-h-[64px] justify-between rounded-xl border border-border-dark/20">
+<div class="flex items-center gap-4">
+<div class="text-primary flex items-center justify-center rounded-lg bg-primary/10 shrink-0 size-10">
+<span class="material-symbols-outlined">notifications_active</span>
+</div>
+<div>
+<p class="text-slate-100 text-base font-medium leading-none">Alertas de Preço</p>
+<p class="text-slate-400 text-xs mt-1">Push em tempo real</p>
+</div>
+</div>
+<div class="shrink-0">
+<label class="relative flex h-[31px] w-[51px] cursor-pointer items-center rounded-full border-none bg-border-dark p-0.5 has-[:checked]:justify-end has-[:checked]:bg-primary has-[:checked]:shadow-neon transition-all duration-300">
+<div class="h-full w-[27px] rounded-full bg-white shadow-lg"></div>
+<input checked="" class="invisible absolute" type="checkbox"/>
+</label>
+</div>
+</div>
+<!-- Toggle Row -->
+<div class="flex items-center gap-4 bg-surface-dark/30 hover:bg-surface-dark/50 transition-colors px-4 min-h-[64px] justify-between rounded-xl border border-border-dark/20">
+<div class="flex items-center gap-4">
+<div class="text-primary flex items-center justify-center rounded-lg bg-primary/10 shrink-0 size-10">
+<span class="material-symbols-outlined">inventory_2</span>
+</div>
+<div>
+<p class="text-slate-100 text-base font-medium leading-none">Execuções de Ordem</p>
+<p class="text-slate-400 text-xs mt-1">Status de compra/venda</p>
+</div>
+</div>
+<div class="shrink-0">
+<label class="relative flex h-[31px] w-[51px] cursor-pointer items-center rounded-full border-none bg-border-dark p-0.5 has-[:checked]:justify-end has-[:checked]:bg-primary has-[:checked]:shadow-neon transition-all duration-300">
+<div class="h-full w-[27px] rounded-full bg-white shadow-lg"></div>
+<input checked="" class="invisible absolute" type="checkbox"/>
+</label>
+</div>
+</div>
+</div>
+</div>
+<!-- Section: Segurança -->
+<div class="px-4 py-6">
+<h3 class="text-primary text-xs font-bold leading-tight tracking-[0.2em] uppercase pb-4 px-2 opacity-80">Segurança &amp; Roles</h3>
+<div class="space-y-2">
+<div class="flex items-center gap-4 bg-surface-dark/30 hover:bg-surface-dark/50 transition-colors px-4 min-h-[64px] justify-between rounded-xl border border-border-dark/20">
+<div class="flex items-center gap-4">
+<div class="text-primary flex items-center justify-center rounded-lg bg-primary/10 shrink-0 size-10">
+<span class="material-symbols-outlined">fingerprint</span>
+</div>
+<div>
+<p class="text-slate-100 text-base font-medium leading-none">Biometria (FaceID)</p>
+<p class="text-slate-400 text-xs mt-1">Para transações críticas</p>
+</div>
+</div>
+<div class="shrink-0">
+<label class="relative flex h-[31px] w-[51px] cursor-pointer items-center rounded-full border-none bg-border-dark p-0.5 has-[:checked]:justify-end has-[:checked]:bg-primary has-[:checked]:shadow-neon transition-all duration-300">
+<div class="h-full w-[27px] rounded-full bg-white shadow-lg"></div>
+<input class="invisible absolute" type="checkbox"/>
+</label>
+</div>
+</div>
+<div class="flex items-center gap-4 bg-surface-dark/30 hover:bg-surface-dark/50 transition-colors px-4 min-h-[64px] justify-between rounded-xl border border-border-dark/20">
+<div class="flex items-center gap-4">
+<div class="text-primary flex items-center justify-center rounded-lg bg-primary/10 shrink-0 size-10">
+<span class="material-symbols-outlined">shield_person</span>
+</div>
+<div>
+<p class="text-slate-100 text-base font-medium leading-none">Modo Quantum Stealth</p>
+<p class="text-slate-400 text-xs mt-1">Ocultar saldos na tela inicial</p>
+</div>
+</div>
+<div class="shrink-0">
+<label class="relative flex h-[31px] w-[51px] cursor-pointer items-center rounded-full border-none bg-border-dark p-0.5 has-[:checked]:justify-end has-[:checked]:bg-primary has-[:checked]:shadow-neon transition-all duration-300">
+<div class="h-full w-[27px] rounded-full bg-white shadow-lg"></div>
+<input checked="" class="invisible absolute" type="checkbox"/>
+</label>
+</div>
+</div>
+</div>
+</div>
+<!-- App Version -->
+<div class="mt-8 flex flex-col items-center justify-center gap-1 opacity-40">
+<p class="text-xs font-bold tracking-widest text-primary uppercase">QLS Quantum v2.4.0</p>
+<p class="text-[10px] text-slate-400">Build #9912-A Cyan Mode Enabled</p>
+</div>
+</main>
+<!-- Bottom NavBar -->
+<nav class="fixed bottom-0 left-0 right-0 z-20 max-w-md mx-auto">
+<div class="flex gap-2 border-t border-border-dark/40 bg-background-dark/95 backdrop-blur-lg px-4 pb-8 pt-2">
+<a class="flex flex-1 flex-col items-center justify-end gap-1 text-slate-400 hover:text-primary transition-colors" href="#">
+<div class="flex h-8 items-center justify-center">
+<span class="material-symbols-outlined">show_chart</span>
+</div>
+<p class="text-[10px] font-medium leading-normal tracking-wider uppercase">Trade</p>
+</a>
+<a class="flex flex-1 flex-col items-center justify-end gap-1 text-slate-400 hover:text-primary transition-colors" href="#">
+<div class="flex h-8 items-center justify-center">
+<span class="material-symbols-outlined">account_balance_wallet</span>
+</div>
+<p class="text-[10px] font-medium leading-normal tracking-wider uppercase">Ativos</p>
+</a>
+<a class="flex flex-1 flex-col items-center justify-end gap-1 text-slate-400 hover:text-primary transition-colors" href="#">
+<div class="flex h-8 items-center justify-center">
+<span class="material-symbols-outlined">history</span>
+</div>
+<p class="text-[10px] font-medium leading-normal tracking-wider uppercase">Histórico</p>
+</a>
+<a class="flex flex-1 flex-col items-center justify-end gap-1 text-primary cyan-glow" href="#">
+<div class="flex h-8 items-center justify-center">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1">settings</span>
+</div>
+<p class="text-[10px] font-bold leading-normal tracking-wider uppercase">Ajustes</p>
+</a>
+</div>
+</nav>
+</div>
+</body></html>

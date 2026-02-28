@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Planos Stripe (Cyan Mode)</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#0dccf2",
+                        "background-light": "#f5f8f8",
+                        "background-dark": "#101f22",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+            -webkit-tap-highlight-color: transparent;
+        }
+        .neon-border {
+            box-shadow: 0 0 10px rgba(13, 204, 242, 0.2);
+        }
+        .neon-glow {
+            text-shadow: 0 0 8px rgba(13, 204, 242, 0.5);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 min-h-screen flex flex-col">
+<!-- Status Bar Spacer (iOS Style) -->
+<div class="h-12 w-full bg-background-light dark:bg-background-dark"></div>
+<!-- Header Navigation -->
+<header class="flex items-center justify-between px-6 py-4 border-b border-primary/10 bg-background-light dark:bg-background-dark sticky top-0 z-10">
+<button class="flex items-center justify-center size-10 rounded-full bg-primary/10 text-primary">
+<span class="material-symbols-outlined">arrow_back_ios_new</span>
+</button>
+<h1 class="text-lg font-bold tracking-tight text-slate-900 dark:text-slate-100">Subscription Plans</h1>
+<button class="flex items-center justify-center size-10 rounded-full bg-primary/10 text-primary">
+<span class="material-symbols-outlined">help_outline</span>
+</button>
+</header>
+<!-- Main Content -->
+<main class="flex-1 overflow-y-auto px-4 py-8 space-y-8">
+<div class="text-center space-y-2">
+<h2 class="text-3xl font-bold tracking-tight text-slate-900 dark:text-slate-100 font-display">Choose Your <span class="text-primary neon-glow">Power</span></h2>
+<p class="text-slate-500 dark:text-slate-400 text-sm max-w-[280px] mx-auto">Unlock advanced liquidity tools and quantum trading signals.</p>
+</div>
+<!-- Plans Container -->
+<div class="space-y-6">
+<!-- Free Plan -->
+<div class="relative overflow-hidden rounded-xl border border-primary/20 bg-primary/5 p-6 flex flex-col gap-6">
+<div class="flex justify-between items-start">
+<div>
+<h3 class="text-lg font-bold text-slate-900 dark:text-slate-100">Starter</h3>
+<p class="text-xs text-slate-500 dark:text-slate-400">Basic features for beginners</p>
+</div>
+<div class="flex flex-col items-end">
+<span class="text-3xl font-black text-slate-900 dark:text-slate-100">$0</span>
+<span class="text-xs font-medium text-slate-500">/month</span>
+</div>
+</div>
+<ul class="space-y-3">
+<li class="flex items-center gap-3 text-sm text-slate-700 dark:text-slate-300">
+<span class="material-symbols-outlined text-primary text-[18px]">check_circle</span>
+                        Basic Analytics
+                    </li>
+<li class="flex items-center gap-3 text-sm text-slate-700 dark:text-slate-300">
+<span class="material-symbols-outlined text-primary text-[18px]">check_circle</span>
+                        1 Active Trading Pair
+                    </li>
+<li class="flex items-center gap-3 text-sm text-slate-700 dark:text-slate-300 text-slate-400 dark:text-slate-500 opacity-50">
+<span class="material-symbols-outlined text-[18px]">block</span>
+                        Priority Signals
+                    </li>
+</ul>
+<button class="w-full py-3 rounded-lg bg-slate-200 dark:bg-primary/20 text-slate-900 dark:text-primary font-bold text-sm transition-all">
+                    Current Plan
+                </button>
+</div>
+<!-- Pro Plan (Most Popular) -->
+<div class="relative overflow-hidden rounded-xl border-2 border-primary bg-primary/10 p-6 flex flex-col gap-6 neon-border">
+<div class="absolute top-0 right-0">
+<div class="bg-primary text-background-dark px-4 py-1 text-[10px] font-black uppercase tracking-widest rounded-bl-lg">
+                        Most Popular
+                    </div>
+</div>
+<div class="flex justify-between items-start pt-2">
+<div>
+<h3 class="text-xl font-bold text-slate-900 dark:text-slate-100 neon-glow">Quantum Pro</h3>
+<p class="text-xs text-slate-500 dark:text-slate-400">For serious active traders</p>
+</div>
+<div class="flex flex-col items-end">
+<div class="flex items-baseline">
+<span class="text-3xl font-black text-primary">$49</span>
+</div>
+<span class="text-xs font-medium text-slate-500">/month</span>
+</div>
+</div>
+<ul class="space-y-3">
+<li class="flex items-center gap-3 text-sm text-slate-700 dark:text-slate-100">
+<span class="material-symbols-outlined text-primary text-[18px]">verified</span>
+                        Advanced Indicators
+                    </li>
+<li class="flex items-center gap-3 text-sm text-slate-700 dark:text-slate-100">
+<span class="material-symbols-outlined text-primary text-[18px]">verified</span>
+                        Unlimited Pairs
+                    </li>
+<li class="flex items-center gap-3 text-sm text-slate-700 dark:text-slate-100">
+<span class="material-symbols-outlined text-primary text-[18px]">verified</span>
+                        Priority Support 24/7
+                    </li>
+<li class="flex items-center gap-3 text-sm text-slate-700 dark:text-slate-100">
+<span class="material-symbols-outlined text-primary text-[18px]">verified</span>
+                        Neon UI Customization
+                    </li>
+</ul>
+<button class="w-full py-4 rounded-lg bg-primary text-background-dark font-black text-sm uppercase tracking-wider shadow-lg shadow-primary/30">
+                    Upgrade to Pro
+                </button>
+</div>
+<!-- Elite Plan -->
+<div class="relative overflow-hidden rounded-xl border border-primary/20 bg-slate-900/50 dark:bg-slate-900/50 p-6 flex flex-col gap-6">
+<div class="flex justify-between items-start">
+<div>
+<h3 class="text-lg font-bold text-slate-900 dark:text-slate-100">Elite X</h3>
+<p class="text-xs text-slate-500 dark:text-slate-400">Institutional grade power</p>
+</div>
+<div class="flex flex-col items-end">
+<span class="text-3xl font-black text-slate-900 dark:text-slate-100">$149</span>
+<span class="text-xs font-medium text-slate-500">/month</span>
+</div>
+</div>
+<ul class="space-y-3">
+<li class="flex items-center gap-3 text-sm text-slate-700 dark:text-slate-300">
+<span class="material-symbols-outlined text-primary text-[18px]">bolt</span>
+                        AI Liquidity Engine
+                    </li>
+<li class="flex items-center gap-3 text-sm text-slate-700 dark:text-slate-300">
+<span class="material-symbols-outlined text-primary text-[18px]">bolt</span>
+                        Zero Latency Execution
+                    </li>
+<li class="flex items-center gap-3 text-sm text-slate-700 dark:text-slate-300">
+<span class="material-symbols-outlined text-primary text-[18px]">bolt</span>
+                        Quantum Strategy Builder
+                    </li>
+</ul>
+<button class="w-full py-3 rounded-lg border border-primary text-primary font-bold text-sm bg-transparent">
+                    Get Elite Access
+                </button>
+</div>
+</div>
+<div class="pt-4 pb-12 text-center">
+<p class="text-[11px] text-slate-500 dark:text-slate-500 px-6">
+                Subscription automatically renews unless cancelled 24 hours before the end of the current period. Manage in Settings.
+            </p>
+</div>
+</main>
+<!-- Bottom Navigation Bar -->
+<nav class="mt-auto border-t border-primary/10 bg-background-light dark:bg-background-dark/95 backdrop-blur-md px-6 py-2 flex items-center justify-between pb-8">
+<a class="flex flex-col items-center gap-1 text-slate-400" href="#">
+<span class="material-symbols-outlined">analytics</span>
+<span class="text-[10px] font-medium font-display">Trade</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-400" href="#">
+<span class="material-symbols-outlined">auto_graph</span>
+<span class="text-[10px] font-medium font-display">Signals</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-primary" href="#">
+<span class="material-symbols-outlined font-fill-1">layers</span>
+<span class="text-[10px] font-medium font-display">Plans</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-400" href="#">
+<span class="material-symbols-outlined">account_balance_wallet</span>
+<span class="text-[10px] font-medium font-display">Wallet</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-400" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="text-[10px] font-medium font-display">Profile</span>
+</a>
+</nav>
+<!-- Home Indicator (iOS Style) -->
+<div class="fixed bottom-1 left-1/2 -translate-x-1/2 w-32 h-1 bg-slate-300 dark:bg-slate-700 rounded-full"></div>
+</body></html>

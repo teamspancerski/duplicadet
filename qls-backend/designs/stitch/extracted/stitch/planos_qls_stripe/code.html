@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="pt-br"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#00ff88",
+                        "background-light": "#f5f8f7",
+                        "background-dark": "#0a0a0a",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Manrope', sans-serif;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .pro-glow {
+            box-shadow: 0 0 20px rgba(0, 255, 136, 0.15);
+            border: 2px solid #00ff88;
+        }
+        .bg-mesh {
+            background-image: radial-gradient(at 0% 0%, rgba(0, 255, 136, 0.05) 0, transparent 50%), radial-gradient(at 100% 100%, rgba(0, 255, 136, 0.03) 0, transparent 50%);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 min-h-screen font-display antialiased">
+<div class="relative flex h-auto min-h-screen w-full flex-col bg-mesh overflow-x-hidden">
+<header class="flex items-center bg-transparent p-4 pb-2 justify-between sticky top-0 z-10 backdrop-blur-md">
+<div class="text-slate-100 flex size-10 shrink-0 items-center justify-center glass-card rounded-full cursor-pointer">
+<span class="material-symbols-outlined">arrow_back_ios_new</span>
+</div>
+<div class="flex flex-col items-center">
+<span class="text-[10px] uppercase tracking-widest text-primary font-bold">Trading System</span>
+<h2 class="text-slate-100 text-sm font-bold leading-tight tracking-tight">QLS Quantum Liquidity</h2>
+</div>
+<div class="flex w-10 items-center justify-end">
+<button class="flex size-10 cursor-pointer items-center justify-center glass-card rounded-full text-slate-100">
+<span class="material-symbols-outlined">account_balance_wallet</span>
+</button>
+</div>
+</header>
+<main class="flex-1 px-4 pt-8 pb-32">
+<div class="mb-10 text-center">
+<h1 class="text-slate-100 tracking-tight text-3xl font-extrabold leading-tight mb-2">Planos e Assinaturas</h1>
+<p class="text-slate-400 text-sm font-medium">Escolha sua arquitetura de liquidez</p>
+<div class="mt-6 inline-flex p-1 glass-card rounded-xl">
+<button class="px-6 py-2 bg-primary text-background-dark rounded-lg text-xs font-bold uppercase tracking-wider">Mensal</button>
+<button class="px-6 py-2 text-slate-400 rounded-lg text-xs font-bold uppercase tracking-wider">Anual</button>
+</div>
+</div>
+<div class="space-y-6">
+<!-- Free Plan -->
+<div class="glass-card flex flex-col gap-6 rounded-xl p-6 transition-all hover:border-primary/50">
+<div class="flex flex-col gap-1">
+<h3 class="text-slate-400 text-xs font-bold uppercase tracking-widest">Entry Level</h3>
+<div class="flex items-baseline gap-2">
+<span class="text-slate-100 text-4xl font-black tracking-tighter">$0</span>
+<span class="text-slate-400 text-sm font-bold">/mês</span>
+</div>
+<h2 class="text-slate-100 text-xl font-bold mt-2">Free Explorer</h2>
+</div>
+<button class="flex w-full items-center justify-center rounded-lg h-12 bg-slate-800 text-slate-100 text-sm font-bold uppercase tracking-widest border border-slate-700">
+                        Começar Agora
+                    </button>
+<div class="space-y-3">
+<div class="flex items-center gap-3 text-xs font-medium text-slate-300">
+<span class="material-symbols-outlined text-primary text-lg">check_circle</span>
+                            Monitoramento de Fluxo Básico
+                        </div>
+<div class="flex items-center gap-3 text-xs font-medium text-slate-300">
+<span class="material-symbols-outlined text-primary text-lg">check_circle</span>
+                            Atraso de 15 min nos Dados
+                        </div>
+<div class="flex items-center gap-3 text-xs font-medium text-slate-300">
+<span class="material-symbols-outlined text-primary text-lg">check_circle</span>
+                            1 Estratégia Ativa
+                        </div>
+</div>
+</div>
+<!-- Pro Plan (Highlighted) -->
+<div class="glass-card pro-glow flex flex-col gap-6 rounded-xl p-6 relative overflow-hidden group">
+<div class="absolute top-4 right-4 bg-primary px-3 py-1 rounded-full">
+<p class="text-background-dark text-[10px] font-black uppercase">Mais Popular</p>
+</div>
+<div class="flex flex-col gap-1">
+<h3 class="text-primary text-xs font-bold uppercase tracking-widest">Advanced Trading</h3>
+<div class="flex items-baseline gap-2">
+<span class="text-slate-100 text-4xl font-black tracking-tighter">$99</span>
+<span class="text-slate-400 text-sm font-bold">/mês</span>
+</div>
+<h2 class="text-slate-100 text-xl font-bold mt-2">Professional Pro</h2>
+</div>
+<button class="flex w-full items-center justify-center rounded-lg h-12 bg-primary text-background-dark text-sm font-bold uppercase tracking-widest shadow-lg shadow-primary/20">
+                        Assinar Agora
+                    </button>
+<div class="space-y-3">
+<div class="flex items-center gap-3 text-xs font-medium text-slate-200">
+<span class="material-symbols-outlined text-primary text-lg">check_circle</span>
+                            Dados em Tempo Real (Tick-by-tick)
+                        </div>
+<div class="flex items-center gap-3 text-xs font-medium text-slate-200">
+<span class="material-symbols-outlined text-primary text-lg">check_circle</span>
+                            Estratégias Quantitativas de Volume
+                        </div>
+<div class="flex items-center gap-3 text-xs font-medium text-slate-200">
+<span class="material-symbols-outlined text-primary text-lg">check_circle</span>
+                            Alertas via Discord &amp; Webhooks
+                        </div>
+<div class="flex items-center gap-3 text-xs font-medium text-slate-200">
+<span class="material-symbols-outlined text-primary text-lg">check_circle</span>
+                            Order Flow Cumulative Delta
+                        </div>
+</div>
+</div>
+<!-- Elite Plan -->
+<div class="glass-card flex flex-col gap-6 rounded-xl p-6">
+<div class="flex flex-col gap-1">
+<h3 class="text-slate-400 text-xs font-bold uppercase tracking-widest">Institutional</h3>
+<div class="flex items-baseline gap-2">
+<span class="text-slate-100 text-4xl font-black tracking-tighter">$499</span>
+<span class="text-slate-400 text-sm font-bold">/mês</span>
+</div>
+<h2 class="text-slate-100 text-xl font-bold mt-2">Elite Institutional</h2>
+</div>
+<button class="flex w-full items-center justify-center rounded-lg h-12 bg-slate-100 text-background-dark text-sm font-bold uppercase tracking-widest">
+                        Falar com Consultor
+                    </button>
+<div class="space-y-3">
+<div class="flex items-center gap-3 text-xs font-medium text-slate-300">
+<span class="material-symbols-outlined text-primary text-lg">check_circle</span>
+                            Algoritmos HFT Customizados
+                        </div>
+<div class="flex items-center gap-3 text-xs font-medium text-slate-300">
+<span class="material-symbols-outlined text-primary text-lg">check_circle</span>
+                            API de Baixa Latência
+                        </div>
+<div class="flex items-center gap-3 text-xs font-medium text-slate-300">
+<span class="material-symbols-outlined text-primary text-lg">check_circle</span>
+                            Infraestrutura Cloud Dedicada
+                        </div>
+<div class="flex items-center gap-3 text-xs font-medium text-slate-300">
+<span class="material-symbols-outlined text-primary text-lg">check_circle</span>
+                            Suporte 24/7 White-Glove
+                        </div>
+</div>
+</div>
+</div>
+<div class="mt-10 p-4 border-t border-white/5 space-y-4">
+<div class="flex items-center justify-between">
+<div class="flex flex-col">
+<span class="text-[10px] text-slate-500 font-bold uppercase">Stripe Status</span>
+<div class="flex items-center gap-1.5 mt-0.5">
+<span class="size-1.5 rounded-full bg-primary animate-pulse"></span>
+<span class="text-xs text-slate-300">Webhooks Ativos</span>
+</div>
+</div>
+<div class="flex items-center gap-2 glass-card px-3 py-1.5 rounded-lg border-white/5">
+<span class="material-symbols-outlined text-sm text-slate-400">lock</span>
+<span class="text-[10px] font-bold text-slate-400 uppercase">Secure Checkout</span>
+</div>
+</div>
+</div>
+</main>
+<nav class="fixed bottom-0 w-full glass-card border-t border-white/10 px-6 pb-8 pt-4 flex justify-between items-center z-20">
+<a class="flex flex-col items-center gap-1 text-slate-500" href="#">
+<span class="material-symbols-outlined text-2xl">grid_view</span>
+<p class="text-[10px] font-bold uppercase tracking-wider">Painel</p>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-500" href="#">
+<span class="material-symbols-outlined text-2xl">monitoring</span>
+<p class="text-[10px] font-bold uppercase tracking-wider">Mercado</p>
+</a>
+<a class="flex flex-col items-center gap-1 text-primary" href="#">
+<span class="material-symbols-outlined text-2xl">workspace_premium</span>
+<p class="text-[10px] font-bold uppercase tracking-wider">Premium</p>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-500" href="#">
+<span class="material-symbols-outlined text-2xl">settings</span>
+<p class="text-[10px] font-bold uppercase tracking-wider">Ajustes</p>
+</a>
+</nav>
+</div>
+</body></html>

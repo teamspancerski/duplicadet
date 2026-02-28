@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="pt-BR"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>QLS - Advanced Metrics</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#0df2f2",
+                        "background-light": "#f5f8f8",
+                        "background-dark": "#102222",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+            -webkit-tap-highlight-color: transparent;
+        }
+        .heatmap-cell {
+            aspect-ratio: 1/1;
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            height: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #0df2f233;
+            border-radius: 10px;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 min-h-screen flex flex-col">
+<!-- Header -->
+<header class="sticky top-0 z-50 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md border-b border-slate-200 dark:border-primary/20">
+<div class="flex items-center p-4 justify-between">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary cursor-pointer">arrow_back_ios</span>
+<h1 class="text-xl font-bold tracking-tight">Advanced Metrics</h1>
+</div>
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-slate-600 dark:text-slate-400">share</span>
+<span class="material-symbols-outlined text-slate-600 dark:text-slate-400">more_vert</span>
+</div>
+</div>
+<!-- Tabs -->
+<nav class="flex px-4 gap-6 overflow-x-auto custom-scrollbar">
+<button class="py-3 text-sm font-medium text-slate-500 dark:text-slate-400 whitespace-nowrap">Overview</button>
+<button class="py-3 text-sm font-bold text-primary border-b-2 border-primary whitespace-nowrap">Equity</button>
+<button class="py-3 text-sm font-medium text-slate-500 dark:text-slate-400 whitespace-nowrap">Heatmap</button>
+<button class="py-3 text-sm font-medium text-slate-500 dark:text-slate-400 whitespace-nowrap">Risk</button>
+<button class="py-3 text-sm font-medium text-slate-500 dark:text-slate-400 whitespace-nowrap">Orders</button>
+</nav>
+</header>
+<main class="flex-1 p-4 space-y-6 pb-24">
+<!-- Summary Cards -->
+<div class="grid grid-cols-2 gap-3">
+<div class="bg-slate-100 dark:bg-primary/5 p-4 rounded-xl border border-slate-200 dark:border-primary/10">
+<p class="text-xs text-slate-500 dark:text-slate-400 uppercase tracking-wider font-semibold">Total Return</p>
+<div class="flex items-end gap-2 mt-1">
+<p class="text-2xl font-bold">+42.8%</p>
+<span class="text-[10px] text-primary bg-primary/10 px-1 rounded mb-1">↑ 2.4%</span>
+</div>
+</div>
+<div class="bg-slate-100 dark:bg-primary/5 p-4 rounded-xl border border-slate-200 dark:border-primary/10">
+<p class="text-xs text-slate-500 dark:text-slate-400 uppercase tracking-wider font-semibold">Sharpe Ratio</p>
+<div class="flex items-end gap-2 mt-1">
+<p class="text-2xl font-bold">2.41</p>
+<span class="text-[10px] text-primary bg-primary/10 px-1 rounded mb-1">STABLE</span>
+</div>
+</div>
+<div class="bg-slate-100 dark:bg-primary/5 p-4 rounded-xl border border-slate-200 dark:border-primary/10">
+<p class="text-xs text-slate-500 dark:text-slate-400 uppercase tracking-wider font-semibold">Max Drawdown</p>
+<div class="flex items-end gap-2 mt-1">
+<p class="text-2xl font-bold text-rose-500">-8.2%</p>
+</div>
+</div>
+<div class="bg-slate-100 dark:bg-primary/5 p-4 rounded-xl border border-slate-200 dark:border-primary/10">
+<p class="text-xs text-slate-500 dark:text-slate-400 uppercase tracking-wider font-semibold">Win Rate</p>
+<div class="flex items-end gap-2 mt-1">
+<p class="text-2xl font-bold">68.4%</p>
+</div>
+</div>
+</div>
+<!-- Equity Curve Chart Placeholder -->
+<section class="space-y-3">
+<div class="flex justify-between items-center">
+<h2 class="text-lg font-bold">Equity Curve</h2>
+<div class="flex gap-2 text-[10px] font-bold">
+<span class="px-2 py-1 rounded bg-primary text-background-dark">1D</span>
+<span class="px-2 py-1 rounded bg-slate-200 dark:bg-primary/10">1W</span>
+<span class="px-2 py-1 rounded bg-slate-200 dark:bg-primary/10">1M</span>
+<span class="px-2 py-1 rounded bg-slate-200 dark:bg-primary/10">ALL</span>
+</div>
+</div>
+<div class="w-full h-48 bg-slate-100 dark:bg-primary/5 rounded-xl border border-slate-200 dark:border-primary/10 relative overflow-hidden">
+<!-- Simple SVG Graph Representation -->
+<svg class="w-full h-full p-4" viewbox="0 0 400 150">
+<defs>
+<lineargradient id="grad" x1="0%" x2="0%" y1="0%" y2="100%">
+<stop offset="0%" style="stop-color:#0df2f2;stop-opacity:0.3"></stop>
+<stop offset="100%" style="stop-color:#0df2f2;stop-opacity:0"></stop>
+</lineargradient>
+</defs>
+<path d="M0 130 Q 50 120, 80 140 T 150 100 T 220 110 T 300 40 T 400 20 L 400 150 L 0 150 Z" fill="url(#grad)"></path>
+<path d="M0 130 Q 50 120, 80 140 T 150 100 T 220 110 T 300 40 T 400 20" fill="none" stroke="#0df2f2" stroke-width="3"></path>
+<!-- Points -->
+<circle cx="300" cy="40" fill="#0df2f2" r="4"></circle>
+<circle cx="400" cy="20" fill="#0df2f2" r="4"></circle>
+</svg>
+<div class="absolute bottom-4 left-4 text-[10px] text-slate-500">Dec 01, 2023</div>
+<div class="absolute bottom-4 right-4 text-[10px] text-slate-500">Today</div>
+</div>
+</section>
+<!-- Hourly Heatmap -->
+<section class="space-y-3">
+<div class="flex justify-between items-center">
+<h2 class="text-lg font-bold">Hourly Performance</h2>
+<span class="text-xs text-primary font-medium">Cyan Intensity = Volume/P&amp;L</span>
+</div>
+<div class="bg-slate-100 dark:bg-primary/5 p-4 rounded-xl border border-slate-200 dark:border-primary/10 overflow-x-auto">
+<div class="grid grid-cols-12 gap-1 min-w-[300px]">
+<!-- Labels -->
+<div class="col-span-12 flex justify-between text-[8px] text-slate-500 mb-1 px-1 uppercase tracking-tighter">
+<span>00:00</span><span>06:00</span><span>12:00</span><span>18:00</span><span>23:59</span>
+</div>
+<!-- Row 1 (Monday) -->
+<div class="heatmap-cell bg-primary/10 rounded-sm"></div>
+<div class="heatmap-cell bg-primary/20 rounded-sm"></div>
+<div class="heatmap-cell bg-primary/5 rounded-sm"></div>
+<div class="heatmap-cell bg-primary/30 rounded-sm"></div>
+<div class="heatmap-cell bg-primary/60 rounded-sm"></div>
+<div class="heatmap-cell bg-primary/80 rounded-sm"></div>
+<div class="heatmap-cell bg-primary/90 rounded-sm"></div>
+<div class="heatmap-cell bg-primary/40 rounded-sm"></div>
+<div class="heatmap-cell bg-primary/20 rounded-sm"></div>
+<div class="heatmap-cell bg-primary/10 rounded-sm"></div>
+<div class="heatmap-cell bg-primary/5 rounded-sm"></div>
+<div class="heatmap-cell bg-primary/10 rounded-sm"></div>
+<!-- Row 2 (Tuesday) -->
+<div class="heatmap-cell bg-primary/20 rounded-sm"></div>
+<div class="heatmap-cell bg-primary/40 rounded-sm"></div>
+<div class="heatmap-cell bg-primary/10 rounded-sm"></div>
+<div class="heatmap-cell bg-primary/5 rounded-sm"></div>
+<div class="heatmap-cell bg-primary/90 rounded-sm"></div>
+<div class="heatmap-cell bg-primary/100 rounded-sm"></div>
+<div class="heatmap-cell bg-primary/70 rounded-sm"></div>
+<div class="heatmap-cell bg-primary/50 rounded-sm"></div>
+<div class="heatmap-cell bg-primary/30 rounded-sm"></div>
+<div class="heatmap-cell bg-primary/20 rounded-sm"></div>
+<div class="heatmap-cell bg-primary/10 rounded-sm"></div>
+<div class="heatmap-cell bg-primary/5 rounded-sm"></div>
+<!-- Row 3 (Wednesday) -->
+<div class="heatmap-cell bg-primary/5 rounded-sm"></div>
+<div class="heatmap-cell bg-primary/10 rounded-sm"></div>
+<div class="heatmap-cell bg-primary/20 rounded-sm"></div>
+<div class="heatmap-cell bg-primary/40 rounded-sm"></div>
+<div class="heatmap-cell bg-primary/80 rounded-sm"></div>
+<div class="heatmap-cell bg-primary/90 rounded-sm"></div>
+<div class="heatmap-cell bg-primary/100 rounded-sm shadow-[0_0_8px_rgba(13,242,242,0.4)]"></div>
+<div class="heatmap-cell bg-primary/60 rounded-sm"></div>
+<div class="heatmap-cell bg-primary/30 rounded-sm"></div>
+<div class="heatmap-cell bg-primary/10 rounded-sm"></div>
+<div class="heatmap-cell bg-primary/5 rounded-sm"></div>
+<div class="heatmap-cell bg-primary/5 rounded-sm"></div>
+</div>
+</div>
+</section>
+<!-- Risk Profile -->
+<section class="space-y-3">
+<h2 class="text-lg font-bold">Risk Allocation</h2>
+<div class="bg-slate-100 dark:bg-primary/5 p-4 rounded-xl border border-slate-200 dark:border-primary/10">
+<div class="space-y-4">
+<div class="space-y-2">
+<div class="flex justify-between text-xs">
+<span class="text-slate-400">BTC / USD High Frequency</span>
+<span class="font-bold">64%</span>
+</div>
+<div class="w-full bg-slate-300 dark:bg-white/10 h-1.5 rounded-full overflow-hidden">
+<div class="bg-primary h-full rounded-full" style="width: 64%"></div>
+</div>
+</div>
+<div class="space-y-2">
+<div class="flex justify-between text-xs">
+<span class="text-slate-400">ETH / USDT Grid Bot</span>
+<span class="font-bold">28%</span>
+</div>
+<div class="w-full bg-slate-300 dark:bg-white/10 h-1.5 rounded-full overflow-hidden">
+<div class="bg-primary/60 h-full rounded-full" style="width: 28%"></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Bottom Navigation -->
+<nav class="fixed bottom-0 left-0 right-0 bg-background-light dark:bg-background-dark border-t border-slate-200 dark:border-primary/20 px-6 py-3 flex justify-between items-center z-50">
+<div class="flex flex-col items-center gap-1 text-slate-400">
+<span class="material-symbols-outlined">insights</span>
+<span class="text-[10px] font-medium">Trade</span>
+</div>
+<div class="flex flex-col items-center gap-1 text-slate-400">
+<span class="material-symbols-outlined">language</span>
+<span class="text-[10px] font-medium">Markets</span>
+</div>
+<div class="flex flex-col items-center gap-1 text-primary">
+<span class="material-symbols-outlined font-bold">monitoring</span>
+<span class="text-[10px] font-bold">Metrics</span>
+</div>
+<div class="flex flex-col items-center gap-1 text-slate-400">
+<span class="material-symbols-outlined">account_balance_wallet</span>
+<span class="text-[10px] font-medium">Wallet</span>
+</div>
+<div class="flex flex-col items-center gap-1 text-slate-400">
+<span class="material-symbols-outlined">settings</span>
+<span class="text-[10px] font-medium">Settings</span>
+</div>
+</nav>
+</body></html>

@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>QLS Quantum Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#1ff9f9",
+                        "background-light": "#f5f8f8",
+                        "background-dark": "#0f2323",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .neon-glow {
+            box-shadow: 0 0 15px rgba(31, 249, 249, 0.15);
+        }
+        .neon-border {
+            border: 1px solid rgba(31, 249, 249, 0.3);
+        }
+        .chart-gradient {
+            background: linear-gradient(180deg, rgba(31, 249, 249, 0.1) 0%, rgba(15, 35, 35, 0) 100%);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 antialiased overflow-x-hidden selection:bg-primary/30">
+<div class="relative flex h-screen w-full flex-col max-w-[430px] mx-auto bg-background-light dark:bg-background-dark shadow-2xl overflow-hidden border-x border-slate-200 dark:border-primary/10">
+<!-- Header -->
+<header class="flex items-center justify-between px-6 py-4 pt-8 bg-background-light dark:bg-background-dark/80 backdrop-blur-md sticky top-0 z-50">
+<div class="flex items-center gap-3">
+<div class="size-10 rounded-full bg-primary/20 flex items-center justify-center border border-primary/40 overflow-hidden">
+<div class="w-full h-full bg-cover bg-center" data-alt="Quantum digital avatar with cyan glow" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBO8CqmUSb4Pv4Xr0rYsS0WOz4339OnqPHCrlUplHQ06zBsQUYitM5sDkI7GEIHtKHvlxkvN_7kwURfWWvoCU1Z21_ePKRx0DSmeZ7Who22Jcat_Tsdk45BcXj0TFkqDmMBZXTMx_X2cM1xjNZkRXY76GKVaUXuptaDhPnPdRXJyQCYD64y4lWigWED2EjD_QdmCy_AfUDO0xosf7o05MqyIt6nH9JV6LxAF3W_9XWaX18WIFXi-ExuQrPG4MI5v4kTcEJ1WjIxH48')"></div>
+</div>
+<div>
+<h2 class="text-lg font-bold leading-none text-slate-900 dark:text-slate-100">QLS Quantum</h2>
+<span class="text-[10px] font-medium uppercase tracking-widest text-primary">v4.0.10 Active</span>
+</div>
+</div>
+<button class="size-10 rounded-full flex items-center justify-center hover:bg-primary/10 transition-colors relative">
+<span class="material-symbols-outlined text-slate-600 dark:text-primary">notifications</span>
+<span class="absolute top-2.5 right-2.5 size-2 bg-primary rounded-full border-2 border-background-dark"></span>
+</button>
+</header>
+<main class="flex-1 overflow-y-auto pb-24">
+<!-- User Balance Section -->
+<section class="px-6 py-4">
+<div class="bg-primary/5 neon-border rounded-xl p-6 relative overflow-hidden">
+<div class="absolute -right-4 -top-4 size-24 bg-primary/10 blur-3xl rounded-full"></div>
+<p class="text-xs font-medium text-slate-500 dark:text-primary/70 uppercase tracking-tighter mb-1">UUID: 8X29-QLS-001</p>
+<div class="flex items-end justify-between">
+<div>
+<p class="text-3xl font-bold text-slate-900 dark:text-slate-100">124,500.00 <span class="text-sm font-medium text-slate-500">USDT</span></p>
+<div class="flex items-center gap-2 mt-2">
+<span class="size-2 rounded-full bg-primary animate-pulse"></span>
+<p class="text-xs text-slate-500 dark:text-slate-400">Quantum Liquidity Engine Active</p>
+</div>
+</div>
+<div class="bg-primary/20 px-3 py-1 rounded-full border border-primary/30">
+<span class="text-[10px] font-bold text-primary">+5.4% 24h</span>
+</div>
+</div>
+</div>
+</section>
+<!-- KPI Cards Grid -->
+<section class="px-6 py-4">
+<div class="grid grid-cols-2 gap-4">
+<div class="bg-slate-100 dark:bg-primary/5 rounded-xl p-4 border border-slate-200 dark:border-primary/10 flex flex-col gap-1">
+<div class="flex items-center justify-between mb-2">
+<span class="material-symbols-outlined text-primary text-lg">analytics</span>
+</div>
+<p class="text-[10px] uppercase tracking-wider text-slate-500 dark:text-slate-400 font-medium">Sharpe Ratio</p>
+<div class="flex items-baseline gap-2">
+<p class="text-xl font-bold text-slate-900 dark:text-slate-100">3.2</p>
+<span class="text-[10px] text-primary font-bold">+0.2%</span>
+</div>
+</div>
+<div class="bg-slate-100 dark:bg-primary/5 rounded-xl p-4 border border-slate-200 dark:border-primary/10 flex flex-col gap-1">
+<div class="flex items-center justify-between mb-2">
+<span class="material-symbols-outlined text-primary text-lg">bolt</span>
+</div>
+<p class="text-[10px] uppercase tracking-wider text-slate-500 dark:text-slate-400 font-medium">Win Rate</p>
+<div class="flex items-baseline gap-2">
+<p class="text-xl font-bold text-slate-900 dark:text-slate-100">68.5%</p>
+<span class="text-[10px] text-primary font-bold">+1.5%</span>
+</div>
+</div>
+<div class="col-span-2 bg-slate-100 dark:bg-primary/5 rounded-xl p-4 border border-slate-200 dark:border-primary/10 flex items-center justify-between neon-glow">
+<div>
+<p class="text-[10px] uppercase tracking-wider text-slate-500 dark:text-slate-400 font-medium mb-1">Total P&amp;L (Accumulated)</p>
+<p class="text-2xl font-bold text-slate-900 dark:text-slate-100">+$12,450.20</p>
+</div>
+<div class="size-12 rounded-lg bg-primary/10 flex items-center justify-center border border-primary/20">
+<span class="material-symbols-outlined text-primary">trending_up</span>
+</div>
+</div>
+</div>
+</section>
+<!-- TradingView Style Chart Section -->
+<section class="px-6 py-4">
+<div class="flex items-center justify-between mb-4">
+<h3 class="text-sm font-bold flex items-center gap-2 text-slate-900 dark:text-slate-100">
+<span class="size-2 bg-orange-500 rounded-full"></span>
+                        BTC/USDT <span class="text-xs font-normal text-slate-500">Binance</span>
+</h3>
+<div class="flex gap-2">
+<button class="text-[10px] px-2 py-1 rounded bg-slate-200 dark:bg-primary/10 text-primary font-bold">1H</button>
+<button class="text-[10px] px-2 py-1 rounded text-slate-500 dark:text-slate-400 font-medium">4H</button>
+<button class="text-[10px] px-2 py-1 rounded text-slate-500 dark:text-slate-400 font-medium">1D</button>
+</div>
+</div>
+<div class="w-full h-64 bg-slate-100 dark:bg-[#0a1818] rounded-xl border border-slate-200 dark:border-primary/10 relative overflow-hidden group">
+<!-- Fake Chart Grid -->
+<div class="absolute inset-0 opacity-10 pointer-events-none" style="background-image: linear-gradient(#1ff9f9 1px, transparent 1px), linear-gradient(90deg, #1ff9f9 1px, transparent 1px); background-size: 20px 20px;"></div>
+<!-- Fake Chart Line -->
+<svg class="absolute inset-0 w-full h-full p-4" viewbox="0 0 400 200">
+<defs>
+<lineargradient id="gradient" x1="0%" x2="0%" y1="0%" y2="100%">
+<stop offset="0%" stop-color="#1ff9f9" stop-opacity="0.2"></stop>
+<stop offset="100%" stop-color="#1ff9f9" stop-opacity="0"></stop>
+</lineargradient>
+</defs>
+<path d="M0,150 Q50,140 80,160 T140,120 T200,80 T280,100 T340,60 T400,40 V200 H0 Z" fill="url(#gradient)"></path>
+<path class="drop-shadow-[0_0_8px_rgba(31,249,249,0.8)]" d="M0,150 Q50,140 80,160 T140,120 T200,80 T280,100 T340,60 T400,40" fill="none" stroke="#1ff9f9" stroke-width="2"></path>
+<!-- Pulse Point -->
+<circle class="animate-pulse" cx="400" cy="40" fill="#1ff9f9" r="4"></circle>
+</svg>
+<!-- Indicators -->
+<div class="absolute left-4 top-4 flex flex-col gap-1">
+<div class="text-[10px] font-mono text-primary flex gap-2"><span>MA(7):</span> 62,341.22</div>
+<div class="text-[10px] font-mono text-purple-400 flex gap-2"><span>MA(25):</span> 61,890.45</div>
+</div>
+<!-- Chart Sidebar Stats -->
+<div class="absolute right-0 top-0 bottom-0 w-12 border-l border-primary/5 flex flex-col justify-between py-4 text-[9px] font-mono text-slate-500">
+<span>64.2k</span>
+<span>63.5k</span>
+<span class="text-primary font-bold bg-primary/10">62.3k</span>
+<span>61.1k</span>
+<span>60.4k</span>
+</div>
+</div>
+</section>
+<!-- Quick Actions -->
+<section class="px-6 py-4 grid grid-cols-4 gap-4">
+<div class="flex flex-col items-center gap-2">
+<button class="size-12 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-background-dark transition-all">
+<span class="material-symbols-outlined">add</span>
+</button>
+<span class="text-[10px] font-medium text-slate-500 uppercase">Deposit</span>
+</div>
+<div class="flex flex-col items-center gap-2">
+<button class="size-12 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">swap_horiz</span>
+</button>
+<span class="text-[10px] font-medium text-slate-500 uppercase">Trade</span>
+</div>
+<div class="flex flex-col items-center gap-2">
+<button class="size-12 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">account_balance_wallet</span>
+</button>
+<span class="text-[10px] font-medium text-slate-500 uppercase">Wallet</span>
+</div>
+<div class="flex flex-col items-center gap-2">
+<button class="size-12 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">history</span>
+</button>
+<span class="text-[10px] font-medium text-slate-500 uppercase">History</span>
+</div>
+</section>
+</main>
+<!-- Bottom Navigation -->
+<nav class="absolute bottom-0 left-0 right-0 bg-background-light dark:bg-background-dark/95 backdrop-blur-xl border-t border-slate-200 dark:border-primary/10 px-6 pt-3 pb-8 flex justify-between items-center z-50">
+<a class="flex flex-col items-center gap-1 group" href="#">
+<span class="material-symbols-outlined text-primary fill-1">grid_view</span>
+<span class="text-[10px] font-bold text-primary">Dash</span>
+</a>
+<a class="flex flex-col items-center gap-1 opacity-40 hover:opacity-100 transition-opacity" href="#">
+<span class="material-symbols-outlined text-slate-500 dark:text-slate-100">monitoring</span>
+<span class="text-[10px] font-medium text-slate-500 dark:text-slate-100">Markets</span>
+</a>
+<div class="relative -top-6">
+<button class="size-14 rounded-full bg-primary shadow-lg shadow-primary/40 flex items-center justify-center text-background-dark border-4 border-background-light dark:border-background-dark">
+<span class="material-symbols-outlined font-bold">bolt</span>
+</button>
+</div>
+<a class="flex flex-col items-center gap-1 opacity-40 hover:opacity-100 transition-opacity" href="#">
+<span class="material-symbols-outlined text-slate-500 dark:text-slate-100">database</span>
+<span class="text-[10px] font-medium text-slate-500 dark:text-slate-100">Nodes</span>
+</a>
+<a class="flex flex-col items-center gap-1 opacity-40 hover:opacity-100 transition-opacity" href="#">
+<span class="material-symbols-outlined text-slate-500 dark:text-slate-100">settings</span>
+<span class="text-[10px] font-medium text-slate-500 dark:text-slate-100">Config</span>
+</a>
+</nav>
+</div>
+</body></html>

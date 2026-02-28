@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="pt-br"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#00ff66",
+                        "background-light": "#f5f8f7",
+                        "background-dark": "#0a0a0a",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        .glass {
+            background: rgba(15, 35, 23, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(0, 255, 102, 0.1);
+        }
+        .blur-bg {
+            filter: blur(8px);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 antialiased overflow-hidden">
+<!-- Background Content (Blurred) -->
+<div class="relative flex h-screen w-full flex-col bg-background-light dark:bg-background-dark blur-bg">
+<!-- Header -->
+<div class="flex items-center p-4 pb-2 justify-between">
+<div class="text-slate-100 flex size-12 shrink-0 items-center justify-center">
+<span class="material-symbols-outlined">chevron_left</span>
+</div>
+<h2 class="text-slate-100 text-lg font-bold leading-tight tracking-tight flex-1 text-center pr-12">Estratégia QLS</h2>
+</div>
+<h4 class="text-primary text-sm font-bold leading-normal tracking-wide px-4 py-2 text-center uppercase">Comparação de Backtest</h4>
+<!-- Main Stats Chart Area -->
+<div class="flex flex-wrap gap-4 px-4 py-6">
+<div class="flex min-w-72 flex-1 flex-col gap-2">
+<p class="text-slate-400 text-base font-medium">Performance QLS Quantum</p>
+<p class="text-white tracking-tighter text-[42px] font-bold leading-none">+24.5%</p>
+<div class="flex gap-2 items-center">
+<p class="text-slate-400 text-sm font-normal">Últimos 30 dias</p>
+<span class="text-primary text-sm font-bold">+5.2%</span>
+</div>
+<!-- SVG Chart Mockup -->
+<div class="flex min-h-[180px] flex-1 flex-col gap-8 py-4">
+<svg fill="none" height="148" preserveaspectratio="none" viewbox="-3 0 478 150" width="100%" xmlns="http://www.w3.org/2000/svg">
+<path d="M0 109C18.1538 109 18.1538 21 36.3077 21C54.4615 21 54.4615 41 72.6154 41C90.7692 41 90.7692 93 108.923 93C127.077 93 127.077 33 145.231 33C163.385 33 163.385 101 181.538 101C199.692 101 199.692 61 217.846 61C236 61 236 45 254.154 45C272.308 45 272.308 121 290.462 121C308.615 121 308.615 149 326.769 149C344.923 149 344.923 1 363.077 1C381.231 1 381.231 81 399.385 81C417.538 81 417.538 129 435.692 129C453.846 129 453.846 25 472 25V149H326.769H0V109Z" fill="url(#chart_grad)"></path>
+<path d="M0 109C18.1538 109 18.1538 21 36.3077 21C54.4615 21 54.4615 41 72.6154 41C90.7692 41 90.7692 93 108.923 93C127.077 93 127.077 33 145.231 33C163.385 33 163.385 101 181.538 101C199.692 101 199.692 61 217.846 61C236 61 236 45 254.154 45C272.308 45 272.308 121 290.462 121C308.615 121 308.615 149 326.769 149C344.923 149 344.923 1 363.077 1C381.231 1 381.231 81 399.385 81C417.538 81 417.538 129 435.692 129C453.846 129 453.846 25 472 25" stroke="#00ff66" stroke-linecap="round" stroke-width="3"></path>
+<defs>
+<lineargradient gradientunits="userSpaceOnUse" id="chart_grad" x1="236" x2="236" y1="1" y2="149">
+<stop stop-color="#00ff66" stop-opacity="0.3"></stop>
+<stop offset="1" stop-color="#00ff66" stop-opacity="0"></stop>
+</lineargradient>
+</defs>
+</svg>
+<div class="flex justify-around">
+<p class="text-slate-500 text-[11px] font-bold uppercase tracking-widest">Sem 1</p>
+<p class="text-slate-500 text-[11px] font-bold uppercase tracking-widest">Sem 2</p>
+<p class="text-slate-500 text-[11px] font-bold uppercase tracking-widest">Sem 3</p>
+<p class="text-slate-500 text-[11px] font-bold uppercase tracking-widest">Sem 4</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Metrics Cards -->
+<div class="flex flex-wrap gap-4 p-4">
+<div class="flex min-w-[158px] flex-1 flex-col gap-2 rounded-xl p-6 bg-slate-900/50 border border-primary/10">
+<p class="text-slate-400 text-sm font-medium">Win Rate</p>
+<p class="text-white text-2xl font-bold">68%</p>
+<p class="text-primary text-sm font-medium">+2.5%</p>
+</div>
+<div class="flex min-w-[158px] flex-1 flex-col gap-2 rounded-xl p-6 bg-slate-900/50 border border-primary/10">
+<p class="text-slate-400 text-sm font-medium">Profit Factor</p>
+<p class="text-white text-2xl font-bold">2.1</p>
+<p class="text-primary text-sm font-medium">+0.3</p>
+</div>
+</div>
+<!-- Bottom Navigation Bar (Blurred) -->
+<div class="mt-auto flex gap-2 border-t border-slate-800 bg-slate-900/80 px-4 pb-8 pt-2">
+<a class="flex flex-1 flex-col items-center justify-end gap-1 text-slate-500" href="#">
+<span class="material-symbols-outlined">home</span>
+<p class="text-[10px] font-medium uppercase tracking-widest">Início</p>
+</a>
+<a class="flex flex-1 flex-col items-center justify-end gap-1 text-slate-500" href="#">
+<span class="material-symbols-outlined">smart_toy</span>
+<p class="text-[10px] font-medium uppercase tracking-widest">Robôs</p>
+</a>
+<a class="flex flex-1 flex-col items-center justify-end gap-1 text-primary" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1">monitoring</span>
+<p class="text-[10px] font-medium uppercase tracking-widest">Estratégias</p>
+</a>
+<a class="flex flex-1 flex-col items-center justify-end gap-1 text-slate-500" href="#">
+<span class="material-symbols-outlined">person</span>
+<p class="text-[10px] font-medium uppercase tracking-widest">Perfil</p>
+</a>
+</div>
+</div>
+<!-- Confirmation Modal Overlay -->
+<div class="fixed inset-0 z-50 flex items-center justify-center p-6 bg-black/40">
+<div class="glass w-full max-w-sm rounded-3xl overflow-hidden shadow-2xl flex flex-col items-center p-8 text-center animate-in fade-in zoom-in duration-300">
+<!-- Icon -->
+<div class="bg-primary/20 p-4 rounded-full mb-6">
+<span class="material-symbols-outlined text-primary text-4xl" style="font-variation-settings: 'wght' 500">published_with_changes</span>
+</div>
+<h3 class="text-white text-2xl font-bold mb-3 tracking-tight">Confirmar Alteração?</h3>
+<p class="text-slate-300 text-base leading-relaxed mb-8">
+                Deseja aplicar os parâmetros da <strong>Estratégia Vencedora</strong> ao seu robô ativo? Isso substituirá as configurações atuais.
+            </p>
+<div class="w-full flex flex-col gap-3">
+<button class="w-full bg-primary py-4 rounded-xl text-background-dark font-bold text-lg hover:brightness-110 active:scale-[0.98] transition-all">
+                    Sim, Aplicar
+                </button>
+<button class="w-full bg-transparent border border-slate-700 py-4 rounded-xl text-slate-300 font-semibold text-lg hover:bg-slate-800 transition-all">
+                    Cancelar
+                </button>
+</div>
+<!-- Security Badge -->
+<div class="mt-6 flex items-center gap-2 text-slate-500">
+<span class="material-symbols-outlined text-xs">lock</span>
+<span class="text-[10px] font-medium uppercase tracking-widest">Operação Segura via QLS Engine</span>
+</div>
+</div>
+</div>
+</body></html>

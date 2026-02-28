@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="pt-br"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#1ff994",
+                        "background-light": "#f5f8f7",
+                        "background-dark": "#0a0a0a",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .glass-effect {
+            background: rgba(15, 35, 26, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(31, 249, 148, 0.1);
+        }
+        .glow-button {
+            box-shadow: 0 0 20px rgba(31, 249, 148, 0.4);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 min-h-screen flex flex-col overflow-hidden">
+<!-- Header Section -->
+<header class="flex items-center justify-between p-4 bg-background-dark/80 backdrop-blur-md sticky top-0 z-10 border-b border-primary/10">
+<button class="w-10 h-10 flex items-center justify-center rounded-full bg-primary/10 text-primary">
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+<h1 class="text-lg font-bold tracking-tight uppercase italic">QLS <span class="text-primary">Quantum</span></h1>
+<div class="w-10"></div>
+</header>
+<!-- Main Content Background (Mocking Strategy List) -->
+<main class="flex-1 p-4 space-y-4 opacity-40">
+<div class="p-4 rounded-xl glass-effect border border-primary/20">
+<div class="flex justify-between items-center mb-2">
+<span class="text-primary font-bold">ETH/USDT Scalp</span>
+<span class="text-xs bg-primary/20 text-primary px-2 py-1 rounded-full">+12.4%</span>
+</div>
+<div class="h-24 w-full bg-gradient-to-r from-primary/5 to-primary/20 rounded-lg"></div>
+</div>
+<div class="p-4 rounded-xl glass-effect border border-primary/20">
+<div class="flex justify-between items-center mb-2">
+<span class="text-primary font-bold">BTC Momentum</span>
+<span class="text-xs bg-primary/20 text-primary px-2 py-1 rounded-full">+8.2%</span>
+</div>
+<div class="h-24 w-full bg-gradient-to-r from-primary/5 to-primary/20 rounded-lg"></div>
+</div>
+</main>
+<!-- Modal Overlay -->
+<div class="fixed inset-0 z-50 flex items-center justify-center p-6 bg-background-dark/90 backdrop-blur-sm">
+<!-- Glassmorphism Modal -->
+<div class="glass-effect w-full max-w-sm rounded-xl overflow-hidden flex flex-col shadow-2xl border border-primary/30">
+<!-- Modal Header -->
+<div class="p-6 text-center border-b border-primary/10">
+<div class="w-16 h-16 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-4">
+<span class="material-symbols-outlined text-primary text-4xl">bolt</span>
+</div>
+<h2 class="text-2xl font-bold text-primary italic uppercase tracking-wider mb-2">Confirmar Estratégia</h2>
+<p class="text-slate-400 text-sm">Verifique os parâmetros antes de ativar o nó de liquidez quântica.</p>
+</div>
+<!-- Strategy Metrics -->
+<div class="p-6 space-y-4">
+<div class="grid grid-cols-2 gap-4">
+<div class="bg-primary/5 p-3 rounded-lg border border-primary/10">
+<p class="text-xs text-slate-400 uppercase">Win Rate</p>
+<p class="text-lg font-bold text-primary">78.4%</p>
+</div>
+<div class="bg-primary/5 p-3 rounded-lg border border-primary/10">
+<p class="text-xs text-slate-400 uppercase">Drawdown</p>
+<p class="text-lg font-bold text-red-400">-4.2%</p>
+</div>
+<div class="bg-primary/5 p-3 rounded-lg border border-primary/10">
+<p class="text-xs text-slate-400 uppercase">Profit Factor</p>
+<p class="text-lg font-bold text-primary">2.41</p>
+</div>
+<div class="bg-primary/5 p-3 rounded-lg border border-primary/10">
+<p class="text-xs text-slate-400 uppercase">Alavancagem</p>
+<p class="text-lg font-bold text-slate-200">10x Max</p>
+</div>
+</div>
+<div class="flex items-center justify-between p-3 rounded-lg bg-background-dark border border-primary/20">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-sm">verified_user</span>
+<span class="text-xs font-medium text-slate-300">Risco Controlado QLS</span>
+</div>
+<span class="text-[10px] text-primary bg-primary/10 px-2 py-0.5 rounded-full">ATIVADO</span>
+</div>
+</div>
+<!-- Action Buttons -->
+<div class="p-6 pt-0 space-y-3">
+<button class="w-full bg-primary text-background-dark font-bold py-4 rounded-lg uppercase tracking-widest glow-button flex items-center justify-center gap-2">
+<span class="material-symbols-outlined">power_settings_new</span>
+                    Confirmar e Ativar
+                </button>
+<button class="w-full bg-transparent border border-primary/40 text-primary/80 font-medium py-3 rounded-lg">
+                    Cancelar
+                </button>
+</div>
+</div>
+</div>
+<!-- Bottom Navigation Bar (Visual Reference) -->
+<nav class="mt-auto border-t border-primary/10 bg-background-dark px-4 pb-8 pt-3 flex justify-around">
+<a class="flex flex-col items-center gap-1 text-primary" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="text-[10px] font-medium">Início</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-500" href="#">
+<span class="material-symbols-outlined">monitoring</span>
+<span class="text-[10px] font-medium">Mercados</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-500" href="#">
+<span class="material-symbols-outlined">account_balance_wallet</span>
+<span class="text-[10px] font-medium">Carteira</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-500" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="text-[10px] font-medium">Perfil</span>
+</a>
+</nav>
+</body></html>

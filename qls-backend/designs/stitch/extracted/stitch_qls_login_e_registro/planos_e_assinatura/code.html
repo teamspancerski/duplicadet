@@ -1,0 +1,215 @@
+<html class="dark"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#00ff66",
+                        "background-light": "#f5f8f7",
+                        "background-dark": "#0f2317",
+                        "glass": "rgba(23, 54, 35, 0.6)",
+                        "glass-border": "rgba(46, 107, 70, 0.4)"
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .glass-morphism {
+            background: rgba(23, 54, 35, 0.6);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(46, 107, 70, 0.4);
+        }
+        .ios-status-bar {
+            height: 44px;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 min-h-screen">
+<div class="relative flex min-h-screen w-full flex-col overflow-x-hidden pb-24">
+<!-- iOS Status Bar Spacer -->
+<div class="ios-status-bar w-full"></div>
+<!-- Header -->
+<div class="flex items-center p-4 justify-between sticky top-0 z-50 bg-background-dark/80 backdrop-blur-md">
+<div class="text-primary flex size-10 shrink-0 items-center justify-center rounded-full hover:bg-primary/10 transition-colors">
+<span class="material-symbols-outlined">arrow_back_ios</span>
+</div>
+<h2 class="text-slate-100 text-lg font-bold leading-tight tracking-tight flex-1 text-center pr-10">Planos e Assinatura</h2>
+</div>
+<!-- Webhook Status Section -->
+<div class="p-4 mx-4 mt-2 rounded-xl glass-morphism">
+<div class="flex flex-col gap-3">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-sm">settings_input_component</span>
+<p class="text-slate-100 text-base font-semibold leading-normal">Status do Webhook</p>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="relative flex h-2 w-2">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
+</span>
+<p class="text-primary text-sm font-medium">Ativo</p>
+</div>
+</div>
+<div class="w-full h-1.5 bg-slate-800 rounded-full overflow-hidden">
+<div class="h-full bg-primary" style="width: 100%;"></div>
+</div>
+<p class="text-slate-400 text-xs font-normal">Conexão ultra-rápida via QLS Quantum Node</p>
+</div>
+</div>
+<!-- Plans Grid -->
+<div class="flex flex-col gap-4 p-4 mt-4">
+<!-- Free Plan -->
+<div class="flex flex-col gap-4 rounded-xl glass-morphism p-6 relative overflow-hidden">
+<div class="flex flex-col gap-1">
+<h1 class="text-slate-400 text-sm font-medium uppercase tracking-wider">Free</h1>
+<div class="flex items-baseline gap-1">
+<span class="text-slate-100 text-4xl font-bold tracking-tighter">R$ 0</span>
+<span class="text-slate-400 text-base font-medium">/mês</span>
+</div>
+</div>
+<button class="w-full flex items-center justify-center rounded-lg h-12 bg-slate-800 text-slate-100 text-sm font-bold tracking-wide border border-slate-700">
+                    Plano Atual
+                </button>
+<div class="flex flex-col gap-3 border-t border-glass-border pt-4">
+<div class="flex items-center gap-3 text-sm text-slate-300">
+<span class="material-symbols-outlined text-primary text-[20px]">check_circle</span>
+                        Paper trading ilimitado
+                    </div>
+<div class="flex items-center gap-3 text-sm text-slate-300">
+<span class="material-symbols-outlined text-primary text-[20px]">check_circle</span>
+                        1 conexão de exchange
+                    </div>
+<div class="flex items-center gap-3 text-sm text-slate-300">
+<span class="material-symbols-outlined text-primary text-[20px]">check_circle</span>
+                        Gráficos básicos
+                    </div>
+</div>
+</div>
+<!-- Pro Plan (Active Look) -->
+<div class="flex flex-col gap-4 rounded-xl glass-morphism p-6 relative overflow-hidden border-2 border-primary/50 shadow-[0_0_20px_rgba(0,255,102,0.15)]">
+<div class="absolute top-0 right-0">
+<div class="bg-primary text-background-dark text-[10px] font-bold px-3 py-1 rounded-bl-lg uppercase tracking-widest">
+                        Recomendado
+                    </div>
+</div>
+<div class="flex flex-col gap-1">
+<h1 class="text-primary text-sm font-bold uppercase tracking-wider">Pro</h1>
+<div class="flex items-baseline gap-1">
+<span class="text-slate-100 text-4xl font-bold tracking-tighter">R$ 99</span>
+<span class="text-slate-400 text-base font-medium">/mês</span>
+</div>
+</div>
+<button class="w-full flex items-center justify-center rounded-lg h-12 bg-primary text-background-dark text-sm font-bold tracking-wide">
+                    Assinar Pro
+                </button>
+<div class="flex flex-col gap-3 border-t border-glass-border pt-4">
+<div class="flex items-center gap-3 text-sm text-slate-300">
+<span class="material-symbols-outlined text-primary text-[20px]">check_circle</span>
+                        Live trading (BUSD/USDT)
+                    </div>
+<div class="flex items-center gap-3 text-sm text-slate-300">
+<span class="material-symbols-outlined text-primary text-[20px]">check_circle</span>
+                        3 conexões de exchange
+                    </div>
+<div class="flex items-center gap-3 text-sm text-slate-300">
+<span class="material-symbols-outlined text-primary text-[20px]">check_circle</span>
+                        Sinais em tempo real
+                    </div>
+<div class="flex items-center gap-3 text-sm text-slate-300">
+<span class="material-symbols-outlined text-primary text-[20px]">check_circle</span>
+                        Baixa latência (Quantum)
+                    </div>
+</div>
+</div>
+<!-- Elite Plan -->
+<div class="flex flex-col gap-4 rounded-xl glass-morphism p-6 relative overflow-hidden">
+<div class="flex flex-col gap-1">
+<h1 class="text-slate-400 text-sm font-medium uppercase tracking-wider">Elite</h1>
+<div class="flex items-baseline gap-1">
+<span class="text-slate-100 text-4xl font-bold tracking-tighter">R$ 499</span>
+<span class="text-slate-400 text-base font-medium">/mês</span>
+</div>
+</div>
+<button class="w-full flex items-center justify-center rounded-lg h-12 glass-morphism text-slate-100 text-sm font-bold tracking-wide hover:bg-primary/20 transition-all">
+                    Assinar Elite
+                </button>
+<div class="flex flex-col gap-3 border-t border-glass-border pt-4">
+<div class="flex items-center gap-3 text-sm text-slate-300">
+<span class="material-symbols-outlined text-primary text-[20px]">check_circle</span>
+                        Multi-exchange simultâneo
+                    </div>
+<div class="flex items-center gap-3 text-sm text-slate-300">
+<span class="material-symbols-outlined text-primary text-[20px]">check_circle</span>
+                        Contas ilimitadas
+                    </div>
+<div class="flex items-center gap-3 text-sm text-slate-300">
+<span class="material-symbols-outlined text-primary text-[20px]">check_circle</span>
+                        API Prioritária QLS
+                    </div>
+<div class="flex items-center gap-3 text-sm text-slate-300">
+<span class="material-symbols-outlined text-primary text-[20px]">check_circle</span>
+                        Suporte VIP 24/7 (Discord)
+                    </div>
+</div>
+</div>
+</div>
+<!-- Billing Info -->
+<div class="px-6 py-4 mb-4">
+<h3 class="text-slate-100 text-lg font-bold leading-tight mb-4">Detalhes da Cobrança</h3>
+<div class="rounded-xl glass-morphism overflow-hidden">
+<div class="flex items-center justify-between p-4 border-b border-glass-border">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-slate-400">credit_card</span>
+<span class="text-sm text-slate-300">Método de pagamento</span>
+</div>
+<span class="text-sm text-slate-100 font-medium">Visa •••• 4242</span>
+</div>
+<div class="flex items-center justify-between p-4">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-slate-400">calendar_today</span>
+<span class="text-sm text-slate-300">Próxima renovação</span>
+</div>
+<span class="text-sm text-slate-100 font-medium">12 Set, 2024</span>
+</div>
+</div>
+</div>
+<!-- Bottom Navigation Bar -->
+<div class="fixed bottom-0 left-0 right-0 glass-morphism border-t-0 rounded-t-2xl z-[100] px-4 pb-8 pt-3 flex justify-between items-center">
+<a class="flex flex-col items-center gap-1 group" href="#">
+<span class="material-symbols-outlined text-slate-500 group-hover:text-primary transition-colors">grid_view</span>
+<p class="text-[10px] font-medium text-slate-500 group-hover:text-primary uppercase tracking-tighter">Início</p>
+</a>
+<a class="flex flex-col items-center gap-1 group" href="#">
+<span class="material-symbols-outlined text-slate-500 group-hover:text-primary transition-colors">show_chart</span>
+<p class="text-[10px] font-medium text-slate-500 group-hover:text-primary uppercase tracking-tighter">Trade</p>
+</a>
+<a class="flex flex-col items-center gap-1 group" href="#">
+<span class="material-symbols-outlined text-slate-500 group-hover:text-primary transition-colors">account_balance_wallet</span>
+<p class="text-[10px] font-medium text-slate-500 group-hover:text-primary uppercase tracking-tighter">Carteira</p>
+</a>
+<a class="flex flex-col items-center gap-1" href="#">
+<span class="material-symbols-outlined text-primary">person</span>
+<p class="text-[10px] font-medium text-primary uppercase tracking-tighter">Perfil</p>
+</a>
+</div>
+</div>
+</body></html>

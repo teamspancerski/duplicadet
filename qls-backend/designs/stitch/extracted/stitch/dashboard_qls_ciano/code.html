@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Dashboard QLS (Ciano)</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#13ecec",
+                        "background-light": "#f6f8f8",
+                        "background-dark": "#0a0a0a",
+                        "glass": "rgba(19, 236, 236, 0.1)",
+                        "glass-border": "rgba(19, 236, 236, 0.2)"
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .glass-morphism {
+            background: rgba(16, 34, 34, 0.6);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(19, 236, 236, 0.2);
+        }
+        .glow-primary {
+            box-shadow: 0 0 15px rgba(19, 236, 236, 0.3);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 min-h-screen flex flex-col pb-20">
+<header class="sticky top-0 z-50 glass-morphism border-b border-primary/20 px-4 py-4 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="size-10 rounded-full border border-primary/50 p-0.5">
+<div class="size-full rounded-full bg-cover bg-center" data-alt="User profile avatar with cyan accents" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCy2SC7_s8GHbx160_6vwDM5pzbdeUZSlVX-lkFx_gnUR_CZ9XxtgMMQpFxZ7jaWPT5TUIsbFJZb63VchFyHChYGIdmg7LwKqhRIn_EOSe1MMrSsbxGf_fVOU_bpYnp4zwf8-g-E61S1lzvGk10x-SKZmOQZkv3mnmmwcgS7ovnOelWqzSa29m8YIqEzFNR_VVhNC4DXdfTNkMFd_JHkrF4wgzuwM78U68fhkCRiQUcglJ2n29wF2s5z7JAxy6hFBIEJerAEi2o6lc')"></div>
+</div>
+<div>
+<h1 class="text-sm font-medium text-slate-400">Welcome back,</h1>
+<p class="text-base font-bold text-slate-100">Quantum Trader</p>
+</div>
+</div>
+<div class="flex gap-2">
+<button class="size-10 rounded-full flex items-center justify-center bg-primary/10 text-primary border border-primary/20 hover:bg-primary/20 transition-all">
+<span class="material-symbols-outlined text-[22px]">notifications</span>
+</button>
+</div>
+</header>
+<main class="p-4 space-y-4 max-w-md mx-auto w-full">
+<div class="relative overflow-hidden rounded-xl bg-gradient-to-br from-[#102222] to-black border border-primary/30 p-6 glow-primary">
+<div class="absolute top-0 right-0 p-4 opacity-20">
+<span class="material-symbols-outlined text-6xl text-primary">account_balance_wallet</span>
+</div>
+<div class="relative z-10">
+<p class="text-slate-400 text-sm font-medium uppercase tracking-wider">Total Portfolio Balance</p>
+<div class="flex items-baseline gap-2 mt-1">
+<h2 class="text-3xl font-bold text-slate-100">$42,850.20</h2>
+<span class="text-primary text-sm font-bold flex items-center bg-primary/10 px-2 py-0.5 rounded-full">
+<span class="material-symbols-outlined text-sm">trending_up</span> 5.2%
+                    </span>
+</div>
+<div class="mt-6 flex justify-between items-end">
+<div class="space-y-1">
+<p class="text-xs text-slate-500 uppercase">System UUID</p>
+<p class="text-sm font-mono text-primary">QLS-8829-QX</p>
+</div>
+<div class="flex items-center gap-1.5 text-xs text-emerald-400 bg-emerald-400/10 px-2 py-1 rounded-full border border-emerald-400/20">
+<span class="size-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                        Active Node
+                    </div>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-3">
+<div class="glass-morphism rounded-xl p-4 flex flex-col gap-2">
+<div class="size-8 rounded-lg bg-primary/20 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[20px]">target</span>
+</div>
+<div>
+<p class="text-slate-400 text-xs font-medium">Win Rate</p>
+<p class="text-lg font-bold text-slate-100">68.5%</p>
+</div>
+</div>
+<div class="glass-morphism rounded-xl p-4 flex flex-col gap-2">
+<div class="size-8 rounded-lg bg-primary/20 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[20px]">query_stats</span>
+</div>
+<div>
+<p class="text-slate-400 text-xs font-medium">Avg Trade</p>
+<p class="text-lg font-bold text-slate-100">+$120.40</p>
+</div>
+</div>
+</div>
+<div class="glass-morphism rounded-xl p-4 space-y-4">
+<div class="flex items-center justify-between">
+<h3 class="text-sm font-bold text-slate-100 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">show_chart</span>
+                    Quantum Liquidity Index
+                </h3>
+<span class="text-[10px] text-slate-500 bg-slate-800 px-2 py-0.5 rounded uppercase">Live (Ciano)</span>
+</div>
+<div class="h-48 w-full bg-[#050c0c] rounded-lg border border-primary/10 relative overflow-hidden group">
+<div class="absolute inset-0 bg-[linear-gradient(rgba(19,236,236,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(19,236,236,0.05)_1px,transparent_1px)] bg-[size:20px_20px]"></div>
+<svg class="absolute bottom-0 left-0 w-full h-32" preserveaspectratio="none" viewbox="0 0 400 100">
+<path d="M0,80 L40,75 L80,85 L120,60 L160,65 L200,40 L240,45 L280,20 L320,30 L360,10 L400,15 L400,100 L0,100 Z" fill="url(#grad1)"></path>
+<path d="M0,80 L40,75 L80,85 L120,60 L160,65 L200,40 L240,45 L280,20 L320,30 L360,10 L400,15" fill="none" stroke="#13ecec" stroke-width="2"></path>
+<defs>
+<lineargradient id="grad1" x1="0%" x2="0%" y1="0%" y2="100%">
+<stop offset="0%" style="stop-color:rgba(19,236,236,0.3);stop-opacity:1"></stop>
+<stop offset="100%" style="stop-color:rgba(19,236,236,0);stop-opacity:0"></stop>
+</lineargradient>
+</defs>
+</svg>
+<div class="absolute top-4 left-4 flex gap-2">
+<span class="text-[10px] font-mono text-primary bg-primary/10 px-1 rounded border border-primary/20">BTC/USDT</span>
+<span class="text-[10px] font-mono text-slate-400">1m</span>
+</div>
+</div>
+<div class="flex justify-between items-center text-xs text-slate-400 px-1">
+<div class="flex gap-4">
+<div class="flex items-center gap-1">
+<span class="size-2 rounded-full bg-primary"></span>
+<span>SMA 20</span>
+</div>
+<div class="flex items-center gap-1">
+<span class="size-2 rounded-full bg-slate-600"></span>
+<span>Vol: 14.2M</span>
+</div>
+</div>
+<p class="font-mono">Indicator: QL-Flow</p>
+</div>
+</div>
+<div class="glass-morphism rounded-xl overflow-hidden">
+<div class="p-4 border-b border-primary/10 flex justify-between items-center">
+<h3 class="text-sm font-bold text-slate-100">Active Trades</h3>
+<button class="text-xs text-primary font-medium">View All</button>
+</div>
+<div class="divide-y divide-primary/5">
+<div class="p-4 flex items-center justify-between hover:bg-primary/5 transition-colors">
+<div class="flex items-center gap-3">
+<div class="size-10 rounded-lg bg-emerald-500/10 flex items-center justify-center text-emerald-500">
+<span class="material-symbols-outlined">trending_up</span>
+</div>
+<div>
+<p class="text-sm font-bold text-slate-100">ETH/USDT Long</p>
+<p class="text-xs text-slate-500">2.54 ETH @ $2,450.22</p>
+</div>
+</div>
+<div class="text-right">
+<p class="text-sm font-bold text-emerald-400">+$240.15</p>
+<p class="text-[10px] text-slate-500">P/L (10.2%)</p>
+</div>
+</div>
+<div class="p-4 flex items-center justify-between hover:bg-primary/5 transition-colors">
+<div class="flex items-center gap-3">
+<div class="size-10 rounded-lg bg-rose-500/10 flex items-center justify-center text-rose-500">
+<span class="material-symbols-outlined">trending_down</span>
+</div>
+<div>
+<p class="text-sm font-bold text-slate-100">SOL/USDT Short</p>
+<p class="text-xs text-slate-500">150.0 SOL @ $102.44</p>
+</div>
+</div>
+<div class="text-right">
+<p class="text-sm font-bold text-rose-400">-$42.00</p>
+<p class="text-[10px] text-slate-500">P/L (-1.4%)</p>
+</div>
+</div>
+</div>
+</div>
+</main>
+<nav class="fixed bottom-0 left-0 right-0 z-50 glass-morphism border-t border-primary/20 safe-area-inset-bottom">
+<div class="max-w-md mx-auto flex justify-around items-center h-20 px-4">
+<a class="flex flex-col items-center gap-1 text-primary" href="#">
+<span class="material-symbols-outlined text-[26px] fill-[1]">grid_view</span>
+<span class="text-[10px] font-bold">Dashboard</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-500 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-[26px]">monitoring</span>
+<span class="text-[10px] font-medium">Markets</span>
+</a>
+<div class="relative -top-6">
+<button class="size-14 rounded-full bg-primary text-background-dark flex items-center justify-center shadow-[0_0_20px_rgba(19,236,236,0.5)]">
+<span class="material-symbols-outlined text-[32px] font-bold">swap_horiz</span>
+</button>
+</div>
+<a class="flex flex-col items-center gap-1 text-slate-500 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-[26px]">account_balance</span>
+<span class="text-[10px] font-medium">Assets</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-500 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-[26px]">settings</span>
+<span class="text-[10px] font-medium">Settings</span>
+</a>
+</div>
+</nav>
+</body></html>

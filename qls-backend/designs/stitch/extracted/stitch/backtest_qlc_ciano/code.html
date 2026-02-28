@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="pt-br"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Backtest QLC (Ciano)</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#00d4ff",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#0a0a0a",
+                        "glass": "rgba(255, 255, 255, 0.03)",
+                        "glass-border": "rgba(255, 255, 255, 0.1)",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .cyan-glow {
+            box-shadow: 0 0 15px rgba(0, 212, 255, 0.3);
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0a0a0a;
+        }
+        .chart-gradient {
+            background: linear-gradient(180deg, rgba(0, 212, 255, 0.1) 0%, rgba(0, 212, 255, 0) 100%);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 font-display min-h-screen flex flex-col overflow-x-hidden">
+<div class="flex items-center bg-background-dark/80 backdrop-blur-md sticky top-0 z-50 p-4 justify-between border-b border-white/5">
+<div class="text-slate-100 flex size-10 shrink-0 items-center justify-center rounded-full hover:bg-white/5 transition-colors">
+<span class="material-symbols-outlined">arrow_back_ios_new</span>
+</div>
+<h2 class="text-slate-100 text-lg font-bold leading-tight tracking-tight flex-1 text-center">Backtest QLC</h2>
+<div class="flex w-10 items-center justify-end">
+<button class="flex items-center justify-center rounded-lg h-10 w-10 bg-transparent text-slate-100 hover:bg-white/5 transition-colors">
+<span class="material-symbols-outlined">more_horiz</span>
+</button>
+</div>
+</div>
+<main class="flex-1 pb-24 overflow-y-auto">
+<div class="px-4 pt-6">
+<div class="glass-effect rounded-2xl p-4 mb-6 cyan-glow">
+<div class="flex items-center justify-between mb-4">
+<p class="text-primary text-sm font-semibold uppercase tracking-wider">Performance Live</p>
+<span class="text-xs text-slate-400">Últimos 30 dias</span>
+</div>
+<div class="relative h-32 w-full chart-gradient rounded-lg overflow-hidden border-b border-primary/20">
+<svg class="absolute bottom-0 left-0 w-full h-24" preserveaspectratio="none" viewbox="0 0 400 100">
+<path d="M0,80 Q50,40 100,60 T200,30 T300,50 T400,10" fill="none" stroke="#00d4ff" stroke-width="3"></path>
+</svg>
+<div class="absolute top-2 left-2 flex items-baseline gap-1">
+<span class="text-2xl font-bold text-slate-100">+12.4%</span>
+<span class="text-xs text-primary">ROI</span>
+</div>
+</div>
+</div>
+<h3 class="text-slate-100 text-lg font-bold leading-tight tracking-tight pb-4">Parâmetros de Execução</h3>
+<div class="glass-effect rounded-2xl p-4 mb-6">
+<div class="flex items-center p-1 justify-between mb-2">
+<button class="text-slate-100 flex size-10 items-center justify-center rounded-full hover:bg-white/5">
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+<p class="text-slate-100 text-base font-bold leading-tight flex-1 text-center">Outubro 2023</p>
+<button class="text-slate-100 flex size-10 items-center justify-center rounded-full hover:bg-white/5">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+<div class="grid grid-cols-7 text-center">
+<p class="text-slate-500 text-[11px] font-bold h-10 flex items-center justify-center">DOM</p>
+<p class="text-slate-500 text-[11px] font-bold h-10 flex items-center justify-center">SEG</p>
+<p class="text-slate-500 text-[11px] font-bold h-10 flex items-center justify-center">TER</p>
+<p class="text-slate-500 text-[11px] font-bold h-10 flex items-center justify-center">QUA</p>
+<p class="text-slate-500 text-[11px] font-bold h-10 flex items-center justify-center">QUI</p>
+<p class="text-slate-500 text-[11px] font-bold h-10 flex items-center justify-center">SEX</p>
+<p class="text-slate-500 text-[11px] font-bold h-10 flex items-center justify-center">SAB</p>
+<button class="h-10 w-full text-slate-400 text-sm font-medium opacity-30">29</button>
+<button class="h-10 w-full text-slate-400 text-sm font-medium opacity-30">30</button>
+<button class="h-10 w-full text-slate-100 text-sm font-medium">1</button>
+<button class="h-10 w-full text-slate-100 text-sm font-medium">2</button>
+<button class="h-10 w-full text-slate-100 text-sm font-medium">3</button>
+<button class="h-10 w-full text-slate-100 text-sm font-medium">4</button>
+<button class="h-10 w-full text-slate-100 text-sm font-medium">5</button>
+<button class="h-10 w-full text-background-dark bg-primary rounded-full text-sm font-bold cyan-glow">6</button>
+<button class="h-10 w-full bg-primary/10 text-slate-100 text-sm font-medium">7</button>
+<button class="h-10 w-full bg-primary/10 text-slate-100 text-sm font-medium">8</button>
+<button class="h-10 w-full bg-primary/10 text-slate-100 text-sm font-medium">9</button>
+<button class="h-10 w-full bg-primary/10 text-slate-100 text-sm font-medium">10</button>
+<button class="h-10 w-full bg-primary/10 text-slate-100 text-sm font-medium">11</button>
+<button class="h-10 w-full text-background-dark bg-primary rounded-full text-sm font-bold cyan-glow">12</button>
+<button class="h-10 w-full text-slate-100 text-sm font-medium">13</button>
+<button class="h-10 w-full text-slate-100 text-sm font-medium">14</button>
+<button class="h-10 w-full text-slate-100 text-sm font-medium">15</button>
+<button class="h-10 w-full text-slate-100 text-sm font-medium">16</button>
+<button class="h-10 w-full text-slate-100 text-sm font-medium">17</button>
+<button class="h-10 w-full text-slate-100 text-sm font-medium">18</button>
+<button class="h-10 w-full text-slate-100 text-sm font-medium">19</button>
+</div>
+</div>
+<div class="space-y-4">
+<div class="flex flex-col gap-2">
+<p class="text-slate-400 text-xs font-medium uppercase tracking-widest pl-1">Estratégia de Liquidez</p>
+<div class="relative">
+<select class="appearance-none glass-effect w-full rounded-xl text-slate-100 focus:outline-none focus:ring-1 focus:ring-primary/50 h-14 px-4 text-base font-medium">
+<option value="qlc_v1">QLS Quantum V1 (Ciano)</option>
+<option value="qlc_v2">QLS Scalper Pro</option>
+<option value="qlc_v3">Quantum Neutral</option>
+</select>
+<div class="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-slate-500">
+<span class="material-symbols-outlined">expand_more</span>
+</div>
+</div>
+</div>
+<div class="flex flex-col gap-2">
+<p class="text-slate-400 text-xs font-medium uppercase tracking-widest pl-1">Alocação de Capital (USD)</p>
+<div class="glass-effect rounded-xl h-14 px-4 flex items-center justify-between">
+<span class="text-slate-500 material-symbols-outlined">account_balance_wallet</span>
+<input class="bg-transparent border-none text-right text-slate-100 font-bold focus:ring-0 w-full text-lg" placeholder="50.000" type="number" value="50000"/>
+</div>
+</div>
+<button class="w-full h-14 bg-primary rounded-xl text-background-dark font-bold text-lg flex items-center justify-center gap-2 cyan-glow mt-8 active:scale-[0.98] transition-transform">
+<span class="material-symbols-outlined">play_arrow</span>
+                    INICIAR BACKTEST
+                </button>
+</div>
+</div>
+</main>
+<div class="fixed bottom-0 w-full border-t border-white/5 bg-background-dark/80 backdrop-blur-lg px-4 pb-8 pt-3">
+<div class="flex justify-around items-center max-w-md mx-auto">
+<a class="flex flex-col items-center gap-1 text-slate-500 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-[28px]">dashboard</span>
+<p class="text-[10px] font-bold">DASHBOARD</p>
+</a>
+<a class="flex flex-col items-center gap-1 text-primary" href="#">
+<span class="material-symbols-outlined text-[28px] fill-current">history</span>
+<p class="text-[10px] font-bold">BACKTEST</p>
+</a>
+<div class="relative -top-6">
+<button class="flex items-center justify-center size-14 bg-primary rounded-full text-background-dark cyan-glow">
+<span class="material-symbols-outlined text-[32px]">add</span>
+</button>
+</div>
+<a class="flex flex-col items-center gap-1 text-slate-500 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-[28px]">account_balance_wallet</span>
+<p class="text-[10px] font-bold">PORTFOLIO</p>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-500 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-[28px]">settings</span>
+<p class="text-[10px] font-bold">CONFIG</p>
+</a>
+</div>
+</div>
+</body></html>

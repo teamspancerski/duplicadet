@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Onboarding Tour QLS</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#00ff88",
+                        "background-light": "#f5f8f7",
+                        "background-dark": "#0a0a0a",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .glass {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .glass-heavy {
+            background: rgba(10, 10, 10, 0.8);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(0, 255, 136, 0.2);
+        }
+        .overlay-dark {
+            background: rgba(0, 0, 0, 0.7);
+        }
+        .neon-glow {
+            box-shadow: 0 0 15px rgba(0, 255, 136, 0.4);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 min-h-screen relative overflow-hidden">
+<!-- Background Dashboard (Darkened) -->
+<div class="absolute inset-0 z-0 flex flex-col pointer-events-none opacity-40">
+<!-- Header -->
+<div class="flex items-center p-4 justify-between border-b border-white/5">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">analytics</span>
+<h2 class="text-lg font-bold tracking-tight">QLS Quantum</h2>
+</div>
+<div class="size-10 rounded-full bg-white/10"></div>
+</div>
+<!-- Cards Section -->
+<div class="flex gap-4 p-4">
+<div class="flex-1 p-6 rounded-xl bg-white/5 border border-white/10">
+<p class="text-sm opacity-60">Total Equity</p>
+<p class="text-2xl font-bold">$124,500</p>
+</div>
+<div class="flex-1 p-6 rounded-xl bg-white/5 border border-white/10">
+<p class="text-sm opacity-60">Active Bots</p>
+<p class="text-2xl font-bold">8/10</p>
+</div>
+</div>
+<!-- Asset Management Title -->
+<div class="px-4 py-2">
+<div class="h-6 w-40 bg-white/10 rounded"></div>
+</div>
+<!-- Chart Placeholder -->
+<div class="px-4 py-4">
+<div class="h-48 w-full bg-white/5 rounded-xl border border-white/10 relative overflow-hidden">
+<div class="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-primary/10 to-transparent"></div>
+</div>
+</div>
+<!-- List Section -->
+<div class="px-4 space-y-3">
+<div class="h-16 w-full bg-white/5 rounded-xl border border-white/10"></div>
+<div class="h-16 w-full bg-white/5 rounded-xl border border-white/10"></div>
+</div>
+</div>
+<!-- Overlay Mask for Spotlight Effect -->
+<div class="absolute inset-0 z-10 overlay-dark">
+<!-- Spotlight on Asset Management Section -->
+<div class="absolute top-[260px] left-4 right-4 h-64 rounded-xl border-2 border-primary neon-glow bg-transparent"></div>
+</div>
+<!-- Floating Tooltip (Onboarding Step) -->
+<div class="absolute z-20 top-[400px] left-1/2 -translate-x-1/2 w-[90%] max-w-sm">
+<div class="glass-heavy rounded-xl p-6 shadow-2xl relative">
+<!-- Arrow up -->
+<div class="absolute -top-3 left-1/2 -translate-x-1/2 w-6 h-6 rotate-45 glass-heavy border-t border-l border-primary/20"></div>
+<div class="flex justify-between items-start mb-4">
+<div class="bg-primary/20 text-primary px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">Step 1 of 5</div>
+<button class="text-slate-400 hover:text-white">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<h3 class="text-xl font-bold text-white mb-2">Asset Management</h3>
+<p class="text-slate-300 text-sm leading-relaxed mb-6">
+                Monitor your real-time performance and portfolio distribution. Our AI-driven engine provides a granular view of your liquidity health.
+            </p>
+<div class="flex items-center justify-between">
+<!-- Progress Indicators -->
+<div class="flex gap-1.5">
+<div class="h-1.5 w-6 rounded-full bg-primary"></div>
+<div class="h-1.5 w-2 rounded-full bg-white/20"></div>
+<div class="h-1.5 w-2 rounded-full bg-white/20"></div>
+<div class="h-1.5 w-2 rounded-full bg-white/20"></div>
+<div class="h-1.5 w-2 rounded-full bg-white/20"></div>
+</div>
+<div class="flex gap-3">
+<button class="px-4 py-2 text-sm font-medium text-slate-400">Skip</button>
+<button class="bg-primary text-background-dark px-6 py-2 rounded-lg font-bold text-sm flex items-center gap-2 hover:brightness-110 active:scale-95 transition-all">
+                        Next
+                        <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Bottom Navigation Bar (Blurred/Inactive) -->
+<div class="fixed bottom-0 left-0 right-0 z-30 pb-8 px-4 pt-4 glass border-t border-white/10 opacity-60">
+<div class="flex justify-around items-center">
+<div class="flex flex-col items-center gap-1 text-primary">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="text-[10px] font-medium">Dashboard</span>
+</div>
+<div class="flex flex-col items-center gap-1 text-slate-400">
+<span class="material-symbols-outlined">smart_toy</span>
+<span class="text-[10px] font-medium">Bots</span>
+</div>
+<div class="flex flex-col items-center gap-1 text-slate-400">
+<span class="material-symbols-outlined">bar_chart</span>
+<span class="text-[10px] font-medium">Trade</span>
+</div>
+<div class="flex flex-col items-center gap-1 text-slate-400">
+<span class="material-symbols-outlined">person</span>
+<span class="text-[10px] font-medium">Profile</span>
+</div>
+</div>
+</div>
+<!-- Decorative elements -->
+<div class="absolute -top-20 -right-20 w-64 h-64 bg-primary/10 rounded-full blur-[100px] z-0"></div>
+<div class="absolute -bottom-20 -left-20 w-64 h-64 bg-primary/5 rounded-full blur-[100px] z-0"></div>
+</body></html>

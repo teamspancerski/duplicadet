@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="pt-br"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>QLS - Scanner de Pares</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#00ff66",
+                        "background-light": "#f5f8f7",
+                        "background-dark": "#0a0a0a",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+            -webkit-tap-highlight-color: transparent;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(0, 255, 102, 0.1);
+        }
+        .neon-glow {
+            box-shadow: 0 0 15px rgba(0, 255, 102, 0.15);
+        }
+        .ios-status-bar {
+            height: 44px;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 min-h-screen flex flex-col max-w-md mx-auto relative overflow-x-hidden">
+<!-- Header / iOS Top Bar -->
+<div class="ios-status-bar flex items-center justify-between px-6 pt-4">
+<span class="text-sm font-semibold">9:41</span>
+<div class="flex gap-1.5 items-center">
+<span class="material-symbols-outlined text-[18px]">signal_cellular_4_bar</span>
+<span class="material-symbols-outlined text-[18px]">wifi</span>
+<span class="material-symbols-outlined text-[20px]">battery_full</span>
+</div>
+</div>
+<!-- Main Navigation Header -->
+<header class="flex items-center justify-between p-4 mt-2">
+<div class="flex items-center gap-3">
+<div class="size-10 rounded-full bg-primary/10 border border-primary/20 flex items-center justify-center neon-glow">
+<span class="material-symbols-outlined text-primary">orbit</span>
+</div>
+<div>
+<h1 class="text-xl font-bold tracking-tight">Scanner <span class="text-primary text-sm font-medium ml-1">QLS</span></h1>
+<p class="text-[10px] text-slate-400 uppercase tracking-widest">Quantum Liquidity</p>
+</div>
+</div>
+<button class="size-10 rounded-full glass-card flex items-center justify-center">
+<span class="material-symbols-outlined text-slate-400">notifications</span>
+</button>
+</header>
+<!-- Filters Section -->
+<section class="px-4 py-4">
+<div class="flex items-center justify-between mb-3">
+<h2 class="text-sm font-semibold text-slate-400 uppercase tracking-wider">Filtros Ativos</h2>
+<span class="text-[10px] bg-primary/20 text-primary px-2 py-0.5 rounded-full border border-primary/30">LIVE</span>
+</div>
+<div class="flex gap-2 overflow-x-auto pb-2 no-scrollbar">
+<button class="flex shrink-0 items-center gap-2 rounded-lg glass-card px-4 py-2 border-primary/40 bg-primary/5">
+<span class="text-xs font-medium text-primary">Volume &gt; $10M</span>
+<span class="material-symbols-outlined text-xs text-primary">expand_more</span>
+</button>
+<button class="flex shrink-0 items-center gap-2 rounded-lg glass-card px-4 py-2">
+<span class="text-xs font-medium text-slate-300">ATR &gt; 2%</span>
+<span class="material-symbols-outlined text-xs text-slate-500">expand_more</span>
+</button>
+<button class="flex shrink-0 items-center gap-2 rounded-lg glass-card px-4 py-2">
+<span class="text-xs font-medium text-slate-300">Temporal: 4H</span>
+<span class="material-symbols-outlined text-xs text-slate-500">expand_more</span>
+</button>
+</div>
+</section>
+<!-- Pairs List -->
+<main class="flex-1 px-4 pb-24 overflow-y-auto">
+<div class="flex items-end justify-between mb-4">
+<h3 class="text-lg font-bold">Top 5 Pares</h3>
+<span class="text-xs text-slate-500">Atualizado agora</span>
+</div>
+<div class="space-y-3">
+<!-- Pair 1 -->
+<div class="glass-card rounded-xl p-4 relative overflow-hidden">
+<div class="absolute top-0 right-0 w-32 h-32 bg-primary/5 blur-3xl -mr-16 -mt-16 rounded-full"></div>
+<div class="flex justify-between items-start mb-4">
+<div class="flex items-center gap-3">
+<div class="flex -space-x-2">
+<div class="size-8 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center overflow-hidden">
+<img class="size-5" data-alt="Logotipo do Bitcoin" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAfMI-6VWC0is_AsPZpivG7ToPmCzsTc-WzzhL7ZFO2OtRXq8nHkuR01Xu-coOvHn6xdesiU3LnZPjLugK80mT5roOj0t7iczgUfGS8Ev-uKMbzIC97ZwPBL1yYR2DeWLjIbEH4ZJTHchCWVMZuSSSkGxyIDQVbLfRwFwqohr-ild9I-TNxsZKujDWQ7Ooj0Z4WwbkcI1xXfChpmCYYC4IcDg8OWMnh1ZzRXSTzgY3WzNeDWxXrPtbbY3HgLmgX-TafaVFXQE1wE3M"/>
+</div>
+<div class="size-8 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center overflow-hidden">
+<img class="size-5" data-alt="Logotipo do Tether USDT" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCM0F5nj9eVC3ocHjtV7-XGh5IpGJXYsGb2e_ZjJnBah_j2xjqB10ZunT8C7pGgGy01dwUn69n_LksKo5ZCreZJNVat_fMckwnK0-FoKj6Iozw2XcVnszFhCovHRUgXhTtK6Sk4N_Z-KhpzCWIZBBE8_r8A2B2AlZ1b5cFWj9NKtieoGU74P_LIuTLmuGARcGn_TpEB56xH-Dcp6T0F9jmvCMl-qiVD9aHNT66S1FNmpJ77Li9kLxvly89QOaZmOSFu-HxsKI_1CjM"/>
+</div>
+</div>
+<div>
+<p class="font-bold text-sm">BTC / USDT</p>
+<p class="text-[10px] text-slate-500">Volume 24h: $45.2M</p>
+</div>
+</div>
+<div class="text-right">
+<p class="text-primary font-bold text-sm">+3.42%</p>
+<p class="text-[10px] text-slate-500">ATR: 4.12%</p>
+</div>
+</div>
+<div class="space-y-2">
+<div class="flex justify-between text-[10px] text-slate-400 mb-1">
+<span>Score de Liquidez</span>
+<span class="text-primary">94/100</span>
+</div>
+<div class="h-1.5 w-full bg-white/5 rounded-full overflow-hidden">
+<div class="h-full bg-primary neon-glow" style="width: 94%"></div>
+</div>
+</div>
+</div>
+<!-- Pair 2 -->
+<div class="glass-card rounded-xl p-4">
+<div class="flex justify-between items-start mb-4">
+<div class="flex items-center gap-3">
+<div class="flex -space-x-2">
+<div class="size-8 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center overflow-hidden">
+<img class="size-5" data-alt="Logotipo do Ethereum" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBDvprakFEFKkNrdsPj3dnyvzGBOXlVaXz-NfIh7KU-OxIMpGr39Po9JECxzNwU2qoAqjtfAHBMjJpNkWjt9gZ4TsnLN2P0R_ZaCUqA4K6Zt4H2Aayn9f1Vy6YK_9zBjdMk_w8OSNW37Pfjs_l5_HImgSYOdDkfywK7BCiwfVwKqP-4MqP_pcqywP5DBrSity2Bxi6cv6VmBjAd9zUfkWeBNQSCIL7yrtZx2QgaFjnqoYYGELlElwe8oAwYyqymmO-jEN-6EgCwDuA"/>
+</div>
+<div class="size-8 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center overflow-hidden">
+<img class="size-5" data-alt="Logotipo do Tether USDT" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDW-P0k369RYyGR7bxaH8DSlyjzkEIFwl9gYSvyQMxGVhx9IZKClDbKUAfFTabLF3YWiJBvUDI7uBVqZTnevrJX0MgNk-sQKFnFkgUCVddQ4GOwfFRuyKLJqbuBygNS2uN-PcZXt_ti_po6UVewjeOsVgITd7gU5RzD9Vx49izAarfAQlyONFxQgNR-nGMOUyIN06OMsErntdSzFeNsYFtHy_dIihJyS-juR66vJhZ4ZjnGivH2s9JbOAGC1-ClZEqsOqgQXqXInbk"/>
+</div>
+</div>
+<div>
+<p class="font-bold text-sm">ETH / USDT</p>
+<p class="text-[10px] text-slate-500">Volume 24h: $28.7M</p>
+</div>
+</div>
+<div class="text-right">
+<p class="text-primary font-bold text-sm">+1.15%</p>
+<p class="text-[10px] text-slate-500">ATR: 3.55%</p>
+</div>
+</div>
+<div class="space-y-2">
+<div class="flex justify-between text-[10px] text-slate-400 mb-1">
+<span>Score de Liquidez</span>
+<span class="text-primary">82/100</span>
+</div>
+<div class="h-1.5 w-full bg-white/5 rounded-full overflow-hidden">
+<div class="h-full bg-primary/60" style="width: 82%"></div>
+</div>
+</div>
+</div>
+<!-- Pair 3 -->
+<div class="glass-card rounded-xl p-4">
+<div class="flex justify-between items-start mb-4">
+<div class="flex items-center gap-3">
+<div class="flex -space-x-2">
+<div class="size-8 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center overflow-hidden">
+<img class="size-5" data-alt="Logotipo da Solana" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDbVJ5krUI6k_7nDA1OxnOnRnXZdynt9Bl0RP_CabstslgfgaSmOy5F2_VCo8XyP6g3rzWyl1vx3QinAVSJhHmfhpT8OADY344WjiqSFaEDqxi9xtJLkGCNOCk-pZnwLp563I9FsZ9G4QK8fO-qdfBiX08AcFLEeezRatXYRrkxiNVRctauAEINEVwllSnZcO3vW2WWYFxkNIDxccIFf6oblBCgmBHpjnnfr5kyQ-Oi-Wkz2Ad92GdiIQo7eIEE2powYgBMz9K05y4"/>
+</div>
+<div class="size-8 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center overflow-hidden">
+<img class="size-5" data-alt="Logotipo do Tether USDT" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBE1nxX_NIUCTPT5thgvK4o-iu3HFNE2UvpyFhbA4T4WauMBe1aEVJQiF98iWc2rZS1qyzfA1f6VLS0xo--oODWFlMVrQtZ7aarJm1JehlMt9aSa6csp7KaiT6mbngK4wUTlWEmsW4zTpt7pTKDjxLNF0pzF-QcpOVKC8wX2pb3UeRqX9rRpS5IEe5lzg3DSxtP5UEy3GdtjA74LkgGmA8Y4e5cbSbfbnzU6_7Hd-HKRoeWrq-x_rlxJooAljb42YEO_49Ct11h6Jg"/>
+</div>
+</div>
+<div>
+<p class="font-bold text-sm">SOL / USDT</p>
+<p class="text-[10px] text-slate-500">Volume 24h: $21.4M</p>
+</div>
+</div>
+<div class="text-right">
+<p class="text-red-400 font-bold text-sm">-0.82%</p>
+<p class="text-[10px] text-slate-500">ATR: 5.21%</p>
+</div>
+</div>
+<div class="space-y-2">
+<div class="flex justify-between text-[10px] text-slate-400 mb-1">
+<span>Score de Liquidez</span>
+<span class="text-primary">76/100</span>
+</div>
+<div class="h-1.5 w-full bg-white/5 rounded-full overflow-hidden">
+<div class="h-full bg-primary/60" style="width: 76%"></div>
+</div>
+</div>
+</div>
+<!-- Pair 4 -->
+<div class="glass-card rounded-xl p-4">
+<div class="flex justify-between items-start mb-4">
+<div class="flex items-center gap-3">
+<div class="flex -space-x-2">
+<div class="size-8 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center overflow-hidden">
+<img class="size-5" data-alt="Logotipo da Cardano" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAp3Qo5xF12hCrFj8Z53EC3MCDF43W-vNu7_nEpkKS0bLpZN8mSXsnGOsZLY_cZdWGEAO410t7nda0PPr7_XfMbu1n3oIdHqJ1rjPdyzu9sOdRjrAx7qIxAbIlonoXDGPl_vxEcTeks43aZ6yhY3GyLhU4iDruodI2uyg6UA8etMua8NMmckQPiESyOJH0p5h7XiNPPCNEgUx3iLimLFIuBlHV8wUmcOKWATUndMzzmQW1I5UsMcq5mAxVxrhFU0iJKKJ5rCcEMQZE"/>
+</div>
+<div class="size-8 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center overflow-hidden">
+<img class="size-5" data-alt="Logotipo do Tether USDT" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDMA4mxBgARaZzjZToLDZKFPErGH-3hwC3zO01q2WsSET8A2Oayzeu6zgBVYtZUIOlrOc8CU-70bYxXpCSqGqjL4Kk1q8HE3tAvxjCrxBacCfGiG5KHjPZbAf8gXZVDvs76g1TRMeWlFFq0t66b05tstFldZmBVcjFwgx62zepf_RXNU_UEboQzN4m1XZZ-_ld7smyEO6uRt0do9T2W6ZLLK2tiz5nEdoqX5K5_V8l_69GMvFAn-ZUlxMxqsml6C9U6yEUyaRr0ReA"/>
+</div>
+</div>
+<div>
+<p class="font-bold text-sm">ADA / USDT</p>
+<p class="text-[10px] text-slate-500">Volume 24h: $12.9M</p>
+</div>
+</div>
+<div class="text-right">
+<p class="text-primary font-bold text-sm">+2.11%</p>
+<p class="text-[10px] text-slate-500">ATR: 2.88%</p>
+</div>
+</div>
+<div class="space-y-2">
+<div class="flex justify-between text-[10px] text-slate-400 mb-1">
+<span>Score de Liquidez</span>
+<span class="text-primary">61/100</span>
+</div>
+<div class="h-1.5 w-full bg-white/5 rounded-full overflow-hidden">
+<div class="h-full bg-primary/60" style="width: 61%"></div>
+</div>
+</div>
+</div>
+<!-- Pair 5 -->
+<div class="glass-card rounded-xl p-4">
+<div class="flex justify-between items-start mb-4">
+<div class="flex items-center gap-3">
+<div class="flex -space-x-2">
+<div class="size-8 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center overflow-hidden">
+<img class="size-5" data-alt="Logotipo da Polygon" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAbKvrOm-jzRz23qowPfpwqMwN7j7fmhnjHyzLY5Aua0Xzcj9RCrFR8FKQRkDvPC4tmncjgwhw7_phSR9tuCJCnKiOpExpkjo3ztCCphN85O1einPcxr--o85DIfqpj2Tit-iZ_8MxZK2jNsfnCA5KNhl5EHLJVuTkDGJ-tTb-lehtj12_YqsuGxGCa4GoOVuPCWbk_UiL7gciKgWR3jHwad1UQyWZbTSnTsZDQ3zQ1zbwmnxdsQ58ZpPeiWiRT3Swu4ycmhfloCp0"/>
+</div>
+<div class="size-8 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center overflow-hidden">
+<img class="size-5" data-alt="Logotipo do Tether USDT" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAO8T6EYof2AwJpAD6hyK6-t4YJZpM4tPWJ-ssMJplRGPlM9xzh7zMoQEYDJMMUV-Do1FuSE0_tOgpMFvaIHUFFqZJquyPP8EgT42MnuLa3fDz1r1oApu2pw1tSbY8yVBHm9IMWwJhWWcsvuE_Hrhstr4nu2IZH00-OPlsKngC8tzbGZZz5VB0GbNMFDWGls2yBslgheQglk1Ya5EvNIxMh999xNuWBHXodm2lrxUqG3JrntliLXAjwgczEY_ejLIjnmNPXUI0Ft_Q"/>
+</div>
+</div>
+<div>
+<p class="font-bold text-sm">MATIC / USDT</p>
+<p class="text-[10px] text-slate-500">Volume 24h: $10.2M</p>
+</div>
+</div>
+<div class="text-right">
+<p class="text-primary font-bold text-sm">+0.45%</p>
+<p class="text-[10px] text-slate-500">ATR: 2.15%</p>
+</div>
+</div>
+<div class="space-y-2">
+<div class="flex justify-between text-[10px] text-slate-400 mb-1">
+<span>Score de Liquidez</span>
+<span class="text-primary">54/100</span>
+</div>
+<div class="h-1.5 w-full bg-white/5 rounded-full overflow-hidden">
+<div class="h-full bg-primary/40" style="width: 54%"></div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Bottom Navigation Bar -->
+<nav class="fixed bottom-0 left-0 right-0 max-w-md mx-auto glass-card border-t border-primary/20 bg-background-dark/80 px-6 pb-8 pt-4 rounded-t-3xl flex justify-between items-center z-50">
+<a class="flex flex-col items-center gap-1 group" href="#">
+<span class="material-symbols-outlined text-slate-500 group-hover:text-primary transition-colors">dashboard</span>
+<span class="text-[10px] text-slate-500 group-hover:text-primary">Início</span>
+</a>
+<a class="flex flex-col items-center gap-1 group text-primary" href="#">
+<span class="material-symbols-outlined text-primary fill-current">query_stats</span>
+<span class="text-[10px] font-medium">Scanner</span>
+</a>
+<div class="relative -top-8">
+<button class="size-14 bg-primary text-black rounded-full flex items-center justify-center shadow-[0_0_20px_rgba(0,255,102,0.4)]">
+<span class="material-symbols-outlined font-bold text-2xl">add</span>
+</button>
+</div>
+<a class="flex flex-col items-center gap-1 group" href="#">
+<span class="material-symbols-outlined text-slate-500 group-hover:text-primary transition-colors">account_balance_wallet</span>
+<span class="text-[10px] text-slate-500 group-hover:text-primary">Carteira</span>
+</a>
+<a class="flex flex-col items-center gap-1 group" href="#">
+<span class="material-symbols-outlined text-slate-500 group-hover:text-primary transition-colors">person</span>
+<span class="text-[10px] text-slate-500 group-hover:text-primary">Perfil</span>
+</a>
+</nav>
+<!-- Decoration Glows -->
+<div class="fixed top-0 left-0 w-full h-full pointer-events-none z-[-1] overflow-hidden">
+<div class="absolute top-[20%] -left-20 w-64 h-64 bg-primary/10 blur-[100px] rounded-full"></div>
+<div class="absolute bottom-[20%] -right-20 w-80 h-80 bg-primary/5 blur-[120px] rounded-full"></div>
+</div>
+</body></html>

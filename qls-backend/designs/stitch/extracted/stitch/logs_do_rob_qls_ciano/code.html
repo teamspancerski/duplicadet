@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="pt-BR"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Logs do Robô QLS (Ciano)</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#00d4ff",
+                        "background-light": "#f6f8f8",
+                        "background-dark": "#0a0a0a",
+                        "surface-dark": "#121212",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"],
+                        "mono": ["JetBrains Mono", "monospace"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .glass {
+            background: rgba(18, 18, 18, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(0, 212, 255, 0.1);
+        }
+        .scanline {
+            width: 100%;
+            height: 2px;
+            background: rgba(0, 212, 255, 0.1);
+            position: absolute;
+            bottom: 0;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 font-display selection:bg-primary/30">
+<div class="relative flex h-screen w-full flex-col overflow-hidden max-w-[430px] mx-auto border-x border-primary/10 shadow-2xl">
+<!-- Header -->
+<div class="flex items-center glass p-4 pb-4 justify-between sticky top-0 z-20">
+<div class="text-primary flex size-10 shrink-0 items-center justify-center rounded-full hover:bg-primary/10 cursor-pointer">
+<span class="material-symbols-outlined">arrow_back_ios_new</span>
+</div>
+<div class="flex flex-col items-center">
+<h2 class="text-slate-100 text-lg font-bold leading-tight tracking-tight uppercase italic">Robô QLS <span class="text-primary font-mono text-xs not-italic border border-primary/40 px-1 rounded ml-1">V2.4</span></h2>
+<p class="text-[10px] text-primary/70 font-mono tracking-widest uppercase">Quantum Liquidity Systems</p>
+</div>
+<div class="flex w-10 items-center justify-end">
+<button class="flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">terminal</span>
+</button>
+</div>
+</div>
+<!-- Search & Filters -->
+<div class="px-4 py-4 space-y-4 bg-background-dark/50 border-b border-primary/10">
+<label class="flex flex-col w-full">
+<div class="flex w-full items-stretch rounded-lg h-11 glass border-primary/30 focus-within:border-primary transition-colors">
+<div class="text-primary/60 flex items-center justify-center pl-4">
+<span class="material-symbols-outlined text-xl">search</span>
+</div>
+<input class="form-input flex w-full flex-1 border-none bg-transparent text-slate-100 focus:ring-0 placeholder:text-slate-500 text-sm font-mono" placeholder="FILTRAR LOGS (CIANO)..."/>
+</div>
+</label>
+<div class="flex gap-2 overflow-x-auto pb-1 no-scrollbar">
+<button class="flex h-8 shrink-0 items-center justify-center gap-x-1 rounded-full bg-primary text-background-dark px-4 text-xs font-bold uppercase tracking-wider">
+                    Todos
+                </button>
+<button class="flex h-8 shrink-0 items-center justify-center gap-x-1 rounded-full glass px-4 text-xs font-medium text-slate-400 uppercase tracking-wider border-primary/20">
+                    Execução
+                </button>
+<button class="flex h-8 shrink-0 items-center justify-center gap-x-1 rounded-full glass px-4 text-xs font-medium text-slate-400 uppercase tracking-wider border-primary/20">
+                    API
+                </button>
+<button class="flex h-8 shrink-0 items-center justify-center gap-x-1 rounded-full glass px-4 text-xs font-medium text-slate-400 uppercase tracking-wider border-primary/20">
+                    Erros
+                </button>
+</div>
+</div>
+<!-- KPI Cards -->
+<div class="flex gap-3 p-4 overflow-x-auto no-scrollbar">
+<div class="flex min-w-[120px] flex-col gap-1 rounded-xl glass p-4 border-l-2 border-l-primary shadow-lg shadow-primary/5">
+<p class="text-slate-400 text-[10px] font-bold uppercase tracking-widest">Status</p>
+<p class="text-primary text-xl font-bold leading-tight font-mono">LIVE</p>
+<div class="flex items-center gap-1">
+<span class="size-1.5 rounded-full bg-primary animate-pulse"></span>
+<p class="text-primary/70 text-[10px] font-mono">Synced</p>
+</div>
+</div>
+<div class="flex min-w-[120px] flex-col gap-1 rounded-xl glass p-4 border-l-2 border-l-primary/30">
+<p class="text-slate-400 text-[10px] font-bold uppercase tracking-widest">Latência</p>
+<p class="text-slate-100 text-xl font-bold leading-tight font-mono">12ms</p>
+<p class="text-primary text-[10px] font-mono font-medium">+2ms</p>
+</div>
+<div class="flex min-w-[120px] flex-col gap-1 rounded-xl glass p-4 border-l-2 border-l-primary/30">
+<p class="text-slate-400 text-[10px] font-bold uppercase tracking-widest">Uptime</p>
+<p class="text-slate-100 text-xl font-bold leading-tight font-mono">99.9%</p>
+<p class="text-primary text-[10px] font-mono font-medium">Stable</p>
+</div>
+</div>
+<!-- Log List -->
+<div class="flex-1 overflow-y-auto px-4 pb-20 space-y-2 font-mono text-[11px] leading-relaxed">
+<div class="p-3 glass rounded-lg border-primary/5 bg-primary/[0.02]">
+<div class="flex justify-between mb-1">
+<span class="text-primary/50">14:02:11.842</span>
+<span class="text-primary bg-primary/10 px-1 rounded uppercase font-bold text-[9px]">API_ROTATION</span>
+</div>
+<p class="text-slate-300">Switching endpoint to <span class="text-primary">wss://stream.qls.io/v3/mainnet</span></p>
+</div>
+<div class="p-3 glass rounded-lg border-primary/5">
+<div class="flex justify-between mb-1">
+<span class="text-primary/50">14:02:12.105</span>
+<span class="text-primary bg-primary/10 px-1 rounded uppercase font-bold text-[9px]">ORDER_EXEC</span>
+</div>
+<p class="text-slate-300">BUY <span class="text-primary font-bold">BTC/USDT</span> @ 64,210.50 | SIZE: 0.15</p>
+<p class="text-slate-500 mt-1 italic border-l border-primary/20 pl-2">Strategy: Quantum_Impulse_V4</p>
+</div>
+<div class="p-3 glass rounded-lg border-primary/5">
+<div class="flex justify-between mb-1">
+<span class="text-primary/50">14:02:15.331</span>
+<span class="text-emerald-400 bg-emerald-400/10 px-1 rounded uppercase font-bold text-[9px]">SUCCESS</span>
+</div>
+<p class="text-slate-300">Order ID <span class="text-primary">#QLS-9921</span> filled successfully.</p>
+</div>
+<div class="p-3 glass rounded-lg border-red-500/20 bg-red-500/[0.02]">
+<div class="flex justify-between mb-1">
+<span class="text-primary/50">14:02:18.002</span>
+<span class="text-red-500 bg-red-500/10 px-1 rounded uppercase font-bold text-[9px]">WARNING</span>
+</div>
+<p class="text-slate-300">Liquidity gap detected on Kraken pool. Skipping route.</p>
+</div>
+<div class="p-3 glass rounded-lg border-primary/5">
+<div class="flex justify-between mb-1">
+<span class="text-primary/50">14:02:22.459</span>
+<span class="text-primary bg-primary/10 px-1 rounded uppercase font-bold text-[9px]">HEARTBEAT</span>
+</div>
+<p class="text-slate-400">All modules operational. Memory usage: 442MB.</p>
+</div>
+<div class="p-3 glass rounded-lg border-primary/5">
+<div class="flex justify-between mb-1">
+<span class="text-primary/50">14:02:30.111</span>
+<span class="text-primary bg-primary/10 px-1 rounded uppercase font-bold text-[9px]">DATA_STREAM</span>
+</div>
+<p class="text-slate-300">Ingesting block <span class="text-primary">#19482021</span>. 142 txs processed.</p>
+</div>
+<div class="p-3 glass rounded-lg border-primary/5">
+<div class="flex justify-between mb-1">
+<span class="text-primary/50">14:02:35.782</span>
+<span class="text-primary bg-primary/10 px-1 rounded uppercase font-bold text-[9px]">SIGNAL</span>
+</div>
+<p class="text-slate-300 font-bold">ALPHA SIGNAL GENERATED: <span class="text-primary">LONG_GAMMA_SURGE</span></p>
+</div>
+</div>
+<!-- Bottom Navigation -->
+<div class="fixed bottom-0 left-0 right-0 max-w-[430px] mx-auto z-30 glass border-t border-primary/20 px-6 pb-6 pt-3 flex justify-between items-center rounded-t-2xl">
+<a class="flex flex-col items-center gap-1 group" href="#">
+<span class="material-symbols-outlined text-slate-500 group-hover:text-primary transition-colors">grid_view</span>
+<span class="text-[10px] font-bold uppercase tracking-widest text-slate-500 group-hover:text-primary transition-colors">Hub</span>
+</a>
+<a class="flex flex-col items-center gap-1 group" href="#">
+<span class="material-symbols-outlined text-slate-500 group-hover:text-primary transition-colors">show_chart</span>
+<span class="text-[10px] font-bold uppercase tracking-widest text-slate-500 group-hover:text-primary transition-colors">Stats</span>
+</a>
+<div class="relative -top-8">
+<div class="absolute inset-0 bg-primary/20 blur-xl rounded-full"></div>
+<button class="relative bg-primary text-background-dark size-14 rounded-full flex items-center justify-center shadow-lg shadow-primary/40 border-4 border-background-dark">
+<span class="material-symbols-outlined text-3xl font-bold">terminal</span>
+</button>
+</div>
+<a class="flex flex-col items-center gap-1 group" href="#">
+<span class="material-symbols-outlined text-slate-500 group-hover:text-primary transition-colors">settings_input_component</span>
+<span class="text-[10px] font-bold uppercase tracking-widest text-slate-500 group-hover:text-primary transition-colors">API</span>
+</a>
+<a class="flex flex-col items-center gap-1 group" href="#">
+<span class="material-symbols-outlined text-slate-500 group-hover:text-primary transition-colors">account_circle</span>
+<span class="text-[10px] font-bold uppercase tracking-widest text-slate-500 group-hover:text-primary transition-colors">User</span>
+</a>
+</div>
+</div>
+</body></html>

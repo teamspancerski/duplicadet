@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="pt-BR"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Perfil do Usuário - QLS Quantum Liquidity</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#0dccf2",
+                        "background-light": "#f5f8f8",
+                        "background-dark": "#101f22",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+        }
+        .neon-glow {
+            box-shadow: 0 0 15px rgba(13, 204, 242, 0.3);
+        }
+        .glass-panel {
+            background: rgba(13, 204, 242, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(13, 204, 242, 0.1);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 min-h-screen flex flex-col">
+<!-- Top Header -->
+<header class="flex items-center justify-between p-4 sticky top-0 z-50 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md border-b border-primary/10">
+<button class="p-2 hover:bg-primary/10 rounded-full transition-colors">
+<span class="material-symbols-outlined text-primary">arrow_back_ios_new</span>
+</button>
+<h1 class="text-xl font-bold tracking-tight text-slate-900 dark:text-slate-100 uppercase">Perfil do Usuário</h1>
+<button class="p-2 hover:bg-primary/10 rounded-full transition-colors">
+<span class="material-symbols-outlined text-primary">settings</span>
+</button>
+</header>
+<main class="flex-1 overflow-y-auto pb-24">
+<!-- Profile Header Section -->
+<section class="flex flex-col items-center p-6 gap-4">
+<div class="relative">
+<div class="size-32 rounded-full border-2 border-primary p-1 neon-glow">
+<div class="w-full h-full rounded-full bg-center bg-cover" data-alt="Futuristic cybernetic avatar portrait in blue tones" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBpwb9SMp_ZcoUS3hlbbb2Tlj-l5YpZx0MoV4cOqEEuub2ydYkRBQuNv99N_7e8J67iSjeIwHMR2ZONQRJkobRrxW37bHFvdx2Rj1VVlpsyt2o8t5-6p5BkkFtKacNUJhdasRoZyz8G6GEPeGy2rkUPtdA77OcC8HNrT8Bgmk4-2WroIuPkBpFzo2bp6BGQIbQZJkkrsbzXBQt3Ap3UhLp6ZHmLa8cHBbcxjgabCvXcD7WFipCXibrdo4dKgG4vLw8CGWwSxYv5pi8');">
+</div>
+</div>
+<div class="absolute bottom-1 right-1 bg-primary text-background-dark rounded-full p-1 border-2 border-background-dark">
+<span class="material-symbols-outlined text-sm block" style="font-variation-settings: 'FILL' 1">verified</span>
+</div>
+</div>
+<div class="text-center">
+<h2 class="text-2xl font-bold tracking-tighter text-slate-900 dark:text-slate-100">CyberTrader_QLS</h2>
+<div class="flex items-center justify-center gap-2 mt-1">
+<span class="text-xs font-mono py-0.5 px-2 bg-primary/20 text-primary rounded border border-primary/30">UUID: 8829-QX-1092</span>
+</div>
+<p class="text-sm text-primary/80 mt-2 font-medium">Verified Pro Member • Variant 18/19</p>
+</div>
+<div class="flex w-full max-w-xs gap-3 mt-2">
+<button class="flex-1 h-11 bg-primary text-background-dark font-bold rounded-lg flex items-center justify-center gap-2 transition-transform active:scale-95 shadow-lg shadow-primary/20">
+<span class="material-symbols-outlined text-sm">edit</span>
+                    Editar
+                </button>
+<button class="flex-1 h-11 bg-primary/10 text-primary border border-primary/30 font-bold rounded-lg flex items-center justify-center gap-2 transition-transform active:scale-95">
+<span class="material-symbols-outlined text-sm">share</span>
+                    Compartilhar
+                </button>
+</div>
+</section>
+<!-- Balance Section -->
+<section class="px-4 py-2 grid grid-cols-2 gap-4">
+<div class="glass-panel p-5 rounded-xl flex flex-col gap-1 border-l-4 border-l-primary">
+<span class="text-xs uppercase tracking-widest text-slate-500 dark:text-slate-400 font-bold">Demo Balance</span>
+<span class="text-xl font-bold font-mono text-slate-900 dark:text-slate-100">$50,000.00</span>
+<div class="flex items-center gap-1 text-emerald-500 text-xs font-bold mt-1">
+<span class="material-symbols-outlined text-sm">trending_up</span>
+                    +0.00%
+                </div>
+</div>
+<div class="glass-panel p-5 rounded-xl flex flex-col gap-1 border-l-4 border-l-primary/30">
+<span class="text-xs uppercase tracking-widest text-slate-500 dark:text-slate-400 font-bold">Live Equity</span>
+<span class="text-xl font-bold font-mono text-slate-900 dark:text-slate-100">0.00</span>
+<div class="flex items-center gap-1 text-slate-400 text-xs font-bold mt-1">
+<span class="material-symbols-outlined text-sm">horizontal_rule</span>
+                    0.00%
+                </div>
+</div>
+</section>
+<!-- Management Menu -->
+<section class="mt-6 px-4">
+<h3 class="text-xs uppercase tracking-widest text-primary font-black mb-4 px-2">Gerenciamento de Conta</h3>
+<div class="flex flex-col gap-1">
+<a class="flex items-center justify-between p-4 glass-panel rounded-lg hover:bg-primary/5 group transition-all" href="#">
+<div class="flex items-center gap-4">
+<div class="size-10 rounded-lg bg-primary/10 flex items-center justify-center text-primary group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined">account_balance_wallet</span>
+</div>
+<div>
+<p class="font-bold text-slate-900 dark:text-slate-100">Fontes de Financiamento</p>
+<p class="text-xs text-slate-500 dark:text-slate-400">Gerencie cartões e carteiras crypto</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-slate-400">chevron_right</span>
+</a>
+<a class="flex items-center justify-between p-4 glass-panel rounded-lg hover:bg-primary/5 group transition-all mt-2" href="#">
+<div class="flex items-center gap-4">
+<div class="size-10 rounded-lg bg-primary/10 flex items-center justify-center text-primary group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined">security</span>
+</div>
+<div>
+<p class="font-bold text-slate-900 dark:text-slate-100">Segurança &amp; 2FA</p>
+<p class="text-xs text-slate-500 dark:text-slate-400">Biometria e chaves quânticas</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-slate-400">chevron_right</span>
+</a>
+<a class="flex items-center justify-between p-4 glass-panel rounded-lg hover:bg-primary/5 group transition-all mt-2" href="#">
+<div class="flex items-center gap-4">
+<div class="size-10 rounded-lg bg-primary/10 flex items-center justify-center text-primary group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined">analytics</span>
+</div>
+<div>
+<p class="font-bold text-slate-900 dark:text-slate-100">Relatórios Mensais</p>
+<p class="text-xs text-slate-500 dark:text-slate-400">Exportar histórico de trading</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-slate-400">chevron_right</span>
+</a>
+<a class="flex items-center justify-between p-4 glass-panel rounded-lg hover:bg-primary/5 group transition-all mt-2" href="#">
+<div class="flex items-center gap-4">
+<div class="size-10 rounded-lg bg-red-500/10 flex items-center justify-center text-red-500 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined">logout</span>
+</div>
+<div>
+<p class="font-bold text-red-500">Encerrar Sessão</p>
+<p class="text-xs text-red-500/60">Sair da conta atual</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-red-500/40">logout</span>
+</a>
+</div>
+</section>
+</main>
+<!-- Bottom Navigation Bar -->
+<nav class="fixed bottom-0 w-full bg-background-light dark:bg-background-dark border-t border-primary/10 px-6 py-3 pb-8 flex items-center justify-between backdrop-blur-md">
+<a class="flex flex-col items-center gap-1 text-slate-500 dark:text-slate-400 transition-colors" href="#">
+<span class="material-symbols-outlined">show_chart</span>
+<span class="text-[10px] font-bold uppercase tracking-tighter">Trade</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-500 dark:text-slate-400 transition-colors" href="#">
+<span class="material-symbols-outlined">language</span>
+<span class="text-[10px] font-bold uppercase tracking-tighter">Markets</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-500 dark:text-slate-400 transition-colors" href="#">
+<span class="material-symbols-outlined">work</span>
+<span class="text-[10px] font-bold uppercase tracking-tighter">Portfolio</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-primary transition-colors" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1">person</span>
+<span class="text-[10px] font-bold uppercase tracking-tighter">Profile</span>
+</a>
+</nav>
+</body></html>

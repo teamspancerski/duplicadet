@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="pt-br"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Logs do Robô QLS</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              colors: {
+                "primary": "#00ff88",
+                "background-light": "#f5f8f7",
+                "background-dark": "#0a0a0a",
+                "glass": "rgba(255, 255, 255, 0.03)",
+                "glass-border": "rgba(255, 255, 255, 0.1)",
+              },
+              fontFamily: {
+                "display": ["Space Grotesk", "sans-serif"],
+                "mono": ["JetBrains Mono", "monospace"]
+              },
+              borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+            },
+          },
+        }
+    </script>
+<style>
+        .glassmorphism {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+            -webkit-tap-highlight-color: transparent;
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: rgba(0, 255, 136, 0.2);
+            border-radius: 10px;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 min-h-screen flex flex-col">
+<!-- Header / Status Bar -->
+<header class="sticky top-0 z-50 glassmorphism px-4 pt-12 pb-4 border-b border-glass-border">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-2xl">arrow_back_ios</span>
+<div>
+<h1 class="text-xl font-bold tracking-tight">Logs do Robô QLS</h1>
+<div class="flex items-center gap-1.5">
+<span class="relative flex h-2 w-2">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
+</span>
+<span class="text-[10px] uppercase tracking-widest text-primary/80 font-bold">Quantum Liquidity Engine v4.2</span>
+</div>
+</div>
+</div>
+<button class="w-10 h-10 rounded-full flex items-center justify-center bg-primary/10 border border-primary/20">
+<span class="material-symbols-outlined text-primary">terminal</span>
+</button>
+</div>
+</header>
+<!-- Main Content -->
+<main class="flex-1 overflow-y-auto px-4 py-6 space-y-6 custom-scrollbar">
+<!-- Stats Row -->
+<div class="grid grid-cols-3 gap-3">
+<div class="glassmorphism p-3 rounded-xl flex flex-col gap-1">
+<span class="text-[10px] uppercase text-slate-400 font-medium">Uptime</span>
+<span class="text-lg font-bold text-primary">99.98%</span>
+</div>
+<div class="glassmorphism p-3 rounded-xl flex flex-col gap-1">
+<span class="text-[10px] uppercase text-slate-400 font-medium">Latência</span>
+<span class="text-lg font-bold text-primary">14ms</span>
+</div>
+<div class="glassmorphism p-3 rounded-xl flex flex-col gap-1">
+<span class="text-[10px] uppercase text-slate-400 font-medium">Status</span>
+<span class="text-lg font-bold text-primary">Online</span>
+</div>
+</div>
+<!-- Search and Filters -->
+<div class="space-y-4">
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-xl">search</span>
+<input class="w-full bg-glass border border-glass-border rounded-xl py-3 pl-10 pr-4 text-sm focus:outline-none focus:ring-1 focus:ring-primary/50 placeholder:text-slate-500" placeholder="Filtrar logs (ex: 'API', 'Error')" type="text"/>
+</div>
+<div class="flex gap-2 overflow-x-auto pb-2 no-scrollbar">
+<button class="px-4 py-2 rounded-full bg-primary text-background-dark text-xs font-bold whitespace-nowrap">Todos</button>
+<button class="px-4 py-2 rounded-full glassmorphism text-xs font-medium whitespace-nowrap border-red-500/30 text-red-400">Erros</button>
+<button class="px-4 py-2 rounded-full glassmorphism text-xs font-medium whitespace-nowrap border-yellow-500/30 text-yellow-400">Avisos</button>
+<button class="px-4 py-2 rounded-full glassmorphism text-xs font-medium whitespace-nowrap border-primary/30 text-primary">Sucesso</button>
+<button class="px-4 py-2 rounded-full glassmorphism text-xs font-medium whitespace-nowrap text-slate-400">API</button>
+</div>
+</div>
+<!-- Log List -->
+<div class="space-y-3">
+<!-- Log Entry: Success -->
+<div class="glassmorphism rounded-xl p-3 border-l-4 border-l-primary flex gap-3">
+<div class="flex-1 space-y-1">
+<div class="flex justify-between items-center">
+<span class="text-[10px] font-mono text-slate-500">14:22:01.342</span>
+<span class="px-1.5 py-0.5 rounded text-[9px] bg-primary/20 text-primary font-bold uppercase tracking-tighter">Success</span>
+</div>
+<p class="text-sm font-mono leading-relaxed text-slate-200">
+<span class="text-primary opacity-60">cmd:</span> order_executed_limit BTCUSDT 0.45@64.231
+                    </p>
+</div>
+</div>
+<!-- Log Entry: Warning -->
+<div class="glassmorphism rounded-xl p-3 border-l-4 border-l-yellow-500 flex gap-3">
+<div class="flex-1 space-y-1">
+<div class="flex justify-between items-center">
+<span class="text-[10px] font-mono text-slate-500">14:21:58.109</span>
+<span class="px-1.5 py-0.5 rounded text-[9px] bg-yellow-500/20 text-yellow-500 font-bold uppercase tracking-tighter">Warning</span>
+</div>
+<p class="text-sm font-mono leading-relaxed text-slate-200">
+<span class="text-yellow-500 opacity-60">api:</span> rotation_needed provider_binance_sg timeout_threshold_reached
+                    </p>
+</div>
+</div>
+<!-- Log Entry: Error -->
+<div class="glassmorphism rounded-xl p-3 border-l-4 border-l-red-500 flex gap-3">
+<div class="flex-1 space-y-1">
+<div class="flex justify-between items-center">
+<span class="text-[10px] font-mono text-slate-500">14:21:55.002</span>
+<span class="px-1.5 py-0.5 rounded text-[9px] bg-red-500/20 text-red-500 font-bold uppercase tracking-tighter">Critical</span>
+</div>
+<p class="text-sm font-mono leading-relaxed text-slate-200">
+<span class="text-red-500 opacity-60">error:</span> connection_refused 0x442 socket_hang_up [retrying_in_2s]
+                    </p>
+</div>
+</div>
+<!-- Log Entry: Info/Success -->
+<div class="glassmorphism rounded-xl p-3 border-l-4 border-l-primary flex gap-3">
+<div class="flex-1 space-y-1">
+<div class="flex justify-between items-center">
+<span class="text-[10px] font-mono text-slate-500">14:21:50.887</span>
+<span class="px-1.5 py-0.5 rounded text-[9px] bg-primary/20 text-primary font-bold uppercase tracking-tighter">System</span>
+</div>
+<p class="text-sm font-mono leading-relaxed text-slate-200">
+<span class="text-primary opacity-60">sys:</span> memory_optimization_triggered gc_collected 42.1MB
+                    </p>
+</div>
+</div>
+<!-- Log Entry: Warning -->
+<div class="glassmorphism rounded-xl p-3 border-l-4 border-l-yellow-500 flex gap-3">
+<div class="flex-1 space-y-1">
+<div class="flex justify-between items-center">
+<span class="text-[10px] font-mono text-slate-500">14:21:44.221</span>
+<span class="px-1.5 py-0.5 rounded text-[9px] bg-yellow-500/20 text-yellow-500 font-bold uppercase tracking-tighter">Warning</span>
+</div>
+<p class="text-sm font-mono leading-relaxed text-slate-200">
+<span class="text-yellow-500 opacity-60">liquidity:</span> spread_widening_detected 0.12% -&gt; 0.45% volatility_spike
+                    </p>
+</div>
+</div>
+<!-- Log Entry: Success -->
+<div class="glassmorphism rounded-xl p-3 border-l-4 border-l-primary flex gap-3">
+<div class="flex-1 space-y-1">
+<div class="flex justify-between items-center">
+<span class="text-[10px] font-mono text-slate-500">14:21:40.100</span>
+<span class="px-1.5 py-0.5 rounded text-[9px] bg-primary/20 text-primary font-bold uppercase tracking-tighter">Order</span>
+</div>
+<p class="text-sm font-mono leading-relaxed text-slate-200">
+<span class="text-primary opacity-60">cmd:</span> hedging_position_closed profit_+2.4% net_gain_0.012ETH
+                    </p>
+</div>
+</div>
+<!-- Log Entry: Success -->
+<div class="glassmorphism rounded-xl p-3 border-l-4 border-l-primary flex gap-3">
+<div class="flex-1 space-y-1">
+<div class="flex justify-between items-center">
+<span class="text-[10px] font-mono text-slate-500">14:21:38.012</span>
+<span class="px-1.5 py-0.5 rounded text-[9px] bg-primary/20 text-primary font-bold uppercase tracking-tighter">API</span>
+</div>
+<p class="text-sm font-mono leading-relaxed text-slate-200">
+<span class="text-primary opacity-60">api:</span> rot_succ primary_node_restored latency_stabilized
+                    </p>
+</div>
+</div>
+</div>
+</main>
+<!-- Bottom Navigation Bar -->
+<nav class="glassmorphism border-t border-glass-border px-6 pb-8 pt-4">
+<div class="flex justify-between items-center max-w-md mx-auto">
+<a class="flex flex-col items-center gap-1 text-slate-400" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="text-[10px] font-medium uppercase tracking-widest">Dashboard</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-primary" href="#">
+<span class="material-symbols-outlined fill-1">terminal</span>
+<span class="text-[10px] font-medium uppercase tracking-widest">Logs</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-400" href="#">
+<span class="material-symbols-outlined">analytics</span>
+<span class="text-[10px] font-medium uppercase tracking-widest">Stats</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-400" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="text-[10px] font-medium uppercase tracking-widest">Config</span>
+</a>
+</div>
+</nav>
+<!-- Background Decoration -->
+<div class="fixed top-[-10%] right-[-10%] w-[50%] h-[30%] bg-primary/10 blur-[120px] rounded-full -z-10"></div>
+<div class="fixed bottom-[-10%] left-[-10%] w-[50%] h-[30%] bg-primary/5 blur-[100px] rounded-full -z-10"></div>
+</body></html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="pt-BR"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#00ff88",
+                        "background-light": "#f5f8f7",
+                        "background-dark": "#0a0a0a",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(0, 255, 136, 0.1);
+        }
+        .neon-glow:focus-within {
+            box-shadow: 0 0 15px rgba(0, 255, 136, 0.3);
+            border-color: #00ff88;
+        }
+        .neon-button {
+            box-shadow: 0 0 20px rgba(0, 255, 136, 0.2);
+        }
+        .neon-button:active {
+            transform: scale(0.98);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 antialiased">
+<div class="relative flex h-screen w-full flex-col overflow-x-hidden p-6">
+<div class="flex items-center justify-between mb-12">
+<button class="text-slate-100 flex size-10 items-center justify-center rounded-full bg-primary/10">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<div class="flex-1"></div>
+</div>
+<div class="flex flex-col items-center justify-center mb-10">
+<div class="relative w-24 h-24 mb-6 flex items-center justify-center">
+<div class="absolute inset-0 bg-primary/20 rounded-full blur-2xl"></div>
+<div class="relative z-10 text-primary">
+<span class="material-symbols-outlined !text-6xl">query_stats</span>
+</div>
+</div>
+<h1 class="text-3xl font-bold tracking-tight text-white mb-2">QLS Quantum</h1>
+<p class="text-primary text-sm font-medium tracking-[0.2em] uppercase">Liquidity Systems</p>
+</div>
+<div class="glass-panel rounded-xl p-8 flex flex-col gap-6">
+<div class="text-center">
+<h2 class="text-2xl font-bold text-white mb-3">Redefinir Senha</h2>
+<p class="text-slate-400 text-sm leading-relaxed">
+                    Insira seu e-mail de cadastro. Enviaremos um link seguro para você recuperar o acesso aos seus trades quânticos.
+                </p>
+</div>
+<div class="flex flex-col gap-2">
+<label class="text-primary text-xs font-bold uppercase tracking-widest px-1">E-mail Corporativo</label>
+<div class="neon-glow flex w-full items-stretch rounded-xl border border-primary/20 bg-black/40 transition-all duration-300">
+<div class="flex items-center justify-center pl-4 text-slate-500">
+<span class="material-symbols-outlined">alternate_email</span>
+</div>
+<input class="form-input flex w-full border-none bg-transparent h-14 text-white placeholder:text-slate-600 focus:ring-0 text-base" placeholder="nome@empresa.com" type="email"/>
+</div>
+</div>
+<button class="neon-button w-full bg-primary hover:bg-primary/90 text-background-dark font-bold py-4 rounded-xl transition-all flex items-center justify-center gap-2">
+<span>ENVIAR LINK DE RECUPERAÇÃO</span>
+<span class="material-symbols-outlined">send</span>
+</button>
+</div>
+<div class="mt-auto pb-8 text-center">
+<p class="text-slate-500 text-sm">
+                Lembrou sua senha? 
+                <a class="text-primary font-bold ml-1" href="#">Fazer Login</a>
+</p>
+</div>
+<div class="fixed bottom-0 left-0 w-full h-[300px] pointer-events-none opacity-20 -z-10 overflow-hidden">
+<div class="absolute bottom-[-100px] left-[-100px] w-[400px] h-[400px] bg-primary/30 rounded-full blur-[120px]"></div>
+<div class="absolute bottom-[-50px] right-[-50px] w-[300px] h-[300px] bg-primary/10 rounded-full blur-[100px]"></div>
+</div>
+</div>
+<div class="hidden">
+<div data-alt="Abstract dark grid pattern with green glowing lines representing market data" data-location="London" style=""></div>
+</div>
+</body></html>

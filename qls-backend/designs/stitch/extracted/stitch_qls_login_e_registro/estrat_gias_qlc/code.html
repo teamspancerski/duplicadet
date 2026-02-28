@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="pt-br"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Estratégias QLC</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#00ff66",
+                        "background-light": "#f5f8f7",
+                        "background-dark": "#0f2317",
+                        "glass": "rgba(23, 54, 35, 0.4)",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .glass-morphism {
+            background: rgba(23, 54, 35, 0.4);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(0, 255, 102, 0.1);
+        }
+        .neon-glow {
+            box-shadow: 0 0 15px rgba(0, 255, 102, 0.3);
+        }
+        input[type="range"] {
+            -webkit-appearance: none;
+            background: transparent;
+        }
+        input[type="range"]::-webkit-slider-runnable-track {
+            width: 100%;
+            height: 4px;
+            background: #204b31;
+            border-radius: 2px;
+        }
+        input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            height: 16px;
+            width: 16px;
+            border-radius: 50%;
+            background: #00ff66;
+            margin-top: -6px;
+            box-shadow: 0 0 8px rgba(0, 255, 102, 0.6);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 min-h-screen pb-24">
+<!-- Header -->
+<header class="sticky top-0 z-50 glass-morphism px-4 py-4 flex items-center justify-between border-b border-primary/10">
+<button class="flex items-center justify-center text-slate-100">
+<span class="material-symbols-outlined">arrow_back_ios</span>
+</button>
+<h1 class="text-lg font-bold tracking-tight text-white">Estratégias QLC</h1>
+<button class="flex items-center justify-center text-slate-100">
+<span class="material-symbols-outlined">settings</span>
+</button>
+</header>
+<main class="p-4 space-y-6">
+<!-- Robot Status Card -->
+<section class="glass-morphism rounded-xl p-5 flex items-center justify-between neon-glow">
+<div class="flex flex-col gap-1">
+<h2 class="text-white text-base font-bold">Status do Robô</h2>
+<p class="text-primary/70 text-sm font-normal">Operações automáticas quânticas</p>
+</div>
+<label class="relative flex h-8 w-14 cursor-pointer items-center rounded-full bg-slate-800/50 p-1 transition-colors duration-300 has-[:checked]:bg-primary">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="h-6 w-6 rounded-full bg-white shadow-lg transition-transform duration-300 peer-checked:translate-x-6"></div>
+</label>
+</section>
+<!-- Sliders Controls -->
+<section class="glass-morphism rounded-xl p-5 space-y-8">
+<!-- Investment Amount -->
+<div class="space-y-4">
+<div class="flex justify-between items-center">
+<span class="text-slate-300 text-sm font-medium">Montante de Investimento</span>
+<span class="text-primary font-bold text-lg">$10.000</span>
+</div>
+<input class="w-full h-1" max="50000" min="1000" type="range" value="10000"/>
+</div>
+<!-- Risk per Trade -->
+<div class="space-y-4">
+<div class="flex justify-between items-center">
+<span class="text-slate-300 text-sm font-medium">Risco por Operação</span>
+<span class="text-primary font-bold text-lg">1%</span>
+</div>
+<input class="w-full h-1" max="5" min="0.1" step="0.1" type="range" value="1"/>
+</div>
+<!-- Timeframe -->
+<div class="space-y-4">
+<div class="flex justify-between items-center">
+<span class="text-slate-300 text-sm font-medium">Tempo de Execução</span>
+<span class="text-primary font-bold text-lg">4h</span>
+</div>
+<div class="flex gap-2">
+<button class="flex-1 py-2 rounded-lg border border-primary/20 bg-primary/10 text-primary text-xs font-bold">1h</button>
+<button class="flex-1 py-2 rounded-lg border border-primary bg-primary text-background-dark text-xs font-bold">4h</button>
+<button class="flex-1 py-2 rounded-lg border border-primary/20 bg-primary/10 text-primary text-xs font-bold">12h</button>
+<button class="flex-1 py-2 rounded-lg border border-primary/20 bg-primary/10 text-primary text-xs font-bold">1d</button>
+</div>
+</div>
+</section>
+<!-- Extra Toggle -->
+<section class="glass-morphism rounded-xl p-5 flex items-center justify-between">
+<div class="flex flex-col gap-1">
+<h2 class="text-white text-base font-bold">Modo Ping-Pong</h2>
+<p class="text-slate-400 text-xs font-normal">Scalping de alta frequência em range</p>
+</div>
+<label class="relative flex h-6 w-11 cursor-pointer items-center rounded-full bg-slate-800/50 p-1 transition-colors duration-300 has-[:checked]:bg-primary/60">
+<input class="sr-only peer" type="checkbox"/>
+<div class="h-4 w-4 rounded-full bg-white transition-transform duration-300 peer-checked:translate-x-5"></div>
+</label>
+</section>
+<!-- Top Score Pairs List -->
+<section class="space-y-4">
+<h3 class="text-white text-sm font-bold uppercase tracking-widest px-1">Top 5 Pares (Quantum Score)</h3>
+<div class="space-y-2">
+<!-- Pair 1 -->
+<div class="glass-morphism rounded-lg p-3 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-sm">currency_bitcoin</span>
+</div>
+<div>
+<p class="text-white font-bold text-sm">BTC/USDT</p>
+<p class="text-slate-500 text-[10px]">Volatilidade: Baixa</p>
+</div>
+</div>
+<div class="text-right">
+<p class="text-primary font-bold">98</p>
+<div class="w-16 h-1 bg-slate-800 rounded-full overflow-hidden">
+<div class="h-full bg-primary" style="width: 98%"></div>
+</div>
+</div>
+</div>
+<!-- Pair 2 -->
+<div class="glass-morphism rounded-lg p-3 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-sm">eco</span>
+</div>
+<div>
+<p class="text-white font-bold text-sm">ETH/USDT</p>
+<p class="text-slate-500 text-[10px]">Volatilidade: Média</p>
+</div>
+</div>
+<div class="text-right">
+<p class="text-primary font-bold">85</p>
+<div class="w-16 h-1 bg-slate-800 rounded-full overflow-hidden">
+<div class="h-full bg-primary" style="width: 85%"></div>
+</div>
+</div>
+</div>
+<!-- Pair 3 -->
+<div class="glass-morphism rounded-lg p-3 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-sm">token</span>
+</div>
+<div>
+<p class="text-white font-bold text-sm">SOL/USDT</p>
+<p class="text-slate-500 text-[10px]">Volatilidade: Alta</p>
+</div>
+</div>
+<div class="text-right">
+<p class="text-primary font-bold">72</p>
+<div class="w-16 h-1 bg-slate-800 rounded-full overflow-hidden">
+<div class="h-full bg-primary" style="width: 72%"></div>
+</div>
+</div>
+</div>
+<!-- Pair 4 -->
+<div class="glass-morphism rounded-lg p-3 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-sm">account_balance_wallet</span>
+</div>
+<div>
+<p class="text-white font-bold text-sm">BNB/USDT</p>
+<p class="text-slate-500 text-[10px]">Volatilidade: Baixa</p>
+</div>
+</div>
+<div class="text-right">
+<p class="text-primary font-bold">64</p>
+<div class="w-16 h-1 bg-slate-800 rounded-full overflow-hidden">
+<div class="h-full bg-primary" style="width: 64%"></div>
+</div>
+</div>
+</div>
+<!-- Pair 5 -->
+<div class="glass-morphism rounded-lg p-3 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-sm">monetization_on</span>
+</div>
+<div>
+<p class="text-white font-bold text-sm">XRP/USDT</p>
+<p class="text-slate-500 text-[10px]">Volatilidade: Estável</p>
+</div>
+</div>
+<div class="text-right">
+<p class="text-primary font-bold">59</p>
+<div class="w-16 h-1 bg-slate-800 rounded-full overflow-hidden">
+<div class="h-full bg-primary" style="width: 59%"></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Bottom Navigation Bar -->
+<nav class="fixed bottom-0 left-0 right-0 z-50 glass-morphism border-t border-primary/20 pb-6 pt-2">
+<div class="flex items-center justify-around">
+<a class="flex flex-col items-center gap-1 text-slate-400" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="text-[10px] font-medium uppercase tracking-tighter">Início</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-primary" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1">target</span>
+<span class="text-[10px] font-medium uppercase tracking-tighter">Estratégias</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-400" href="#">
+<span class="material-symbols-outlined">account_balance_wallet</span>
+<span class="text-[10px] font-medium uppercase tracking-tighter">Carteira</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-400" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="text-[10px] font-medium uppercase tracking-tighter">Perfil</span>
+</a>
+</div>
+</nav>
+</body></html>

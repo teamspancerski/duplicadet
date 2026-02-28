@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="pt-BR"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Scanner de Pares (Cyan Mode) - QLS</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#0dccf2",
+                        "background-light": "#f5f8f8",
+                        "background-dark": "#101f22",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .glass-card {
+            background: rgba(13, 204, 242, 0.05);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(13, 204, 242, 0.1);
+        }
+        .neon-glow {
+            box-shadow: 0 0 15px rgba(13, 204, 242, 0.4);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 antialiased selection:bg-primary/30">
+<div class="relative flex min-h-screen w-full flex-col max-w-[430px] mx-auto bg-background-light dark:bg-background-dark shadow-2xl overflow-hidden border-x border-slate-200 dark:border-slate-800">
+<header class="sticky top-0 z-20 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md px-4 pt-6 pb-4">
+<div class="flex items-center justify-between mb-6">
+<button class="flex items-center justify-center size-10 rounded-full hover:bg-slate-200 dark:hover:bg-slate-800 transition-colors">
+<span class="material-symbols-outlined text-slate-900 dark:text-slate-100">arrow_back_ios_new</span>
+</button>
+<h1 class="text-xl font-bold tracking-tight text-slate-900 dark:text-slate-100">Scanner de Pares</h1>
+<button class="flex items-center justify-center size-10 rounded-full hover:bg-slate-200 dark:hover:bg-slate-800 transition-colors">
+<span class="material-symbols-outlined text-slate-900 dark:text-slate-100">search</span>
+</button>
+</div>
+<nav class="flex gap-2 p-1 bg-slate-200/50 dark:bg-slate-800/50 rounded-xl">
+<a class="flex-1 text-center py-2.5 rounded-lg bg-primary text-slate-900 font-bold text-sm shadow-lg shadow-primary/20" href="#">Volume</a>
+<a class="flex-1 text-center py-2.5 rounded-lg text-slate-500 dark:text-slate-400 font-medium text-sm hover:text-primary transition-colors" href="#">ATR</a>
+<a class="flex-1 text-center py-2.5 rounded-lg text-slate-500 dark:text-slate-400 font-medium text-sm hover:text-primary transition-colors" href="#">Score</a>
+</nav>
+</header>
+<main class="flex-1 px-4 py-2 space-y-6 overflow-y-auto">
+<section>
+<div class="flex items-center justify-between mb-4">
+<h2 class="text-lg font-bold text-slate-900 dark:text-slate-100 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">analytics</span>
+                        Top 5 Pairs
+                    </h2>
+<span class="text-xs font-medium text-slate-500 dark:text-slate-400 px-2 py-1 bg-slate-100 dark:bg-slate-800 rounded-md">Real-time</span>
+</div>
+<div class="space-y-3">
+<div class="glass-card rounded-xl p-4 flex flex-col gap-3 group hover:border-primary/40 transition-all">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="size-10 rounded-lg bg-primary/20 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-2xl">currency_bitcoin</span>
+</div>
+<div>
+<p class="font-bold text-slate-900 dark:text-slate-100">BTC/USDT</p>
+<p class="text-xs text-slate-500 dark:text-slate-400">Vol: $2.4B • ATR: 1.2%</p>
+</div>
+</div>
+<div class="text-right">
+<p class="text-xs font-semibold text-primary uppercase tracking-wider">Quantum Score</p>
+<p class="text-xl font-bold text-primary">92</p>
+</div>
+</div>
+<div class="w-full bg-slate-200 dark:bg-slate-800 h-2 rounded-full overflow-hidden">
+<div class="h-full bg-primary neon-glow rounded-full" style="width: 92%"></div>
+</div>
+</div>
+<div class="glass-card rounded-xl p-4 flex flex-col gap-3 group hover:border-primary/40 transition-all">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="size-10 rounded-lg bg-primary/20 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-2xl">eco</span>
+</div>
+<div>
+<p class="font-bold text-slate-900 dark:text-slate-100">ETH/USDT</p>
+<p class="text-xs text-slate-500 dark:text-slate-400">Vol: $1.8B • ATR: 2.1%</p>
+</div>
+</div>
+<div class="text-right">
+<p class="text-xs font-semibold text-primary uppercase tracking-wider">Quantum Score</p>
+<p class="text-xl font-bold text-primary">87</p>
+</div>
+</div>
+<div class="w-full bg-slate-200 dark:bg-slate-800 h-2 rounded-full overflow-hidden">
+<div class="h-full bg-primary neon-glow rounded-full" style="width: 87%"></div>
+</div>
+</div>
+<div class="glass-card rounded-xl p-4 flex flex-col gap-3 group hover:border-primary/40 transition-all">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="size-10 rounded-lg bg-primary/20 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-2xl">token</span>
+</div>
+<div>
+<p class="font-bold text-slate-900 dark:text-slate-100">SOL/USDT</p>
+<p class="text-xs text-slate-500 dark:text-slate-400">Vol: $950M • ATR: 4.8%</p>
+</div>
+</div>
+<div class="text-right">
+<p class="text-xs font-semibold text-primary uppercase tracking-wider">Quantum Score</p>
+<p class="text-xl font-bold text-primary">79</p>
+</div>
+</div>
+<div class="w-full bg-slate-200 dark:bg-slate-800 h-2 rounded-full overflow-hidden">
+<div class="h-full bg-primary neon-glow rounded-full" style="width: 79%"></div>
+</div>
+</div>
+<div class="glass-card rounded-xl p-4 flex flex-col gap-3 group hover:border-primary/40 transition-all">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="size-10 rounded-lg bg-primary/20 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-2xl">monitoring</span>
+</div>
+<div>
+<p class="font-bold text-slate-900 dark:text-slate-100">BNB/USDT</p>
+<p class="text-xs text-slate-500 dark:text-slate-400">Vol: $720M • ATR: 1.5%</p>
+</div>
+</div>
+<div class="text-right">
+<p class="text-xs font-semibold text-primary uppercase tracking-wider">Quantum Score</p>
+<p class="text-xl font-bold text-primary">74</p>
+</div>
+</div>
+<div class="w-full bg-slate-200 dark:bg-slate-800 h-2 rounded-full overflow-hidden">
+<div class="h-full bg-primary neon-glow rounded-full" style="width: 74%"></div>
+</div>
+</div>
+<div class="glass-card rounded-xl p-4 flex flex-col gap-3 group hover:border-primary/40 transition-all">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="size-10 rounded-lg bg-primary/20 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-2xl">trending_up</span>
+</div>
+<div>
+<p class="font-bold text-slate-900 dark:text-slate-100">LINK/USDT</p>
+<p class="text-xs text-slate-500 dark:text-slate-400">Vol: $410M • ATR: 3.2%</p>
+</div>
+</div>
+<div class="text-right">
+<p class="text-xs font-semibold text-primary uppercase tracking-wider">Quantum Score</p>
+<p class="text-xl font-bold text-primary">68</p>
+</div>
+</div>
+<div class="w-full bg-slate-200 dark:bg-slate-800 h-2 rounded-full overflow-hidden">
+<div class="h-full bg-primary neon-glow rounded-full" style="width: 68%"></div>
+</div>
+</div>
+</div>
+</section>
+<section class="pb-24">
+<div class="flex items-center justify-between mb-4">
+<h2 class="text-lg font-bold text-slate-900 dark:text-slate-100">Heatmap Quickview</h2>
+<a class="text-primary text-sm font-semibold" href="#">Ver todos</a>
+</div>
+<div class="grid grid-cols-2 gap-3">
+<div class="bg-primary/10 border border-primary/20 rounded-xl p-4">
+<p class="text-xs text-slate-500 dark:text-slate-400 font-medium mb-1">Top Gainer 24h</p>
+<p class="text-lg font-bold text-emerald-500">+12.4%</p>
+<p class="text-sm font-bold mt-1">PEPE/USDT</p>
+</div>
+<div class="bg-slate-800/40 border border-slate-700/50 rounded-xl p-4">
+<p class="text-xs text-slate-500 dark:text-slate-400 font-medium mb-1">Liquidez Total</p>
+<p class="text-lg font-bold text-primary">$1.24T</p>
+<p class="text-sm font-bold mt-1">Global Mkt</p>
+</div>
+</div>
+</section>
+</main>
+<footer class="fixed bottom-0 left-1/2 -translate-x-1/2 w-full max-w-[430px] z-30">
+<div class="bg-background-light/90 dark:bg-background-dark/90 backdrop-blur-xl border-t border-slate-200 dark:border-slate-800 px-6 py-3 pb-8">
+<div class="flex items-center justify-between">
+<a class="flex flex-col items-center gap-1 text-slate-400" href="#">
+<span class="material-symbols-outlined text-2xl">grid_view</span>
+<span class="text-[10px] font-bold uppercase tracking-widest">Dashboard</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-primary" href="#">
+<span class="material-symbols-outlined text-2xl">target</span>
+<span class="text-[10px] font-bold uppercase tracking-widest">Scanner</span>
+</a>
+<a class="relative -top-6" href="#">
+<div class="size-14 rounded-full bg-primary shadow-lg shadow-primary/40 flex items-center justify-center text-slate-900 neon-glow">
+<span class="material-symbols-outlined text-3xl font-bold">add</span>
+</div>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-400" href="#">
+<span class="material-symbols-outlined text-2xl">swap_horiz</span>
+<span class="text-[10px] font-bold uppercase tracking-widest">Trades</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-400" href="#">
+<span class="material-symbols-outlined text-2xl">account_circle</span>
+<span class="text-[10px] font-bold uppercase tracking-widest">Perfil</span>
+</a>
+</div>
+</div>
+</footer>
+</div>
+</body></html>

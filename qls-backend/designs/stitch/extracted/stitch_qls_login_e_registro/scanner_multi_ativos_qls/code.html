@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="pt-BR"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Scanner Multi-Ativos QLS</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#06f967",
+                        "background-light": "#f5f8f7",
+                        "background-dark": "#0f2317",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .glass {
+            background: rgba(15, 35, 23, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(6, 249, 103, 0.1);
+        }
+        .neon-glow {
+            box-shadow: 0 0 15px rgba(6, 249, 103, 0.3);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 antialiased">
+<div class="relative flex min-h-screen w-full flex-col overflow-x-hidden max-w-[430px] mx-auto bg-background-light dark:bg-background-dark border-x border-primary/10">
+<!-- Header -->
+<header class="sticky top-0 z-50 glass px-4 py-4 flex items-center justify-between border-b border-primary/20">
+<div class="flex items-center gap-3">
+<div class="size-10 rounded-lg bg-primary/20 flex items-center justify-center border border-primary/30">
+<span class="material-symbols-outlined text-primary">analytics</span>
+</div>
+<div>
+<h1 class="text-lg font-bold leading-tight tracking-tight">Scanner QLS</h1>
+<p class="text-[10px] uppercase tracking-widest text-primary font-semibold">Quantum Liquidity</p>
+</div>
+</div>
+<div class="flex gap-2">
+<button class="size-10 rounded-full flex items-center justify-center bg-primary/10 text-primary">
+<span class="material-symbols-outlined text-[22px]">notifications</span>
+</button>
+<button class="size-10 rounded-full flex items-center justify-center bg-primary/10 text-primary">
+<span class="material-symbols-outlined text-[22px]">settings</span>
+</button>
+</div>
+</header>
+<!-- Search & Tabs -->
+<div class="px-4 pt-6 pb-2">
+<div class="relative group">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-primary/60">search</span>
+<input class="w-full h-14 bg-primary/5 border border-primary/20 rounded-xl pl-12 pr-4 text-slate-100 placeholder:text-primary/40 focus:ring-1 focus:ring-primary focus:border-primary outline-none transition-all" placeholder="Buscar pares (ex: BTCUSDT)" type="text"/>
+</div>
+</div>
+<nav class="px-4 flex gap-2 overflow-x-auto no-scrollbar py-4">
+<button class="px-6 py-2.5 rounded-full bg-primary text-background-dark font-bold text-sm whitespace-nowrap">Crypto</button>
+<button class="px-6 py-2.5 rounded-full bg-primary/10 text-primary font-medium text-sm border border-primary/20 whitespace-nowrap">Forex</button>
+<button class="px-6 py-2.5 rounded-full bg-primary/10 text-primary font-medium text-sm border border-primary/20 whitespace-nowrap">Commodities</button>
+<button class="px-6 py-2.5 rounded-full bg-primary/10 text-primary font-medium text-sm border border-primary/20 whitespace-nowrap">Stocks</button>
+</nav>
+<!-- Market Overview Section -->
+<div class="px-4 py-2">
+<div class="flex items-center justify-between mb-4">
+<h2 class="text-sm font-bold uppercase tracking-wider text-primary/80">Tendência do Mercado</h2>
+<span class="text-xs text-primary bg-primary/10 px-2 py-0.5 rounded">Tempo Real</span>
+</div>
+<!-- Pairs List -->
+<div class="space-y-3 pb-24">
+<!-- Pair Card 1 -->
+<div class="glass p-4 rounded-xl flex items-center justify-between border border-primary/20">
+<div class="flex items-center gap-3">
+<div class="size-10 rounded-full bg-slate-800 flex items-center justify-center border border-primary/30 overflow-hidden">
+<img class="w-full h-full object-cover opacity-80" data-alt="Bandeira dos Estados Unidos" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD2FBr5VIx7DEbKVo7mtgpUlb9YsAhzLJyzv-FhmsLiobgmKpPQwhbm77fWWdsyCiOyZA0O93SR-uq6kCrxQagqvExCDkeU-vm31yjFyO28zaa4atJ2ggF3l4x9A_ujtnY1lWm3ae7UrjolZv_WdhRn72S11IJ3ii7bkkNiQNQCJeERb7xuYAh1o5FbfEfB9ONRHs8a4uF9kgICsz7LztiKCSfoWqdRGCi9nmX-_yw1fjyTX3gOC3EP_sLGjiPnYdruuoU8Heay8wU"/>
+</div>
+<div>
+<p class="font-bold text-slate-100">BTC / USDT</p>
+<p class="text-xs text-slate-400">Bitcoin</p>
+</div>
+</div>
+<div class="flex flex-col items-end gap-1">
+<div class="flex items-center gap-2">
+<span class="text-[10px] font-bold text-primary/70 uppercase">Score QLS</span>
+<span class="text-primary font-bold">92</span>
+</div>
+<div class="w-24 h-1.5 bg-primary/10 rounded-full overflow-hidden">
+<div class="h-full bg-primary neon-glow" style="width: 92%"></div>
+</div>
+<p class="text-[10px] text-primary/80 font-medium">Compra Forte</p>
+</div>
+</div>
+<!-- Pair Card 2 -->
+<div class="glass p-4 rounded-xl flex items-center justify-between border border-primary/20">
+<div class="flex items-center gap-3">
+<div class="size-10 rounded-full bg-slate-800 flex items-center justify-center border border-primary/30 overflow-hidden text-primary font-bold">
+                            Ξ
+                        </div>
+<div>
+<p class="font-bold text-slate-100">ETH / USDT</p>
+<p class="text-xs text-slate-400">Ethereum</p>
+</div>
+</div>
+<div class="flex flex-col items-end gap-1">
+<div class="flex items-center gap-2">
+<span class="text-[10px] font-bold text-primary/70 uppercase">Score QLS</span>
+<span class="text-primary font-bold">78</span>
+</div>
+<div class="w-24 h-1.5 bg-primary/10 rounded-full overflow-hidden">
+<div class="h-full bg-primary neon-glow" style="width: 78%"></div>
+</div>
+<p class="text-[10px] text-primary/80 font-medium">Compra</p>
+</div>
+</div>
+<!-- Pair Card 3 -->
+<div class="glass p-4 rounded-xl flex items-center justify-between border border-primary/10 opacity-70">
+<div class="flex items-center gap-3">
+<div class="size-10 rounded-full bg-slate-800 flex items-center justify-center border border-primary/30 overflow-hidden text-yellow-500 font-bold">
+                            Ð
+                        </div>
+<div>
+<p class="font-bold text-slate-100">DOGE / USDT</p>
+<p class="text-xs text-slate-400">Dogecoin</p>
+</div>
+</div>
+<div class="flex flex-col items-end gap-1">
+<div class="flex items-center gap-2">
+<span class="text-[10px] font-bold text-slate-500 uppercase">Score QLS</span>
+<span class="text-slate-400 font-bold">45</span>
+</div>
+<div class="w-24 h-1.5 bg-slate-800 rounded-full overflow-hidden">
+<div class="h-full bg-slate-500" style="width: 45%"></div>
+</div>
+<p class="text-[10px] text-slate-500 font-medium">Neutro</p>
+</div>
+</div>
+<!-- Pair Card 4 -->
+<div class="glass p-4 rounded-xl flex items-center justify-between border border-primary/20">
+<div class="flex items-center gap-3">
+<div class="size-10 rounded-full bg-slate-800 flex items-center justify-center border border-primary/30 overflow-hidden text-primary font-bold">
+<span class="material-symbols-outlined text-sm">currency_bitcoin</span>
+</div>
+<div>
+<p class="font-bold text-slate-100">SOL / USDT</p>
+<p class="text-xs text-slate-400">Solana</p>
+</div>
+</div>
+<div class="flex flex-col items-end gap-1">
+<div class="flex items-center gap-2">
+<span class="text-[10px] font-bold text-primary/70 uppercase">Score QLS</span>
+<span class="text-primary font-bold">85</span>
+</div>
+<div class="w-24 h-1.5 bg-primary/10 rounded-full overflow-hidden">
+<div class="h-full bg-primary neon-glow" style="width: 85%"></div>
+</div>
+<p class="text-[10px] text-primary/80 font-medium">Compra Forte</p>
+</div>
+</div>
+<!-- Pair Card 5 -->
+<div class="glass p-4 rounded-xl flex items-center justify-between border border-primary/20">
+<div class="flex items-center gap-3">
+<div class="size-10 rounded-full bg-slate-800 flex items-center justify-center border border-primary/30 overflow-hidden text-red-500 font-bold">
+<span class="material-symbols-outlined">trending_down</span>
+</div>
+<div>
+<p class="font-bold text-slate-100">XRP / USDT</p>
+<p class="text-xs text-slate-400">Ripple</p>
+</div>
+</div>
+<div class="flex flex-col items-end gap-1">
+<div class="flex items-center gap-2">
+<span class="text-[10px] font-bold text-red-400/70 uppercase">Score QLS</span>
+<span class="text-red-500 font-bold">12</span>
+</div>
+<div class="w-24 h-1.5 bg-red-500/10 rounded-full overflow-hidden">
+<div class="h-full bg-red-500" style="width: 12%"></div>
+</div>
+<p class="text-[10px] text-red-500 font-medium">Venda Forte</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Bottom Navigation Bar -->
+<div class="fixed bottom-0 left-1/2 -translate-x-1/2 w-full max-w-[430px] z-50">
+<div class="flex gap-2 border-t border-primary/20 glass px-4 pb-8 pt-3 shadow-2xl">
+<a class="flex flex-1 flex-col items-center justify-center gap-1 text-primary/60 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined">grid_view</span>
+<p class="text-[10px] font-medium leading-normal">Dashboard</p>
+</a>
+<a class="flex flex-1 flex-col items-center justify-center gap-1 text-primary" href="#">
+<span class="material-symbols-outlined font-fill">radar</span>
+<p class="text-[10px] font-bold leading-normal">Scanner</p>
+</a>
+<a class="flex flex-1 flex-col items-center justify-center gap-1 text-primary/60 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined">account_balance_wallet</span>
+<p class="text-[10px] font-medium leading-normal">Portfólio</p>
+</a>
+<a class="flex flex-1 flex-col items-center justify-center gap-1 text-primary/60 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined">person</span>
+<p class="text-[10px] font-medium leading-normal">Perfil</p>
+</a>
+</div>
+</div>
+</div>
+</body></html>

@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="pt-br"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#00ffff",
+                        "background-light": "#f5f8f8",
+                        "background-dark": "#0a0a0a",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .glass-card {
+            background: rgba(15, 35, 35, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(0, 255, 255, 0.1);
+        }
+        .neon-shadow {
+            box-shadow: 0 0 15px rgba(0, 255, 255, 0.3);
+        }
+        .neon-text-shadow {
+            text-shadow: 0 0 8px rgba(0, 255, 255, 0.5);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-dark font-display text-slate-100 min-h-screen flex flex-col items-center justify-start overflow-x-hidden">
+<div class="relative w-full max-w-[430px] min-h-screen flex flex-col bg-background-dark pb-10">
+<div class="flex items-center p-6 justify-between w-full">
+<div class="text-primary flex size-10 shrink-0 items-center justify-center rounded-full bg-primary/10 border border-primary/20">
+<span class="material-symbols-outlined">close</span>
+</div>
+<h2 class="text-primary text-sm font-bold tracking-widest uppercase flex-1 text-center pr-10 neon-text-shadow">QLS Quantum Liquidity</h2>
+</div>
+<div class="flex flex-col items-center px-6 pt-4 pb-8">
+<div class="relative w-32 h-32 flex items-center justify-center mb-6">
+<div class="absolute inset-0 bg-primary/20 blur-3xl rounded-full"></div>
+<div class="relative z-10 text-primary scale-[3.5]" data-icon="bolt">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1, 'wght' 400;">bolt</span>
+</div>
+</div>
+<h1 class="text-slate-100 text-3xl font-bold leading-tight text-center pb-2">Acesse sua conta</h1>
+<p class="text-slate-400 text-sm text-center">Inicie sua jornada no trading quântico</p>
+</div>
+<div class="px-6 mb-8">
+<div class="flex bg-slate-900/50 rounded-xl p-1 border border-primary/10">
+<button class="flex-1 py-3 rounded-lg bg-primary text-background-dark font-bold text-sm transition-all duration-300">
+                    Entrar
+                </button>
+<button class="flex-1 py-3 rounded-lg text-slate-400 font-bold text-sm hover:text-primary transition-all duration-300">
+                    Registrar
+                </button>
+</div>
+</div>
+<div class="px-6 space-y-5">
+<div class="glass-card rounded-xl p-6 space-y-4">
+<div class="space-y-2">
+<label class="text-primary text-xs font-bold uppercase tracking-wider pl-1">E-mail</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-primary/60 text-xl">mail</span>
+<input class="w-full h-14 bg-background-dark/50 border border-primary/20 rounded-xl pl-12 pr-4 text-slate-100 focus:ring-1 focus:ring-primary focus:border-primary outline-none transition-all" placeholder="nome@exemplo.com" type="email"/>
+</div>
+</div>
+<div class="space-y-2">
+<label class="text-primary text-xs font-bold uppercase tracking-wider pl-1">Senha</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-primary/60 text-xl">lock</span>
+<input class="w-full h-14 bg-background-dark/50 border border-primary/20 rounded-xl pl-12 pr-12 text-slate-100 focus:ring-1 focus:ring-primary focus:border-primary outline-none transition-all" placeholder="••••••••" type="password"/>
+<span class="material-symbols-outlined absolute right-4 top-1/2 -translate-y-1/2 text-primary/60 text-xl cursor-pointer">visibility</span>
+</div>
+</div>
+<div class="flex items-center justify-between pt-2">
+<div class="flex items-center gap-2">
+<div class="relative inline-flex h-6 w-11 items-center rounded-full bg-primary/20 cursor-pointer">
+<span class="translate-x-6 inline-block h-4 w-4 transform rounded-full bg-primary transition"></span>
+</div>
+<span class="text-xs text-slate-300 font-medium">Lembrar de mim</span>
+</div>
+<a class="text-xs text-primary font-medium hover:underline" href="#">Esqueceu a senha?</a>
+</div>
+</div>
+<div class="glass-card rounded-xl p-5 flex items-center justify-between border-dashed border-primary/30">
+<div class="flex items-center gap-3">
+<div class="size-10 rounded-lg bg-primary/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">shield_lock</span>
+</div>
+<div>
+<p class="text-sm font-bold text-slate-100">Autenticação 2FA</p>
+<p class="text-[10px] text-slate-400 uppercase tracking-tighter">Camada extra de segurança</p>
+</div>
+</div>
+<div class="relative inline-flex h-6 w-11 items-center rounded-full bg-slate-700 cursor-pointer">
+<span class="translate-x-1 inline-block h-4 w-4 transform rounded-full bg-slate-400 transition"></span>
+</div>
+</div>
+<div class="glass-card rounded-xl p-5 flex items-center justify-between border-primary/30 neon-shadow">
+<div class="flex items-center gap-3">
+<div class="size-10 rounded-lg bg-primary flex items-center justify-center text-background-dark">
+<span class="material-symbols-outlined">workspace_premium</span>
+</div>
+<div>
+<p class="text-sm font-bold text-slate-100">Plano Pro Mensal</p>
+<p class="text-[10px] text-primary font-bold uppercase tracking-widest">Ativar Quantum Mode</p>
+</div>
+</div>
+<div class="relative inline-flex h-6 w-11 items-center rounded-full bg-primary cursor-pointer">
+<span class="translate-x-6 inline-block h-4 w-4 transform rounded-full bg-background-dark transition"></span>
+</div>
+</div>
+<button class="w-full h-16 bg-primary text-background-dark font-bold text-lg rounded-xl flex items-center justify-center gap-2 neon-shadow active:scale-95 transition-transform">
+                Entrar no Terminal
+                <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+<div class="flex items-center gap-4 py-4">
+<div class="h-[1px] flex-1 bg-slate-800"></div>
+<span class="text-xs text-slate-500 font-medium uppercase tracking-widest">Ou acesse com</span>
+<div class="h-[1px] flex-1 bg-slate-800"></div>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<button class="h-14 glass-card rounded-xl flex items-center justify-center gap-3 text-slate-300 hover:text-primary transition-colors border-slate-800">
+<span class="material-symbols-outlined">google</span>
+<span class="text-sm font-bold">Google</span>
+</button>
+<button class="h-14 glass-card rounded-xl flex items-center justify-center gap-3 text-slate-300 hover:text-primary transition-colors border-slate-800">
+<span class="material-symbols-outlined">ios</span>
+<span class="text-sm font-bold">Apple ID</span>
+</button>
+</div>
+</div>
+<div class="mt-auto px-6 py-8 text-center">
+<p class="text-slate-500 text-xs">
+                Ao entrar, você concorda com nossos <br/>
+<a class="text-primary hover:underline" href="#">Termos de Serviço</a> e <a class="text-primary hover:underline" href="#">Privacidade</a>.
+            </p>
+</div>
+</div>
+<div class="fixed inset-0 pointer-events-none overflow-hidden -z-10">
+<div class="absolute -top-[10%] -left-[10%] w-[40%] h-[40%] bg-primary/5 rounded-full blur-[120px]"></div>
+<div class="absolute bottom-[5%] right-[0%] w-[50%] h-[50%] bg-primary/10 rounded-full blur-[150px]"></div>
+</div>
+</body></html>

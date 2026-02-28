@@ -1,0 +1,237 @@
+<html class="dark"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#00ff66",
+            "background-light": "#f5f8f7",
+            "background-dark": "#0f2317",
+            "glass": "rgba(32, 75, 49, 0.4)",
+            "glass-stroke": "rgba(0, 255, 102, 0.1)",
+          },
+          fontFamily: {
+            "display": ["Space Grotesk"]
+          },
+          borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+        },
+      },
+    }
+  </script>
+<style>
+    .glass-card {
+      background: rgba(32, 75, 49, 0.3);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(0, 255, 102, 0.1);
+    }
+    .neon-shadow {
+      box-shadow: 0 0 15px rgba(0, 255, 102, 0.2);
+    }
+    body {
+      -webkit-tap-highlight-color: transparent;
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 antialiased overflow-x-hidden">
+<!-- Main Container (Mobile Viewport Simulation) -->
+<div class="relative flex h-auto min-h-screen w-full flex-col bg-background-light dark:bg-background-dark overflow-x-hidden pb-24">
+<!-- iOS Status Bar Placeholder -->
+<div class="h-10 w-full flex items-center justify-between px-6 text-xs font-semibold">
+<span>9:41</span>
+<div class="flex gap-1.5 items-center">
+<span class="material-symbols-outlined text-[14px]">signal_cellular_4_bar</span>
+<span class="material-symbols-outlined text-[14px]">wifi</span>
+<span class="material-symbols-outlined text-[18px]">battery_full</span>
+</div>
+</div>
+<!-- Header Section -->
+<div class="flex items-center p-4 justify-between sticky top-0 z-50 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md">
+<div class="text-slate-900 dark:text-slate-100 flex size-10 shrink-0 items-center justify-center rounded-full glass-card">
+<span class="material-symbols-outlined">arrow_back_ios_new</span>
+</div>
+<h2 class="text-slate-900 dark:text-slate-100 text-lg font-bold leading-tight tracking-tight flex-1 text-center">Histórico de Ordens</h2>
+<div class="flex w-10 items-center justify-end">
+<button class="flex size-10 cursor-pointer items-center justify-center rounded-full glass-card text-primary neon-shadow">
+<span class="material-symbols-outlined">download</span>
+</button>
+</div>
+</div>
+<!-- Hero Stats Grid -->
+<div class="grid grid-cols-2 gap-3 p-4">
+<div class="flex flex-col gap-1 rounded-xl p-5 glass-card border-l-4 border-l-primary">
+<p class="text-slate-400 text-xs font-medium uppercase tracking-wider">Lucro Total</p>
+<p class="text-primary tracking-tight text-xl font-bold">+R$ 12.450,00</p>
+<div class="flex items-center gap-1 text-primary text-xs font-bold">
+<span class="material-symbols-outlined text-sm">trending_up</span>
+<span>+12.4%</span>
+</div>
+</div>
+<div class="flex flex-col gap-1 rounded-xl p-5 glass-card border-l-4 border-l-rose-500">
+<p class="text-slate-400 text-xs font-medium uppercase tracking-wider">Perda Total</p>
+<p class="text-slate-100 tracking-tight text-xl font-bold">-R$ 3.200,00</p>
+<div class="flex items-center gap-1 text-rose-500 text-xs font-bold">
+<span class="material-symbols-outlined text-sm">trending_down</span>
+<span>-5.2%</span>
+</div>
+</div>
+<div class="flex flex-col gap-1 rounded-xl p-5 glass-card">
+<p class="text-slate-400 text-xs font-medium uppercase tracking-wider">Taxa de Acerto</p>
+<p class="text-slate-100 tracking-tight text-xl font-bold">85%</p>
+<div class="w-full bg-slate-800 h-1 rounded-full mt-2 overflow-hidden">
+<div class="bg-primary h-full w-[85%]"></div>
+</div>
+</div>
+<div class="flex flex-col gap-1 rounded-xl p-5 glass-card">
+<p class="text-slate-400 text-xs font-medium uppercase tracking-wider">Trades Fechados</p>
+<p class="text-slate-100 tracking-tight text-xl font-bold">142</p>
+<p class="text-slate-500 text-xs font-medium">Últimos 30 dias</p>
+</div>
+</div>
+<!-- Export Action -->
+<div class="px-4 py-2">
+<button class="w-full flex items-center justify-center gap-2 rounded-xl h-12 bg-primary/10 border border-primary/20 text-primary font-bold text-sm tracking-wide">
+<span class="material-symbols-outlined text-xl">description</span>
+        EXPORTAR RELATÓRIO CSV
+      </button>
+</div>
+<!-- Filter/Title Section -->
+<div class="flex items-center justify-between px-4 pb-2 pt-6">
+<h3 class="text-slate-100 text-lg font-bold tracking-tight">Negociações Encerradas</h3>
+<button class="text-primary text-sm font-medium flex items-center gap-1">
+        Filtros <span class="material-symbols-outlined text-lg">tune</span>
+</button>
+</div>
+<!-- Trade List -->
+<div class="flex flex-col gap-3 p-4">
+<!-- Trade Item 1 -->
+<div class="flex flex-col gap-3 rounded-xl p-4 glass-card">
+<div class="flex justify-between items-start">
+<div class="flex items-center gap-3">
+<div class="size-10 rounded-lg bg-primary/20 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">currency_bitcoin</span>
+</div>
+<div>
+<p class="text-slate-100 font-bold">BTC/USDT</p>
+<p class="text-slate-500 text-xs">Venda • 14 Out, 15:30</p>
+</div>
+</div>
+<div class="text-right">
+<p class="text-primary font-bold">+R$ 1.240,00</p>
+<p class="text-primary/70 text-xs">+2.45%</p>
+</div>
+</div>
+<div class="grid grid-cols-3 gap-2 pt-2 border-t border-white/5">
+<div class="flex flex-col">
+<span class="text-[10px] text-slate-500 uppercase">Entrada</span>
+<span class="text-xs text-slate-300">62.450,00</span>
+</div>
+<div class="flex flex-col">
+<span class="text-[10px] text-slate-500 uppercase">Saída</span>
+<span class="text-xs text-slate-300">63.980,00</span>
+</div>
+<div class="flex flex-col text-right">
+<span class="text-[10px] text-slate-500 uppercase">Alav.</span>
+<span class="text-xs text-slate-300">10x</span>
+</div>
+</div>
+</div>
+<!-- Trade Item 2 -->
+<div class="flex flex-col gap-3 rounded-xl p-4 glass-card">
+<div class="flex justify-between items-start">
+<div class="flex items-center gap-3">
+<div class="size-10 rounded-lg bg-primary/20 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">toll</span>
+</div>
+<div>
+<p class="text-slate-100 font-bold">ETH/USDT</p>
+<p class="text-slate-500 text-xs">Compra • 14 Out, 12:15</p>
+</div>
+</div>
+<div class="text-right">
+<p class="text-rose-500 font-bold">-R$ 450,20</p>
+<p class="text-rose-500/70 text-xs">-1.10%</p>
+</div>
+</div>
+<div class="grid grid-cols-3 gap-2 pt-2 border-t border-white/5">
+<div class="flex flex-col">
+<span class="text-[10px] text-slate-500 uppercase">Entrada</span>
+<span class="text-xs text-slate-300">2.450,50</span>
+</div>
+<div class="flex flex-col">
+<span class="text-[10px] text-slate-500 uppercase">Saída</span>
+<span class="text-xs text-slate-300">2.420,10</span>
+</div>
+<div class="flex flex-col text-right">
+<span class="text-[10px] text-slate-500 uppercase">Alav.</span>
+<span class="text-xs text-slate-300">5x</span>
+</div>
+</div>
+</div>
+<!-- Trade Item 3 -->
+<div class="flex flex-col gap-3 rounded-xl p-4 glass-card">
+<div class="flex justify-between items-start">
+<div class="flex items-center gap-3">
+<div class="size-10 rounded-lg bg-primary/20 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">polyline</span>
+</div>
+<div>
+<p class="text-slate-100 font-bold">SOL/USDT</p>
+<p class="text-slate-500 text-xs">Compra • 13 Out, 21:05</p>
+</div>
+</div>
+<div class="text-right">
+<p class="text-primary font-bold">+R$ 890,15</p>
+<p class="text-primary/70 text-xs">+4.12%</p>
+</div>
+</div>
+<div class="grid grid-cols-3 gap-2 pt-2 border-t border-white/5">
+<div class="flex flex-col">
+<span class="text-[10px] text-slate-500 uppercase">Entrada</span>
+<span class="text-xs text-slate-300">145,20</span>
+</div>
+<div class="flex flex-col">
+<span class="text-[10px] text-slate-500 uppercase">Saída</span>
+<span class="text-xs text-slate-300">151,18</span>
+</div>
+<div class="flex flex-col text-right">
+<span class="text-[10px] text-slate-500 uppercase">Alav.</span>
+<span class="text-xs text-slate-300">20x</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Bottom Navigation Bar -->
+<div class="fixed bottom-0 left-0 right-0 z-[100] border-t border-primary/10 bg-background-dark/95 backdrop-blur-xl px-4 pb-6 pt-3 flex justify-between items-center">
+<a class="flex flex-1 flex-col items-center justify-center gap-1 text-slate-500" href="#">
+<span class="material-symbols-outlined">home</span>
+<p class="text-[10px] font-medium leading-none">Início</p>
+</a>
+<a class="flex flex-1 flex-col items-center justify-center gap-1 text-slate-500" href="#">
+<span class="material-symbols-outlined">analytics</span>
+<p class="text-[10px] font-medium leading-none">Trade</p>
+</a>
+<a class="flex flex-1 flex-col items-center justify-center gap-1 text-primary relative" href="#">
+<div class="absolute -top-1 size-1 rounded-full bg-primary neon-shadow"></div>
+<span class="material-symbols-outlined fill-1">history</span>
+<p class="text-[10px] font-bold leading-none">Histórico</p>
+</a>
+<a class="flex flex-1 flex-col items-center justify-center gap-1 text-slate-500" href="#">
+<span class="material-symbols-outlined">account_circle</span>
+<p class="text-[10px] font-medium leading-none">Perfil</p>
+</a>
+</div>
+</div>
+</body></html>
