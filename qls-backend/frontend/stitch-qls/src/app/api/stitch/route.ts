@@ -1,7 +1,9 @@
 export async function GET() {
   return Response.json({ 
-    message: "🧵 Stitch-QLS API OK!", 
-    status: "live",
-    user: "Jeronimo SP" 
+    success: true,
+    message: "🧵 Stitch-QLS API 100% operacional!",
+    user: "Jeronimo SP",
+    timestamp: new Date().toISOString(),
+    endpoints: ["/api/stitch", "/api/auth", "/api/demo"]
   });
 }
